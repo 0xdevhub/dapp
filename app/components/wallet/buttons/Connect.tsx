@@ -9,7 +9,8 @@ export const WalletConnectButton = () => {
       className={classNames([
         'text-sm text-dark-blue',
         'rounded-md px-2 py-1',
-        'rotate-bg bg-gradient-radial from-yellow-400 via-sky-400 to-green-400'
+        'bg-lime-400'
+        // 'rotate-bg bg-gradient-radial from-yellow-400 via-sky-400 to-green-400'
       ])}
     >
       Connect

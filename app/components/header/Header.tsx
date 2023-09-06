@@ -14,12 +14,13 @@ export const Header = ({ className, ...rest }: HTMLProps<HTMLDivElement>) => {
     <header
       className={classnames([
         className,
-        'flex items-center justify-between space-x-4 p-1 lg:space-x-0 lg:p-2'
+        'flex items-center justify-between space-x-4 lg:space-x-0'
       ])}
       {...rest}
     >
       <div className='flex flex-1 items-center justify-between space-x-4 lg:justify-start'>
         <Logo tabIndex={1} />
+        <span className='hidden text-gray-400 lg:inline-flex'>|</span>
         <NavMain tabIndex={2} />
       </div>
       <div className='flex items-center space-x-4'>

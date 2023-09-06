@@ -1,8 +1,8 @@
 const appConfig = {
-  name: "hubfi",
+  name: 'defihub',
   meta: {
-    description: "defi utility tools",
-  },
-};
+    description: 'defi utility tools'
+  }
+}
 
-export default appConfig;
+export default appConfig

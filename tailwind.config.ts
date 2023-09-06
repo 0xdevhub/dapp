@@ -1,60 +1,74 @@
-import type { Config } from "tailwindcss";
-import plugin from "tailwindcss/plugin";
+import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
 
 export enum CONTAINER_SIZES {
-  fallback = "100%",
-  md = "768px",
-  lg = "1200px",
+  fallback = '100%',
+  md = '768px',
+  lg = '1200px'
 }
 
 export const container = plugin(({ addUtilities }) => {
   const utility = {
-    ".container": {
+    '.container': {
       width: CONTAINER_SIZES.fallback,
-      margin: "auto",
-      paddingRight: "16px",
-      paddingLeft: "16px",
+      margin: 'auto',
+      paddingRight: '16px',
+      paddingLeft: '16px',
 
-      "@screen md": {
-        maxWidth: CONTAINER_SIZES.md,
+      '@screen md': {
+        maxWidth: CONTAINER_SIZES.md
       },
 
-      "@screen lg": {
-        maxWidth: CONTAINER_SIZES.lg,
-      },
-    },
-  };
+      '@screen lg': {
+        maxWidth: CONTAINER_SIZES.lg
+      }
+    }
+  }
 
-  addUtilities(utility);
-});
+  addUtilities(utility)
+})
 
 const config: Config = {
-  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: ['./app/**/*.{js,ts,jsx,tsx,mdx}'],
   corePlugins: {
-    container: false,
+    container: false
   },
   plugins: [container],
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
       },
-      colors: {
-        ["dark-blue"]: "#26405D",
-        ["light-blue"]: "#2E4B6A",
+      backgroundColor: {
+        ['dark-blue']: '#26405D',
+        ['light-blue']: '#2E4B6A',
+        ['dark-green']: '#668672',
         primary: {
-          DEFAULT: "#FFDA5C",
-          dark: "#EFA236",
+          DEFAULT: '#FFDA5C',
+          dark: '#EFA236'
         },
         secondary: {
-          DEFAULT: "#43B4D3",
-          dark: "#0084A8",
-        },
+          DEFAULT: '#43B4D3',
+          dark: '#0084A8'
+        }
       },
-    },
-  },
-};
+      colors: {
+        ['dark-blue']: '#26405D',
+        ['light-blue']: '#2E4B6A',
+        ['dark-green']: '#668672',
+        primary: {
+          DEFAULT: '#FFDA5C',
+          dark: '#EFA236'
+        },
+        secondary: {
+          DEFAULT: '#43B4D3',
+          dark: '#0084A8'
+        }
+      }
+    }
+  }
+}
 
-export default config;
+export default config
