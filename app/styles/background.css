@@ -1,0 +1,16 @@
+@keyframes rotate-gradient {
+  0% {
+    background-position: -50% 0%;
+  }
+  50% {
+    background-position: 300% 150%;
+  }
+  100% {
+    background-position: -50% 0%;
+  }
+}
+
+.rotate-bg {
+  background-size: 300% 300%;
+  animation: rotate-gradient 5s linear infinite;
+}
