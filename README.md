@@ -1,4 +1,4 @@
-# defi hub - defi utility tools
+# defihub - defi utility tools hub
 
 ## Getting Started
 

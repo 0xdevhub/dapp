@@ -4,7 +4,8 @@ import plugin from 'tailwindcss/plugin'
 export enum CONTAINER_SIZES {
   fallback = '100%',
   md = '768px',
-  lg = '1200px'
+  lg = '1200px',
+  '2xl' = '1400px'
 }
 
 export const container = plugin(({ addUtilities }) => {
@@ -21,6 +22,10 @@ export const container = plugin(({ addUtilities }) => {
 
       '@screen lg': {
         maxWidth: CONTAINER_SIZES.lg
+      },
+
+      '@screen 2xl': {
+        maxWidth: CONTAINER_SIZES['2xl']
       }
     }
   }
