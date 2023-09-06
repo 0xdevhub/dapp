@@ -17,7 +17,7 @@ export const Logo = ({
         tabIndex={tabIndex}
       >
         <span className='flex items-center space-x-px'>
-          <span className='font-thin'>defi</span>
+          <span className='font-light'>defi</span>
           <span className='rotate-bg bg-gradient-conic from-yellow-400 via-sky-400 to-green-400 bg-clip-text font-extrabold text-transparent'>
             hub
           </span>
