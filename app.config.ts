@@ -1,7 +1,7 @@
 const appConfig = {
   name: "hubfi",
   meta: {
-    description: "Crypto assets management utilities apps",
+    description: "defi utility tools",
   },
 };
 
