@@ -21,12 +21,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body
         className={classNames([
           inter.className,
-          'from-dark-green/60 h-screen bg-dark-blue bg-gradient-radial to-dark-blue text-white',
+          'h-screen bg-dark-blue bg-gradient-radial from-dark-green/60 to-dark-blue text-white',
           'container'
         ])}
       >
-        <Header className='p-1 lg:p-2' />
-        <main className='m-2'>{children}</main>
+        <Header className='py-2 lg:py-4' />
+        <main className='my-2'>{children}</main>
       </body>
     </html>
   )

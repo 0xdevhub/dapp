@@ -4,8 +4,21 @@ import plugin from 'tailwindcss/plugin'
 export enum CONTAINER_SIZES {
   fallback = '100%',
   md = '768px',
-  lg = '1200px',
-  '2xl' = '1400px'
+  lg = '1280px'
+}
+
+export const colors = {
+  ['dark-blue']: '#26405D',
+  ['light-blue']: '#2E4B6A',
+  ['dark-green']: '#668672',
+  primary: {
+    DEFAULT: '#FFDA5C',
+    dark: '#EFA236'
+  },
+  secondary: {
+    DEFAULT: '#43B4D3',
+    dark: '#0084A8'
+  }
 }
 
 export const container = plugin(({ addUtilities }) => {
@@ -22,10 +35,6 @@ export const container = plugin(({ addUtilities }) => {
 
       '@screen lg': {
         maxWidth: CONTAINER_SIZES.lg
-      },
-
-      '@screen 2xl': {
-        maxWidth: CONTAINER_SIZES['2xl']
       }
     }
   }
@@ -47,30 +56,10 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
       },
       backgroundColor: {
-        ['dark-blue']: '#26405D',
-        ['light-blue']: '#2E4B6A',
-        ['dark-green']: '#668672',
-        primary: {
-          DEFAULT: '#FFDA5C',
-          dark: '#EFA236'
-        },
-        secondary: {
-          DEFAULT: '#43B4D3',
-          dark: '#0084A8'
-        }
+        ...colors
       },
       colors: {
-        ['dark-blue']: '#26405D',
-        ['light-blue']: '#2E4B6A',
-        ['dark-green']: '#668672',
-        primary: {
-          DEFAULT: '#FFDA5C',
-          dark: '#EFA236'
-        },
-        secondary: {
-          DEFAULT: '#43B4D3',
-          dark: '#0084A8'
-        }
+        ...colors
       }
     }
   }

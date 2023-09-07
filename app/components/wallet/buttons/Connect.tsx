@@ -13,7 +13,7 @@ export const WalletConnectButton = () => {
         // 'rotate-bg bg-gradient-radial from-yellow-400 via-sky-400 to-green-400'
       ])}
     >
-      Connect
+      Acessar
     </button>
   )
 }
