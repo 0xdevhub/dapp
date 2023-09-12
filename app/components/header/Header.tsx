@@ -21,7 +21,9 @@ export const Header = ({ className, ...rest }: HTMLProps<HTMLDivElement>) => {
     >
       <div className='flex flex-1 items-center justify-between space-x-8 lg:justify-start'>
         <Logo tabIndex={1} />
-        <span className='hidden text-white/20 lg:inline-flex'>|</span>
+        <span aria-hidden className='hidden text-white/20 lg:inline-flex'>
+          |
+        </span>
         <NavMain tabIndex={2} navLinks={appConfig.routes} />
       </div>
       <div className='flex items-center space-x-4'>

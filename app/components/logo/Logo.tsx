@@ -16,7 +16,7 @@ export const Logo = ({
         href='/'
         tabIndex={tabIndex}
       >
-        <span className='flex items-center space-x-px'>
+        <h1 className='flex items-center space-x-px'>
           <span className='font-light'>defi</span>
           <span className='relative'>
             <span
@@ -37,7 +37,7 @@ export const Logo = ({
               hub
             </span>
           </span>
-        </span>
+        </h1>
       </Link>
     </div>
   )

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Dashboard() {
   return (
     <section>
-      <h1>Aplicativos</h1>
+      <h2>Aplicativos</h2>
     </section>
   )
 }

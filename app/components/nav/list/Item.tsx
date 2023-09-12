@@ -23,7 +23,7 @@ export const NavListItem = ({
       href={href}
       className={classNames([
         {
-          'font-extrabold ': pathname === href
+          'font-bold ': pathname === href
         },
         customClass ? 'drop-shadow-secondary text-secondary' : 'text-white'
       ])}

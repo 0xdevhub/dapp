@@ -14,7 +14,11 @@ type NavMainProps = HTMLProps<HTMLElement> & {
 
 export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
   return (
-    <nav {...props} className={classNames(props.className, 'text-base')}>
+    <nav
+      {...props}
+      className={classNames(props.className, 'text-base')}
+      aria-labelledby='navmain'
+    >
       <div className='lg:hidden'>
         <Bars3BottomLeftIcon
           tabIndex={tabIndex}
@@ -23,7 +27,13 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
         />
       </div>
       <div className='hidden lg:inline-flex'>
-        <NavList navLinks={navLinks} className='flex space-x-8' />
+        <span id='navmain' aria-hidden className='hidden'>
+          Menu
+        </span>
+        <NavList
+          navLinks={navLinks}
+          className='flex space-x-8  tracking-wide'
+        />
       </div>
     </nav>
   )

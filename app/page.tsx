@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Dashboard() {
   return (
     <section>
-      <h1>Meu Portfólio</h1>
+      <h2>Meu Portfólio</h2>
     </section>
   )
 }
