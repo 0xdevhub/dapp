@@ -1,6 +1,7 @@
 import type { HTMLProps } from 'react'
 import { Bars3BottomLeftIcon } from '@heroicons/react/24/solid'
 import { NavList } from './list'
+import classNames from 'classnames'
 
 export type NavLink = {
   label: string
@@ -13,7 +14,7 @@ type NavMainProps = HTMLProps<HTMLElement> & {
 
 export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
   return (
-    <nav {...props}>
+    <nav {...props} className={classNames(props.className, 'text-base')}>
       <div className='lg:hidden'>
         <Bars3BottomLeftIcon
           tabIndex={tabIndex}

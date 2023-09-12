@@ -1,24 +1,32 @@
 'use client'
 
+import Link, { LinkProps } from 'next/link'
 import classNames from 'classnames'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-export type NavListItemProps = {
+export type NavListItemProps = LinkProps & {
   label: string
-  href: string
+  customClass?: boolean
 }
 
-export const NavListItem = ({ href, label }: NavListItemProps) => {
+export const NavListItem = ({
+  href,
+  label,
+  customClass,
+  ...props
+}: NavListItemProps) => {
   const pathname = usePathname()
 
   return (
     <Link
+      {...props}
       href={href}
-      key={href}
-      className={classNames({
-        'font-extrabold text-white': pathname === href
-      })}
+      className={classNames([
+        {
+          'font-extrabold ': pathname === href
+        },
+        customClass ? 'drop-shadow-secondary text-secondary' : 'text-white'
+      ])}
     >
       {label}
     </Link>

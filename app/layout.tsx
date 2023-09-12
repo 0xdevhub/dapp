@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         className={classNames([
           inter.className,
           'h-screen bg-dark-blue bg-gradient-radial from-dark-green/60 to-dark-blue ',
-          'container'
+          'text-sm font-normal tracking-wide container'
         ])}
       >
         <WaleltProvider>

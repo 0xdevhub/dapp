@@ -5,7 +5,8 @@ export const routes = [
   },
   {
     label: 'Aplicativos',
-    href: '/apps/'
+    href: '/apps/',
+    customClass: true
   },
   {
     label: 'Documentação',
