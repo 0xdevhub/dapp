@@ -2,14 +2,14 @@ import type { Metadata } from 'next'
 import appConfig from '@/app.config'
 
 export const metadata: Metadata = {
-  title: `${appConfig.name} - início`,
+  title: `${appConfig.name} - aplicativos`,
   description: appConfig.meta.description
 }
 
 export default function Dashboard() {
   return (
     <section>
-      <h1>Meu Portfólio</h1>
+      <h1>Aplicativos</h1>
     </section>
   )
 }

@@ -5,11 +5,11 @@ export const routes = [
   },
   {
     label: 'Aplicativos',
-    href: '/apps'
+    href: '/apps/'
   },
   {
     label: 'Documentação',
-    href: '/docs'
+    href: '/docs/'
   }
 ]
 
