@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import { type Metadata } from 'next'
 import appConfig from '@/app.config'
 
 export const metadata: Metadata = {

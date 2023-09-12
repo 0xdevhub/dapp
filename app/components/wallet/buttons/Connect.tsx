@@ -30,7 +30,7 @@ export const WalletConnectButton = () => {
     useWallet()
 
   return (
-    <div>
+    <>
       {isConnected ? (
         <button type='button' onClick={() => disconnect()}>
           Ola, ({address?.slice(0, 6)})
@@ -41,7 +41,7 @@ export const WalletConnectButton = () => {
             <button
               className={classNames([
                 'text-sm text-dark-blue',
-                'rounded-md px-2 py-1',
+                'w-full rounded-md px-2 py-1',
                 'bg-lime-400'
                 // 'rotate-bg bg-gradient-radial from-yellow-400 via-sky-400 to-green-400'
               ])}
@@ -55,7 +55,7 @@ export const WalletConnectButton = () => {
         })
       )}
       {error && <div>{error.message}</div>}
-    </div>
+    </>
   )
 }
 
