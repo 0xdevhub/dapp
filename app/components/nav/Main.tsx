@@ -30,7 +30,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
   return (
     <nav
       {...props}
-      className={classNames(props.className, 'text-base')}
+      className={classNames(props.className, 'text-base tracking-wide')}
       aria-labelledby='navmain'
     >
       <span id='navmain' aria-hidden className='hidden'>
@@ -45,7 +45,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
         />
       </div>
       <div className='hidden lg:inline-flex'>
-        <NavList navLinks={navLinks} className='flex space-x-8 tracking-wide' />
+        <NavList navLinks={navLinks} className='flex space-x-8' />
       </div>
       {isOpened && (
         <div className='z-10'>
@@ -58,7 +58,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
               />
               <NavList
                 navLinks={navLinks}
-                className='flex flex-col space-y-2 tracking-wide'
+                className='flex flex-col space-y-2 '
               />
               <div className='w-full'>
                 <WalletConnectButton />
