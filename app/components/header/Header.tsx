@@ -3,6 +3,7 @@ import { Logo } from '@/app/components/logo'
 import { NavMain } from '@/app/components/nav'
 import { HTMLProps } from 'react'
 import classnames from 'classnames'
+import appConfig from '@/app.config'
 
 const WalletConnectButton = dynamic(
   () => import('@/app/components/wallet/buttons/Connect'),
@@ -18,10 +19,10 @@ export const Header = ({ className, ...rest }: HTMLProps<HTMLDivElement>) => {
       ])}
       {...rest}
     >
-      <div className='flex flex-1 items-center justify-between space-x-4 lg:justify-start'>
+      <div className='flex flex-1 items-center justify-between space-x-8 lg:justify-start'>
         <Logo tabIndex={1} />
-        <span className='hidden text-gray-400 lg:inline-flex'>|</span>
-        <NavMain tabIndex={2} />
+        <span className='hidden text-white/20 lg:inline-flex'>|</span>
+        <NavMain tabIndex={2} navLinks={appConfig.routes} />
       </div>
       <div className='flex items-center space-x-4'>
         <WalletConnectButton />

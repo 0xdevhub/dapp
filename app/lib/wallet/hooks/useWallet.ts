@@ -1,11 +1,18 @@
-// import { useEffect } from z'react'
-// import web3auth from '../web3Auth'
+import { useAccount, useConnect, useDisconnect } from 'wagmi'
 
 function useWallet() {
-  // useEffect(() => {
-  //   web3auth.initModal().then(console.log)
-  // }, [])
-  // return web3auth
+  const { isConnected, address } = useAccount()
+  const { connect, connectors, error } = useConnect()
+  const { disconnect } = useDisconnect()
+
+  return {
+    address,
+    isConnected,
+    connect,
+    connectors,
+    error,
+    disconnect
+  }
 }
 
-export default useWallet;
+export default useWallet
