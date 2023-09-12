@@ -19,6 +19,9 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
       className={classNames(props.className, 'text-base')}
       aria-labelledby='navmain'
     >
+      <span id='navmain' aria-hidden className='hidden'>
+        Menu
+      </span>
       <div className='lg:hidden'>
         <Bars3BottomLeftIcon
           tabIndex={tabIndex}
@@ -27,13 +30,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
         />
       </div>
       <div className='hidden lg:inline-flex'>
-        <span id='navmain' aria-hidden className='hidden'>
-          Menu
-        </span>
-        <NavList
-          navLinks={navLinks}
-          className='flex space-x-8  tracking-wide'
-        />
+        <NavList navLinks={navLinks} className='flex space-x-8 tracking-wide' />
       </div>
     </nav>
   )

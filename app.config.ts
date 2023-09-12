@@ -6,7 +6,7 @@ export const routes = [
   {
     label: 'Aplicativos',
     href: '/apps/',
-    customClass: true
+    variant: 'secondary'
   },
   {
     label: 'Documentação',

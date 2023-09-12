@@ -1,4 +1,4 @@
-import type { HTMLProps } from 'react'
+import { Children, type HTMLProps } from 'react'
 import { NavListItem, NavListItemProps } from './Item'
 
 type NavListProps = HTMLProps<HTMLUListElement> & {
@@ -8,11 +8,13 @@ type NavListProps = HTMLProps<HTMLUListElement> & {
 export const NavList = ({ navLinks, ...props }: NavListProps) => {
   return (
     <ul {...props}>
-      {navLinks.map((navLink) => (
-        <li>
-          <NavListItem {...navLink} />
-        </li>
-      ))}
+      {Children.toArray(
+        navLinks.map((navLink) => (
+          <li>
+            <NavListItem {...navLink} />
+          </li>
+        ))
+      )}
     </ul>
   )
 }
