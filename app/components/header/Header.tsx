@@ -1,10 +1,15 @@
 import { HTMLProps } from 'react'
+import dynamic from 'next/dynamic'
 import classnames from 'classnames'
 import appConfig from '@/app.config'
 import Separator from '@/app/components/Separator'
 import { Logo } from '@/app/components/logo'
 import { NavMain } from '@/app/components/nav'
-import { Wallet } from '@/app/components/wallet'
+
+const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {
+  ssr: false,
+  loading: () => <div>wait...</div>
+})
 
 export const Header = ({ className, ...rest }: HTMLProps<HTMLDivElement>) => {
   return (

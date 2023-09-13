@@ -8,7 +8,7 @@ import { WalletConnectButton } from './buttons'
 import { WalletNetwork } from './network'
 
 export const Wallet = () => {
-  const { isConnected } = useWallet()
+  const { isConnected, address } = useWallet()
   return (
     <>
       {!isConnected ? (
@@ -17,7 +17,7 @@ export const Wallet = () => {
         <div className='flex items-center justify-end space-x-4'>
           <WalletNetwork />
           <Separator className='hidden lg:inline-flex' />
-          <WalletAvatar />
+          <WalletAvatar title={address} address={address} />
         </div>
       )}
     </>
