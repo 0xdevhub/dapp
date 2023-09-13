@@ -3,15 +3,16 @@ import { NavListItem, NavListItemProps } from './Item'
 
 type NavListProps = HTMLProps<HTMLUListElement> & {
   navLinks: NavListItemProps[]
+  onItemClick?: () => void
 }
 
-export const NavList = ({ navLinks, ...props }: NavListProps) => {
+export const NavList = ({ navLinks, onItemClick, ...props }: NavListProps) => {
   return (
     <ul {...props}>
       {Children.toArray(
         navLinks.map((navLink) => (
           <li>
-            <NavListItem {...navLink} />
+            <NavListItem {...navLink} onClick={onItemClick} />
           </li>
         ))
       )}
