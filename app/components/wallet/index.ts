@@ -1,1 +1,2 @@
-export { default as WalletConnect } from './Connect'
+export { default as Wallet } from './Wallet'
+export { default as WalletProvider } from './Provider'

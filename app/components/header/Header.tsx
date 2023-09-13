@@ -1,10 +1,10 @@
-import dynamic from 'next/dynamic'
-import { Logo } from '@/app/components/logo'
-import { NavMain } from '@/app/components/nav'
 import { HTMLProps } from 'react'
 import classnames from 'classnames'
 import appConfig from '@/app.config'
-import { WalletConnect } from '@/app/components/wallet'
+import Separator from '@/app/components/Separator'
+import { Logo } from '@/app/components/logo'
+import { NavMain } from '@/app/components/nav'
+import { Wallet } from '@/app/components/wallet'
 
 export const Header = ({ className, ...rest }: HTMLProps<HTMLDivElement>) => {
   return (
@@ -17,13 +17,11 @@ export const Header = ({ className, ...rest }: HTMLProps<HTMLDivElement>) => {
     >
       <div className='flex flex-1 items-center justify-between space-x-8 lg:justify-start'>
         <Logo tabIndex={1} />
-        <span aria-hidden className='hidden text-white/20 lg:inline-flex'>
-          |
-        </span>
+        <Separator />
         <NavMain tabIndex={2} navLinks={appConfig.routes} />
       </div>
       <div className='flex items-center space-x-4'>
-        <WalletConnect />
+        <Wallet />
       </div>
     </header>
   )

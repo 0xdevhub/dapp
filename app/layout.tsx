@@ -7,7 +7,7 @@ import classNames from 'classnames'
 
 import appConfig from '@/app.config'
 import { Header } from '@/app/components/header'
-import WaleltProvider from '@/app/components/wallet/Provider'
+import { WalletProvider } from '@/app/components/wallet'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,10 +26,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           'text-sm font-normal container'
         ])}
       >
-        <WaleltProvider>
+        <WalletProvider>
           <Header className='py-2 lg:py-4' />
           <main className='my-2'>{children}</main>
-        </WaleltProvider>
+        </WalletProvider>
       </body>
     </html>
   )

@@ -1,5 +1,11 @@
+import { AvatarThumbnail } from './Thumbnail'
+
 const WalletAvatar = () => {
-  return <div>avatar</div>
+  return (
+    <div>
+      <AvatarThumbnail className='cursor-pointer' />
+    </div>
+  )
 }
 
 export default WalletAvatar

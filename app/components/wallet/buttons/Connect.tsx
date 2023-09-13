@@ -26,7 +26,7 @@ import useWallet from '@/app/lib/wallet/hooks/useWallet'
 import classNames from 'classnames'
 
 export const WalletConnectButton = () => {
-  const { connectors, connect, error } = useWallet()
+  const { connectors, connect } = useWallet()
 
   return connectors.map((connector) => (
     <button
