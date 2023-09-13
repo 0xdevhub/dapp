@@ -10,7 +10,7 @@ import { LanguageSelector } from '@/app/components/LanguageSelector'
 
 const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {
   ssr: false,
-  loading: () => <Loading className='w-24' />
+  loading: () => <Loading className='w-24' variant='green' />
 })
 
 export const Header = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {

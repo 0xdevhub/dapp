@@ -9,8 +9,12 @@ export const Variant = {
     active: 'font-bold',
     classes: 'text-white'
   },
+  primary: {
+    active: 'font-bold',
+    classes: 'text-primary'
+  },
   secondary: {
-    active: 'font-bold drop-shadow-secondary',
+    active: 'font-bold',
     classes: 'text-secondary'
   }
 } as const

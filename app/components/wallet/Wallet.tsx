@@ -2,7 +2,7 @@
 
 import { useWallet } from '@/app/lib/wallet'
 import { WalletAvatar } from './avatar'
-import { WalletConnectButton } from './buttons'
+import { WalletConnectButton } from './button'
 
 export const Wallet = () => {
   const { isConnected, address } = useWallet()

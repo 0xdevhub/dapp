@@ -67,14 +67,14 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
         <div
           className={classNames([
             'fixed bottom-0 right-0 top-0 h-screen w-screen',
-            'transition-all duration-300',
+            'z-[999] transition-all duration-1000',
             isOpened ? 'left-0' : '-left-full'
           ])}
         >
           <div
             className={classNames([
               'relative z-10 flex h-full flex-col justify-between p-12',
-              'transition-all duration-700',
+              'transition-all duration-1000',
               isOpened ? 'blur-0' : 'blur-lg'
             ])}
           >
@@ -100,12 +100,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
           </div>
           <div
             className={classNames([
-              'absolute top-0 z-0 h-full w-full bg-black/70 backdrop-blur-sm',
-              'transition-all duration-700',
-              {
-                blur: !isOpened,
-                'blur-0': isOpened
-              }
+              'absolute top-0 z-0 h-full w-full bg-black/70 backdrop-blur-sm'
             ])}
           />
         </div>

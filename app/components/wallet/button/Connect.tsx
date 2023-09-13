@@ -23,26 +23,32 @@
 'use client'
 
 import useWallet from '@/app/lib/wallet/hooks/useWallet'
-import classNames from 'classnames'
+import { Button } from '@/app/components/Button'
+
+/// bkp:  'rotate-bg bg-gradient-radial from-yellow-400 via-sky-400 to-green-400'
 
 export const WalletConnectButton = () => {
-  const { connectors, connect } = useWallet()
+  const {
+    connectors: [connector],
+    connect,
+    isConnecting
+  } = useWallet()
 
-  return connectors.map((connector) => (
-    <button
-      className={classNames([
-        'text-sm text-dark-blue',
-        'w-full rounded-md px-2 py-1',
-        'bg-lime-400'
-        // 'rotate-bg bg-gradient-radial from-yellow-400 via-sky-400 to-green-400'
-      ])}
+  return (
+    <Button
+      loadingProps={{
+        variant: 'dark'
+      }}
+      loading={isConnecting}
+      className='w-full rounded-md '
       type='button'
       key={connector.id}
+      disabled={isConnecting}
       onClick={() => connect({ connector })}
     >
       Acessar
-    </button>
-  ))
+    </Button>
+  )
 }
 
 export default WalletConnectButton

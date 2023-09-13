@@ -28,6 +28,7 @@ export const Logo = ({
               hub
             </span>
             <span
+            tabIndex={-1}
               aria-hidden
               className={classNames([
                 'rotate-bg absolute bg-gradient-conic from-yellow-400 via-sky-400 to-green-400 bg-clip-text font-extrabold text-transparent blur',
