@@ -7,11 +7,11 @@ import { usePathname } from 'next/navigation'
 export const Variant = {
   default: {
     active: 'font-bold',
-    default: 'text-white'
+    classes: 'text-white'
   },
   secondary: {
     active: 'font-bold drop-shadow-secondary',
-    default: 'text-secondary'
+    classes: 'text-secondary'
   }
 } as const
 
@@ -37,7 +37,7 @@ export const NavListItem = ({
         {
           [Variant[variant || 'default'].active]: pathname === href
         },
-        Variant[variant || 'default'].default
+        Variant[variant || 'default'].classes
       ])}
     >
       {label}

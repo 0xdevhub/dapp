@@ -97,7 +97,16 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
               </>
             )}
           </div>
-          <div className='absolute top-0 z-0 h-full w-full bg-black/70 backdrop-blur-sm ' />
+          <div
+            className={classNames([
+              'absolute top-0 z-0 h-full w-full bg-black/70 backdrop-blur-sm',
+              'transition-all duration-700',
+              {
+                blur: !isOpened,
+                'blur-0': isOpened
+              }
+            ])}
+          />
         </div>
       </div>
     </nav>
