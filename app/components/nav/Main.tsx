@@ -59,7 +59,8 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
       <div
         tabIndex={!isOpened ? -1 : 0}
         className={classNames([
-          'duration-50 z-10 transition-all',
+          'z-10',
+          'duration-50  transition-all',
           isOpened ? 'visible left-0' : 'invisible -left-full'
         ])}
       >

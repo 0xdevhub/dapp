@@ -1,4 +1,4 @@
-import { HTMLProps } from 'react'
+import { type HTMLProps } from 'react'
 import dynamic from 'next/dynamic'
 import classnames from 'classnames'
 import appConfig from '@/app.config'
@@ -11,14 +11,14 @@ const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {
   loading: () => <div>wait...</div>
 })
 
-export const Header = ({ className, ...rest }: HTMLProps<HTMLDivElement>) => {
+export const Header = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
   return (
     <header
+      {...props}
       className={classnames([
         className,
         'flex items-center justify-between space-x-4 lg:space-x-0'
       ])}
-      {...rest}
     >
       <div className='flex flex-1 items-center  justify-start  space-x-8'>
         <Logo tabIndex={1} />
