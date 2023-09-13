@@ -8,5 +8,6 @@
   "bracketSpacing": true,
   "jsxSingleQuote": true,
   "semi": false,
+  "tailwindConfig": "./tailwind.config.ts",
   "plugins": ["prettier-plugin-tailwindcss"]
 }
