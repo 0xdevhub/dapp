@@ -1,8 +1,9 @@
-@import './styles/background.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import './styles/background.css';
+@import './styles/loading.css';
 
 :root {
   --foreground-rgb: 0, 0, 0;

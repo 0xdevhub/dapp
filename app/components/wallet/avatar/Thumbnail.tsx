@@ -5,10 +5,8 @@ import Image from 'next/image'
 
 type AvatarThumbnailProps = HTMLProps<HTMLDivElement> & {
   src?: string
-  address?: string
+  address: string
 }
-
-const GENERIC_32 = new Uint32Array(10)
 
 export const AvatarThumbnail = ({
   src,
@@ -27,12 +25,7 @@ export const AvatarThumbnail = ({
       {src ? (
         <Image src={src} alt='avatar' />
       ) : (
-        <Jazzicon
-          diameter={36}
-          seed={jsNumberForAddress(
-            address || crypto.getRandomValues(GENERIC_32).join('')
-          )}
-        />
+        <Jazzicon diameter={36} seed={jsNumberForAddress(address)} />
       )}
     </div>
   )

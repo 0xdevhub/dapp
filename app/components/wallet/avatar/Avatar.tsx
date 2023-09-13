@@ -1,5 +1,6 @@
 import { type HTMLProps } from 'react'
 import { AvatarThumbnail } from './Thumbnail'
+import { ZeroAddress } from 'ethers'
 
 type WalletAvatarProps = HTMLProps<HTMLDivElement> & {
   src?: string
@@ -9,7 +10,11 @@ type WalletAvatarProps = HTMLProps<HTMLDivElement> & {
 const WalletAvatar = ({ src, address, ...props }: WalletAvatarProps) => {
   return (
     <div {...props}>
-      <AvatarThumbnail src={src} address={address} className='cursor-pointer' />
+      <AvatarThumbnail
+        src={src}
+        address={address || ZeroAddress}
+        className='cursor-pointer'
+      />
     </div>
   )
 }
