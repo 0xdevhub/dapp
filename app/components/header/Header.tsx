@@ -4,11 +4,7 @@ import { NavMain } from '@/app/components/nav'
 import { HTMLProps } from 'react'
 import classnames from 'classnames'
 import appConfig from '@/app.config'
-
-const WalletConnectButton = dynamic(
-  () => import('@/app/components/wallet/buttons/Connect'),
-  { ssr: false }
-)
+import { WalletConnect } from '@/app/components/wallet'
 
 export const Header = ({ className, ...rest }: HTMLProps<HTMLDivElement>) => {
   return (
@@ -27,7 +23,7 @@ export const Header = ({ className, ...rest }: HTMLProps<HTMLDivElement>) => {
         <NavMain tabIndex={2} navLinks={appConfig.routes} />
       </div>
       <div className='flex items-center space-x-4'>
-        <WalletConnectButton />
+        <WalletConnect />
       </div>
     </header>
   )

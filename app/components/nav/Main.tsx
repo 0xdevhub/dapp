@@ -5,7 +5,7 @@ import { Bars3BottomLeftIcon } from '@heroicons/react/24/solid'
 import { useToggle, useMediaQuery } from 'usehooks-ts'
 import classNames from 'classnames'
 import { ArrowLongLeftIcon } from '@heroicons/react/24/outline'
-import { WalletConnectButton } from '@/app/components/wallet/buttons'
+import { WalletConnect } from '@/app/components/wallet'
 import { NavList } from './list'
 
 export type NavLink = {
@@ -92,7 +92,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
                   />
                 </div>
                 <div className='w-full'>
-                  <WalletConnectButton />
+                  <WalletConnect />
                 </div>
               </>
             )}
