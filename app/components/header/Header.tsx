@@ -15,7 +15,7 @@ export const Header = ({ className, ...rest }: HTMLProps<HTMLDivElement>) => {
       ])}
       {...rest}
     >
-      <div className='flex flex-1 items-center justify-between space-x-8 lg:justify-start'>
+      <div className='flex flex-1 items-center  justify-start  space-x-8'>
         <Logo tabIndex={1} />
         <Separator />
         <NavMain tabIndex={2} navLinks={appConfig.routes} />
