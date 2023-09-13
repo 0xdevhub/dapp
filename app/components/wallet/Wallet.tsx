@@ -11,7 +11,7 @@ export const Wallet = () => {
   const { isConnected } = useWallet()
   return (
     <>
-      {isConnected ? (
+      {!isConnected ? (
         <WalletConnectButton />
       ) : (
         <div className='flex items-center justify-end space-x-4'>
