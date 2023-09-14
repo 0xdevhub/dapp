@@ -1,14 +1,28 @@
-import { ChevronDownIcon } from '@heroicons/react/24/solid'
-import NetworkThumbnail from './Thumbnail'
+import { type HTMLProps } from 'react'
 
-export const Network = () => {
+import { ChevronDownIcon } from '@heroicons/react/24/solid'
+import { NetworkThumbnail } from './Thumbnail'
+import classNames from 'classnames'
+import { Chain } from 'wagmi'
+
+type NetworkProps = HTMLProps<HTMLDivElement> & {
+  chain: Chain
+}
+
+export const Network = ({ chain, ...props }: NetworkProps) => {
   return (
-    <div className='flex cursor-pointer space-x-2'>
-      <ChevronDownIcon
-        width={16}
-        className='hidden text-white lg:inline-flex'
-      />
-      <NetworkThumbnail />
+    <div
+      {...props}
+      className={classNames(
+        props.className,
+        'flex cursor-pointer justify-between space-x-2'
+      )}
+    >
+      <div className='flex items-center space-x-2'>
+        <NetworkThumbnail />
+        <span>{chain.name}</span>
+      </div>
+      <ChevronDownIcon width={18} />
     </div>
   )
 }

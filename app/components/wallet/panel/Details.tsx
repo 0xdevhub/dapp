@@ -8,10 +8,13 @@ import addressUtils from '@/app/lib/utils/address'
 import Heading from '@/app/components/Heading'
 import balanceUtils from '@/app/lib/utils/balance'
 import { Square2StackIcon } from '@heroicons/react/24/outline'
+import { useCopyToClipboard } from 'usehooks-ts'
+import { Network } from '../network'
 
 export const PanelDetails = (props: HTMLProps<HTMLDivElement>) => {
   const { balance } = useBalance()
   const { address, chain } = useWallet()
+  const [, copy] = useCopyToClipboard()
 
   return (
     <section
@@ -19,21 +22,22 @@ export const PanelDetails = (props: HTMLProps<HTMLDivElement>) => {
       className={classNames(props?.className, 'flex flex-col space-y-6')}
     >
       <Heading variant='h4'>Minha carteira</Heading>
-      <div>
+      <div className='flex flex-col space-y-2'>
         <Heading variant='h5'>ID</Heading>
         <div className='flex justify-between space-x-4'>
           <p>{addressUtils.toEllipsis(address!, 8, 6)}</p>
           <Square2StackIcon
-            width={16}
-            className='cursor-pointer text-dark-green'
+            onClick={() => copy(address!)}
+            width={18}
+            className='cursor-pointer text-dark-green active:text-lime-400'
           />
         </div>
       </div>
-      <div>
+      <div className='flex flex-col space-y-2'>
         <Heading variant='h5'>Rede</Heading>
-        <div>{chain?.name}</div>
+        <Network chain={chain!} />
       </div>
-      <div>
+      <div className='flex flex-col space-y-2'>
         <Heading variant='h5'>Saldo</Heading>
         <div className='flex space-x-2'>
           <span>{balanceUtils.cropDecimals(balance?.formatted)}</span>
