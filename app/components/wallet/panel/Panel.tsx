@@ -24,20 +24,22 @@ export const Panel = ({ children, ...props }: PanelProps) => {
   return (
     <div {...props} className={classNames(props?.className, 'lg:relative')}>
       <div
-        tabIndex={-1}
         className={classNames(
-          'gradient-border-bg before:rotate-bg before:bg-gradient-radial lg:before:rounded-2xl lg:before:p-0.5',
-          'before:from-yellow-400 before:via-sky-400 before:to-lime-400',
+          'gradient-border-bg',
+          'before:bg-gradient-to-b lg:before:rounded-2xl lg:before:p-0.5',
+          'before:from-lime-400 before:to-sky-400',
           'absolute z-[19] bg-black/70 backdrop-blur-sm',
-          'duration-400 transition-all',
-          'lg:-right-2 lg:-top-2 lg:bottom-auto lg:left-auto lg:rounded-2xl lg:px-6 lg:py-4',
-          'bottom-0 right-0 top-0 px-12 py-8',
+          'duration-400 overflow-hidden transition-all',
+          'bottom-0 right-0 top-0',
+          'px-12 py-8',
+          'lg:rounded-2xl lg:px-6 lg:py-4',
+          'lg:-right-2 lg:-top-2 lg:bottom-auto lg:left-auto',
           isOpen
-            ? 'visible h-full w-full blur-0 lg:h-auto lg:w-60'
-            : 'invisible h-0 w-0 overflow-hidden blur'
+            ? 'visible h-full w-full overflow-auto blur-0 lg:h-[22rem] lg:w-60'
+            : 'invisible h-0 w-0 blur-xl'
         )}
       >
-        <div className='flex h-full flex-col justify-between space-y-6'>
+        <div className='flex h-full flex-col justify-between lg:w-[12rem]'>
           <PanelDetails />
           <DisconnectButton />
         </div>

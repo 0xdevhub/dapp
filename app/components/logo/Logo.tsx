@@ -24,7 +24,6 @@ export const Logo = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
               hub
             </span>
             <span
-              tabIndex={-1}
               aria-hidden
               className={classNames([
                 'rotate-bg absolute bg-gradient-conic from-yellow-400 via-sky-400 to-lime-400 bg-clip-text font-extrabold text-transparent blur',

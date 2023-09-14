@@ -41,7 +41,7 @@ export const Header = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
               tabIndex: appConfig.routes.length + 3
             }}
             avatarProps={{
-              tabIndex: appConfig.routes.length + 4
+              tabIndex: appConfig.routes.length + 3
             }}
           />
         </div>

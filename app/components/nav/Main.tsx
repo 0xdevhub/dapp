@@ -43,7 +43,6 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
       </span>
       <div className='lg:hidden'>
         <Bars3BottomLeftIcon
-          tabIndex={tabIndex}
           width={24}
           className='cursor-pointer text-gray-300'
           onClick={toggle}
@@ -58,7 +57,6 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
         />
       </div>
       <div
-        tabIndex={!isOpened ? -1 : undefined}
         className={classNames([
           'z-10',
           'duration-50  transition-all',
@@ -87,6 +85,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
                     className='cursor-pointer text-gray-300'
                     onClick={toggle}
                   />
+
                   <NavList
                     tabIndex={tabIndex}
                     navLinks={navLinks}
@@ -94,7 +93,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
                     onItemClick={handleToggle}
                   />
                 </div>
-                <LanguageSelector tabIndex={-1} />
+                <LanguageSelector />
               </div>
             )}
           </div>

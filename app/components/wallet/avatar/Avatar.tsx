@@ -7,10 +7,11 @@ export type AvatarProps = HTMLProps<HTMLDivElement> & {
   address?: string
 }
 
-export const Avatar = ({ src, address, ...props }: AvatarProps) => {
+export const Avatar = ({ src, address, tabIndex, ...props }: AvatarProps) => {
   return (
     <div {...props}>
       <AvatarThumbnail
+        tabIndex={tabIndex}
         src={src}
         address={address || ZeroAddress}
         className='cursor-pointer'
