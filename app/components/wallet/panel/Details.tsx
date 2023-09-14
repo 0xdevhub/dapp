@@ -29,7 +29,7 @@ export const PanelDetails = (props: HTMLProps<HTMLDivElement>) => {
           <Square2StackIcon
             onClick={() => copy(address!)}
             width={18}
-            className='cursor-pointer text-dark-green active:text-lime-400'
+            className='cursor-pointer  active:text-lime-400'
           />
         </div>
       </div>
