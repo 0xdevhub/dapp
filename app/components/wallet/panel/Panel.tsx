@@ -45,10 +45,10 @@ export const Panel = ({ children, ...props }: PanelProps) => {
             : 'invisible h-0 w-0 overflow-hidden blur'
         )}
       >
-        <section className='flex h-full flex-col justify-between space-y-6'>
+        <div className='flex h-full flex-col justify-between space-y-6'>
           <PanelDetails />
           <DisconnectButton />
-        </section>
+        </div>
       </div>
       <div className='relative z-20'>
         {typeof children === 'function'
