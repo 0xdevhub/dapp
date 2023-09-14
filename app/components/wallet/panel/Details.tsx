@@ -19,10 +19,10 @@ export const PanelDetails = (props: HTMLProps<HTMLDivElement>) => {
   return (
     <section
       {...props}
-      className={classNames(props?.className, 'flex flex-col space-y-6')}
+      className={classNames(props?.className, 'flex flex-col space-y-4')}
     >
       <Heading variant='h4'>Minha carteira</Heading>
-      <div className='flex flex-col space-y-2'>
+      <div className='flex flex-col space-y-1'>
         <Heading variant='h5'>ID</Heading>
         <div className='flex justify-between space-x-4'>
           <p>{addressUtils.toEllipsis(address!, 8, 6)}</p>
@@ -33,11 +33,11 @@ export const PanelDetails = (props: HTMLProps<HTMLDivElement>) => {
           />
         </div>
       </div>
-      <div className='flex flex-col space-y-2'>
+      <div className='flex flex-col space-y-1'>
         <Heading variant='h5'>Rede</Heading>
         <Network chain={chain!} />
       </div>
-      <div className='flex flex-col space-y-2'>
+      <div className='flex flex-col space-y-1'>
         <Heading variant='h5'>Saldo</Heading>
         <div className='flex space-x-2'>
           <span>{balanceUtils.cropDecimals(balance?.formatted)}</span>
