@@ -40,7 +40,7 @@ export const Panel = ({ children, ...props }: PanelProps) => {
             className={classNames(
               'absolute z-[19] bg-black/70 backdrop-blur-sm',
               'lg:-right-2 lg:-top-2 lg:bottom-auto lg:left-auto lg:h-auto lg:w-60 lg:rounded-2xl lg:px-6 lg:py-4',
-              'bottom-0 left-0 top-0 h-full w-full p-6'
+              'bottom-0 left-0 top-0 h-full w-full px-12 py-8'
             )}
           >
             <section className='flex h-full flex-col justify-between space-y-6'>
@@ -62,7 +62,7 @@ export const Panel = ({ children, ...props }: PanelProps) => {
                   </div>
                 </div>
               </div>
-              <DisconnectButton size='md' />
+              <DisconnectButton />
             </section>
           </div>
         </>

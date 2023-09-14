@@ -80,24 +80,19 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
             ])}
           >
             {isOpened && (
-              <>
-                <div className='flex flex-col space-y-10'>
-                  <ArrowLongLeftIcon
-                    width={36}
-                    className='cursor-pointer text-gray-300'
-                    onClick={toggle}
-                  />
-                  <NavList
-                    tabIndex={tabIndex}
-                    navLinks={navLinks}
-                    className='flex flex-col space-y-4'
-                    onItemClick={handleToggle}
-                  />
-                </div>
-                <div className='w-full'>
-                  <Wallet tabIndex={4} />
-                </div>
-              </>
+              <div className='flex flex-col space-y-10'>
+                <ArrowLongLeftIcon
+                  width={36}
+                  className='cursor-pointer text-gray-300'
+                  onClick={toggle}
+                />
+                <NavList
+                  tabIndex={tabIndex}
+                  navLinks={navLinks}
+                  className='flex flex-col space-y-4'
+                  onItemClick={handleToggle}
+                />
+              </div>
             )}
           </div>
           <div
