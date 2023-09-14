@@ -5,10 +5,7 @@ import Button, { ButtonProps } from '@/app/components/Button'
 
 export type DisconnectButtonProps = ButtonProps
 
-export const DisconnectButton = ({
-  children,
-  ...props
-}: DisconnectButtonProps) => {
+export const DisconnectButton = (props: DisconnectButtonProps) => {
   const { disconnect } = useWallet()
 
   return (

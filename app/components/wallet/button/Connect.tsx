@@ -4,7 +4,7 @@ import useWallet from '@/app/lib/wallet/hooks/useWallet'
 import Button, { ButtonProps } from '@/app/components/Button'
 
 export type ConnectButtonProps = ButtonProps
-/// bkp:  'rotate-bg bg-gradient-radial from-yellow-400 via-sky-400 to-green-400'
+/// bkp:  'rotate-bg bg-gradient-radial from-yellow-400 via-sky-400 to-lime-400'
 
 export const ConnectButton = ({ children, ...props }: ConnectButtonProps) => {
   const {

@@ -17,7 +17,7 @@ export const Logo = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
           <span className='relative'>
             <span
               className={classNames([
-                'rotate-bg bg-gradient-conic from-yellow-400 via-sky-400 to-green-400 bg-clip-text font-extrabold text-transparent',
+                'rotate-bg bg-gradient-conic from-yellow-400 via-sky-400 to-lime-400 bg-clip-text font-extrabold text-transparent',
                 'shadow-black drop-shadow'
               ])}
             >
@@ -27,7 +27,7 @@ export const Logo = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
               tabIndex={-1}
               aria-hidden
               className={classNames([
-                'rotate-bg absolute bg-gradient-conic from-yellow-400 via-sky-400 to-green-400 bg-clip-text font-extrabold text-transparent blur',
+                'rotate-bg absolute bg-gradient-conic from-yellow-400 via-sky-400 to-lime-400 bg-clip-text font-extrabold text-transparent blur',
                 'left-0 right-0 z-[-1]'
               ])}
             >

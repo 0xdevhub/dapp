@@ -14,3 +14,18 @@
   background-size: 300% 300%;
   animation: rotate-gradient 5s linear infinite;
 }
+
+.gradient-border-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
