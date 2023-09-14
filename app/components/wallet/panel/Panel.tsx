@@ -2,14 +2,8 @@
 
 import { type HTMLProps, type ReactNode, useState } from 'react'
 import classNames from 'classnames'
-import { useWallet, useBalance } from '@/app/lib/wallet/hooks'
-import addressUtils from '@/app/lib/utils/address'
-
-import Heading from '@/app/components/Heading'
 import { DisconnectButton } from '../button/Disconnect'
-import { ethers } from 'ethers'
-import balanceUtils from '@/app/lib/utils/balance'
-import PanelDetails from './Details'
+import { PanelDetails } from './Details'
 
 export type PanelButtonProps = {
   onClick?: () => void
@@ -21,9 +15,7 @@ export type PanelProps =
     } & Pick<HTMLProps<HTMLDivElement>, 'className'>)
 
 export const Panel = ({ children, ...props }: PanelProps) => {
-  const { balance } = useBalance()
   const [isOpen, setIsOpen] = useState(false)
-  const { address, chain } = useWallet()
 
   const onClick = () => {
     setIsOpen(!isOpen)
