@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes } from 'react'
+import { type ReactNode, type ButtonHTMLAttributes } from 'react'
 import classNames from 'classnames'
 import { Loading, LoadingProps } from '@/app/components/Loading'
 
@@ -20,12 +20,14 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: keyof typeof Sizes
   loading?: boolean
   loadingProps?: LoadingProps
+  iconBefore?: ReactNode
 }
 
 export const Button = ({
   loadingProps,
   children,
   loading,
+  iconBefore,
   variant = 'default',
   size = 'default',
   ...props
@@ -40,6 +42,7 @@ export const Button = ({
         Sizes[size].classes
       ])}
     >
+      {iconBefore && <span>{iconBefore}</span>}
       <span>{children}</span>
       <span
         className={classNames('transition-all duration-300', {

@@ -3,6 +3,7 @@ import { type HTMLProps } from 'react'
 import { useWallet } from '@/app/lib/wallet'
 import { ConnectButton, ConnectButtonProps } from './button/Connect'
 import { Avatar, AvatarProps } from './avatar/Avatar'
+import Menu from './menu/Menu'
 
 type WalletProps = HTMLProps<HTMLDivElement> & {
   connectButtonProps?: ConnectButtonProps
@@ -23,7 +24,16 @@ export const Wallet = ({
           {isConnecting && 'Acessando'}
         </ConnectButton>
       ) : (
-        <Avatar title={address} address={address} {...avatarProps} />
+        <Menu>
+          {({ onClick }) => (
+            <Avatar
+              title={address}
+              address={address}
+              onClick={onClick}
+              {...avatarProps}
+            />
+          )}
+        </Menu>
       )}
     </div>
   )

@@ -8,7 +8,7 @@ export const Separator = ({
   <span
     aria-hidden
     {...props}
-    className={classNames(className, ' text-white/20')}
+    className={classNames(className, ' select-none text-white/20')}
   >
     |
   </span>

@@ -1,7 +1,7 @@
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import NetworkThumbnail from './Thumbnail'
 
-export const WalletNetwork = () => {
+export const Network = () => {
   return (
     <div className='flex cursor-pointer space-x-2'>
       <ChevronDownIcon
@@ -13,4 +13,4 @@ export const WalletNetwork = () => {
   )
 }
 
-export default WalletNetwork
+export default Network

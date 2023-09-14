@@ -1,1 +1,1 @@
-export { default as WalletNetwork } from './Network'
+export { default as Network } from './Network'

@@ -1,5 +1,6 @@
 import { type Metadata } from 'next'
 import appConfig from '@/app.config'
+import Heading from './components/Heading'
 // import Loading from '@/app/components/Loading'
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 export default function Dashboard() {
   return (
     <section>
-      <h2>Meu Portfólio</h2>
+      <Heading variant='h2'>Meu Portfólio</Heading>
       {/*
       <div className='flex min-h-[44rem] flex-col items-center justify-center space-y-2'>
          <Loading className='w-24' />
