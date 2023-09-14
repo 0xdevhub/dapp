@@ -40,7 +40,7 @@ export const WalletConnectButton = () => {
         variant: 'dark'
       }}
       loading={isConnecting}
-      className='w-full rounded-md '
+      className='w-full justify-center rounded-md'
       type='button'
       key={connector.id}
       disabled={isConnecting}
