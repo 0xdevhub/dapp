@@ -21,7 +21,6 @@ export const Variant = {
 } as const
 
 export type LoadingProps = HTMLProps<HTMLDivElement> & {
-  backgroundClassName?: string
   variant?: keyof typeof Variant
 }
 

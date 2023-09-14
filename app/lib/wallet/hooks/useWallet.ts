@@ -1,20 +1,16 @@
 import { useAccount, useConnect, useDisconnect, useNetwork } from 'wagmi'
 
 function useWallet() {
-  const { isConnected, address, isConnecting } = useAccount()
-  const { connect, connectors, error } = useConnect()
-  const { disconnect } = useDisconnect()
-  const { chain } = useNetwork()
+  const useAccountOptions = useAccount()
+  const useConnectOptions = useConnect()
+  const useDisconnectOptions = useDisconnect()
+  const useNetworkOptions = useNetwork()
 
   return {
-    isConnecting,
-    chain,
-    address,
-    isConnected,
-    connect,
-    connectors,
-    error,
-    disconnect
+    ...useNetworkOptions,
+    ...useAccountOptions,
+    ...useDisconnectOptions,
+    ...useConnectOptions
   }
 }
 

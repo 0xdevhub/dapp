@@ -31,9 +31,16 @@ export const Header = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
           <NavMain tabIndex={2} navLinks={appConfig.routes} />
         </div>
         <div className='flex items-center space-x-4'>
-          <LanguageSelector />
+          <LanguageSelector tabIndex={appConfig.routes.length + 2} />
           <Separator className='hidden lg:inline-flex' />
-          <Wallet />
+          <Wallet
+            connectButtonProps={{
+              tabIndex: appConfig.routes.length + 3
+            }}
+            avatarProps={{
+              tabIndex: appConfig.routes.length + 4
+            }}
+          />
         </div>
       </header>
       <div className='absolute left-0 right-0 h-11 w-full overflow-hidden'>

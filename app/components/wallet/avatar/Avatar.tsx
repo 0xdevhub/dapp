@@ -2,12 +2,12 @@ import { type HTMLProps } from 'react'
 import { AvatarThumbnail } from './Thumbnail'
 import { ZeroAddress } from 'ethers'
 
-type WalletAvatarProps = HTMLProps<HTMLDivElement> & {
+export type AvatarProps = HTMLProps<HTMLDivElement> & {
   src?: string
   address?: string
 }
 
-const WalletAvatar = ({ src, address, ...props }: WalletAvatarProps) => {
+export const Avatar = ({ src, address, ...props }: AvatarProps) => {
   return (
     <div {...props}>
       <AvatarThumbnail
@@ -19,4 +19,4 @@ const WalletAvatar = ({ src, address, ...props }: WalletAvatarProps) => {
   )
 }
 
-export default WalletAvatar
+export default Avatar

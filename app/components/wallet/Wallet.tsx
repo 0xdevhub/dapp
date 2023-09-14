@@ -1,20 +1,31 @@
 'use client'
-
+import { type HTMLProps } from 'react'
 import { useWallet } from '@/app/lib/wallet'
-import { WalletAvatar } from './avatar'
-import { WalletConnectButton } from './button'
+import { ConnectButton, ConnectButtonProps } from './button/Connect'
+import { Avatar, AvatarProps } from './avatar/Avatar'
 
-export const Wallet = () => {
-  const { isConnected, address } = useWallet()
+type WalletProps = HTMLProps<HTMLDivElement> & {
+  connectButtonProps?: ConnectButtonProps
+  avatarProps?: AvatarProps
+}
+
+export const Wallet = ({
+  connectButtonProps,
+  avatarProps,
+  ...props
+}: WalletProps) => {
+  const { isConnected, address, isConnecting } = useWallet()
 
   return (
-    <>
+    <div {...props}>
       {!isConnected ? (
-        <WalletConnectButton />
+        <ConnectButton {...connectButtonProps}>
+          {isConnecting && 'Acessando'}
+        </ConnectButton>
       ) : (
-        <WalletAvatar title={address} address={address} />
+        <Avatar title={address} address={address} {...avatarProps} />
       )}
-    </>
+    </div>
   )
 }
 

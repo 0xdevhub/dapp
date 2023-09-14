@@ -1,18 +1,14 @@
+import { type HTMLProps } from 'react'
 import Link from 'next/link'
 import appConfig from '@/app.config'
 import classNames from 'classnames'
-import { HTMLProps } from 'react'
 
-export const Logo = ({
-  className,
-  tabIndex,
-  ...props
-}: HTMLProps<HTMLDivElement>) => {
+export const Logo = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
   return (
     <div {...props}>
       <Link
         title={appConfig.name}
-        className={classNames(['select-none text-2xl'])}
+        className='select-none text-2xl'
         href='/'
         tabIndex={tabIndex}
       >
@@ -28,7 +24,7 @@ export const Logo = ({
               hub
             </span>
             <span
-            tabIndex={-1}
+              tabIndex={-1}
               aria-hidden
               className={classNames([
                 'rotate-bg absolute bg-gradient-conic from-yellow-400 via-sky-400 to-green-400 bg-clip-text font-extrabold text-transparent blur',

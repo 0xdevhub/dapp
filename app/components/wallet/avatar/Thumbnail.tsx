@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import Jazzicon, { jsNumberForAddress } from 'react-jazzicon'
 import Image from 'next/image'
 
-type AvatarThumbnailProps = HTMLProps<HTMLDivElement> & {
+export type AvatarThumbnailProps = HTMLProps<HTMLDivElement> & {
   src?: string
   address: string
 }

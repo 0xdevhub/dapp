@@ -40,19 +40,16 @@ export const Button = ({
         Sizes[size].classes
       ])}
     >
+      <span>{children}</span>
       <span
         className={classNames('transition-all duration-300', {
-          'visible w-8 pr-2 opacity-100': loading,
-          'invisible w-0 pr-0 opacity-0': !loading,
+          'visible w-8 pl-2 opacity-100': loading,
+          'invisible w-0 overflow-hidden pl-0 opacity-0': !loading,
           'opacity-50': props.disabled
         })}
       >
-        <Loading
-          {...loadingProps}
-          className={classNames(loadingProps?.className, 'w-8')}
-        />
+        <Loading {...loadingProps} />
       </span>
-      <span>{children}</span>
     </button>
   )
 }

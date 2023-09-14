@@ -51,13 +51,14 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
       </div>
       <div className='hidden lg:inline-flex'>
         <NavList
+          tabIndex={tabIndex}
           navLinks={navLinks}
           className='flex space-x-8'
           onItemClick={handleToggle}
         />
       </div>
       <div
-        tabIndex={!isOpened ? -1 : 0}
+        tabIndex={!isOpened ? -1 : undefined}
         className={classNames([
           'z-10',
           'duration-50  transition-all',
@@ -87,13 +88,14 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
                     onClick={toggle}
                   />
                   <NavList
+                    tabIndex={tabIndex}
                     navLinks={navLinks}
                     className='flex flex-col space-y-4'
                     onItemClick={handleToggle}
                   />
                 </div>
                 <div className='w-full'>
-                  <Wallet />
+                  <Wallet tabIndex={4} />
                 </div>
               </>
             )}

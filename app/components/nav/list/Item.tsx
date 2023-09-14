@@ -6,22 +6,24 @@ import { usePathname } from 'next/navigation'
 
 export const Variant = {
   default: {
-    active: 'font-bold',
+    default: '',
+    active: 'text-white font-bold',
     classes: 'text-white'
   },
   primary: {
-    active: 'font-bold',
+    default: '',
+    active: 'text-primary font-bold',
     classes: 'text-primary'
   },
   secondary: {
-    active: 'font-bold',
+    default: '',
+    active: 'text-secondary font-bold',
     classes: 'text-secondary'
   }
 } as const
 
 export type NavListItemProps = LinkProps & {
   label: string
-  customClass?: boolean
   variant?: keyof typeof Variant
 }
 
@@ -38,10 +40,10 @@ export const NavListItem = ({
       {...props}
       href={href}
       className={classNames([
-        {
-          [Variant[variant || 'default'].active]: pathname === href
-        },
-        Variant[variant || 'default'].classes
+        [Variant[variant || 'default'].default],
+        pathname === href
+          ? [Variant[variant || 'default'].active]
+          : Variant[variant || 'default'].classes
       ])}
     >
       {label}
