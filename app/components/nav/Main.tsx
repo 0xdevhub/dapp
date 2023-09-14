@@ -5,8 +5,8 @@ import { Bars3BottomLeftIcon } from '@heroicons/react/24/solid'
 import { useToggle, useMediaQuery } from 'usehooks-ts'
 import classNames from 'classnames'
 import { ArrowLongLeftIcon } from '@heroicons/react/24/outline'
-import { Wallet } from '@/app/components/wallet'
 import { NavList } from './list'
+import { LanguageSelector } from '@/app/components/LanguageSelector'
 
 export type NavLink = {
   label: string
@@ -80,18 +80,21 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
             ])}
           >
             {isOpened && (
-              <div className='flex flex-col space-y-10'>
-                <ArrowLongLeftIcon
-                  width={36}
-                  className='cursor-pointer text-gray-300'
-                  onClick={toggle}
-                />
-                <NavList
-                  tabIndex={tabIndex}
-                  navLinks={navLinks}
-                  className='flex flex-col space-y-4'
-                  onItemClick={handleToggle}
-                />
+              <div className='flex h-full flex-col items-start justify-between'>
+                <div className='flex flex-col space-y-10'>
+                  <ArrowLongLeftIcon
+                    width={36}
+                    className='cursor-pointer text-gray-300'
+                    onClick={toggle}
+                  />
+                  <NavList
+                    tabIndex={tabIndex}
+                    navLinks={navLinks}
+                    className='flex flex-col space-y-4'
+                    onItemClick={handleToggle}
+                  />
+                </div>
+                <LanguageSelector tabIndex={-1} />
               </div>
             )}
           </div>
