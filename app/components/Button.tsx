@@ -4,13 +4,16 @@ import { Loading, LoadingProps } from '@/app/components/Loading'
 
 export const Sizes = {
   default: {
-    classes: 'px-2 py-1'
+    classes: 'px-2 py-1 text-sm'
+  },
+  md: {
+    classes: 'px-3 py-1.5 text-base'
   }
 } as const
 
 export const Variant = {
   default: {
-    classes: 'bg-lime-400 text-sm text-dark-blue',
+    classes: 'bg-lime-400 text-dark-blue',
     disabled: 'bg-lime-400/70 text-light-blue'
   }
 } as const
