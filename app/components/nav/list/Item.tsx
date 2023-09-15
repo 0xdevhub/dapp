@@ -4,7 +4,7 @@ import Link, { LinkProps } from 'next/link'
 import classNames from 'classnames'
 import { usePathname } from 'next/navigation'
 import { useI18n } from '@/locales/client'
-import { Locales } from '@/locales/locales'
+import { Locale } from '@/locales/locales'
 
 export const Variant = {
   default: {
@@ -50,7 +50,7 @@ export const NavListItem = ({
           : Variant[variant || 'default'].classes
       ])}
     >
-      {t(label as Locales)}
+      {t(label as keyof Locale)}
     </Link>
   )
 }
