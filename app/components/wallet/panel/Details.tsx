@@ -10,10 +10,12 @@ import balanceUtils from '@/app/lib/utils/balance'
 import { Square2StackIcon } from '@heroicons/react/24/outline'
 import { useCopyToClipboard } from 'usehooks-ts'
 import { Network } from '../network'
+import useNetwork from '@/app/lib/wallet/hooks/useNetwork'
 
 export const PanelDetails = (props: HTMLProps<HTMLDivElement>) => {
   const { balance } = useBalance()
-  const { address, chain } = useWallet()
+  const { chain, chains } = useNetwork()
+  const { address } = useWallet()
   const [, copy] = useCopyToClipboard()
 
   return (
@@ -35,7 +37,7 @@ export const PanelDetails = (props: HTMLProps<HTMLDivElement>) => {
       </div>
       <div className='flex flex-col space-y-1'>
         <Heading variant='h5'>Rede</Heading>
-        <Network chain={chain!} />
+        <Network chain={chain!} chains={chains} />
       </div>
       <div className='flex flex-col space-y-1'>
         <Heading variant='h5'>Saldo</Heading>
