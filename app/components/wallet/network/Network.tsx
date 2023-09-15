@@ -22,7 +22,7 @@ export const Network = ({ chain, chains, ...props }: NetworkProps) => {
   return (
     <ToggleContent
       key='network-toggle'
-      className='flex flex-col space-y-1'
+      className='flex flex-col space-y-2'
       element={({ onClick }) => (
         <div
           onClick={onClick}
