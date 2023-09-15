@@ -59,21 +59,19 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
       <div
         className={classNames([
           'z-10',
-          'duration-50  transition-all',
           isOpened ? 'visible left-0' : 'invisible -left-full'
         ])}
       >
         <div
           className={classNames([
             'fixed bottom-0 right-0 top-0 h-screen w-screen',
-            'z-[999] transition-all duration-1000',
+            'z-[999] ',
             isOpened ? 'left-0' : '-left-full'
           ])}
         >
           <div
             className={classNames([
               'relative z-10 flex h-full flex-col justify-between p-12',
-              'transition-all duration-1000',
               isOpened ? 'blur-0' : 'blur-lg'
             ])}
           >

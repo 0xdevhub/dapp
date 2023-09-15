@@ -20,9 +20,9 @@ export const NetworkThumbnail = ({
       )}
     >
       {src ? (
-        <Image src={src} alt='network' />
+        <Image src={src} alt='network' width={24} height={24} />
       ) : (
-        <div className=' font-bold text-black/75'>?</div>
+        <div className='font-bold text-black/75'>?</div>
       )}
     </div>
   )

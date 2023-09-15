@@ -48,7 +48,7 @@ export const Button = ({
       {iconBefore && <span>{iconBefore}</span>}
       <span>{children}</span>
       <span
-        className={classNames('transition-all duration-300', {
+        className={classNames({
           'visible w-8 pl-2 opacity-100': loading,
           'invisible w-0 overflow-hidden pl-0 opacity-0': !loading,
           'opacity-50': props.disabled

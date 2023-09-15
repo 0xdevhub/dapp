@@ -1,10 +1,10 @@
 import { createConfig, configureChains } from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
-import { polygonMumbai } from 'wagmi/chains'
+import { polygonMumbai, polygon } from 'wagmi/chains'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [polygonMumbai],
+  [polygonMumbai, polygon],
   [
     alchemyProvider({
       apiKey: 'q6A2S1PCqjST0yu0-Txzd_oKUcsXz9em'

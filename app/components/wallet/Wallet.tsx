@@ -15,14 +15,12 @@ export const Wallet = ({
   avatarProps,
   ...props
 }: WalletProps) => {
-  const { isConnected, isConnecting } = useWallet()
+  const { isConnected } = useWallet()
 
   return (
     <div {...props}>
       {!isConnected ? (
-        <ConnectButton {...connectButtonProps}>
-          {isConnecting && 'Acessando'}
-        </ConnectButton>
+        <ConnectButton {...connectButtonProps} />
       ) : (
         <Panel avatarProps={avatarProps} />
       )}
