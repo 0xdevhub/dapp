@@ -20,9 +20,9 @@ export const Network = ({ chain, chains, ...props }: NetworkProps) => {
         </div>
         <ChevronDownIcon width={18} />
       </div>
-      <ul className='hidden'>
+      {/* <ul>
         {Children.toArray(chains.map((chainItem) => <li>{chainItem.name}</li>))}
-      </ul>
+      </ul> */}
     </div>
   )
 }

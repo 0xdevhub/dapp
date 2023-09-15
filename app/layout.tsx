@@ -8,6 +8,7 @@ import classNames from 'classnames'
 import appConfig from '@/app.config'
 import { Header } from '@/app/components/header'
 import { WalletProvider } from '@/app/components/wallet'
+import StyledJsxRegistry from './registry'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,8 +28,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         ])}
       >
         <WalletProvider>
-          <Header className='py-2 lg:py-4' />
-          <main className='my-16'>{children}</main>
+          <StyledJsxRegistry>
+            <Header className='py-2 lg:py-4' />
+            <main className='my-16'>{children}</main>
+          </StyledJsxRegistry>
         </WalletProvider>
       </body>
     </html>

@@ -48,6 +48,7 @@ const config: Config = {
     container: false
   },
   plugins: [container],
+  darkMode: 'class',
   theme: {
     extend: {
       backgroundImage: {
