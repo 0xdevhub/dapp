@@ -1,15 +1,18 @@
 import { Children, type HTMLProps } from 'react'
 
-import { ChevronDownIcon } from '@heroicons/react/24/solid'
+import {
+  ChevronDownIcon,
+  CodeBracketIcon,
+  CheckBadgeIcon,
+  PuzzlePieceIcon,
+  ExclamationTriangleIcon
+} from '@heroicons/react/24/solid'
 import { NetworkThumbnail } from './Thumbnail'
 import classNames from 'classnames'
 import ToggleContent from '@/app/components/ToggleContent'
 import useNetwork, { ChainConfig } from '@/app/lib/wallet/hooks/useNetwork'
-import {
-  CheckBadgeIcon,
-  ExclamationTriangleIcon
-} from '@heroicons/react/24/outline'
-import Loading from '../../Loading'
+
+import Loading from '@/app/components/Loading'
 
 type NetworkProps = HTMLProps<HTMLUListElement> & {
   chain: ChainConfig
@@ -49,7 +52,7 @@ export const Network = ({ chain, chains, ...props }: NetworkProps) => {
             <li
               className={classNames(
                 'cursor-pointer bg-black/70 p-2 hover:bg-black/40 hover:text-white',
-                'flex space-x-2'
+                ' flex space-x-2'
               )}
               onClick={() => switchNetwork && switchNetwork(chainItem.id)}
             >
@@ -59,6 +62,9 @@ export const Network = ({ chain, chains, ...props }: NetworkProps) => {
                   <CheckBadgeIcon width={18} className='text-green-400' />
                 )}
               </span>
+              {chainItem.testnet === true && (
+                <PuzzlePieceIcon width={18} className='text-red-400' />
+              )}
             </li>
           ))
         )}
