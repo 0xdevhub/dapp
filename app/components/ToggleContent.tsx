@@ -8,8 +8,9 @@ import {
   ReactElement,
   useRef
 } from 'react'
+
 import classNames from 'classnames'
-import { useElementSize } from 'usehooks-ts'
+import { useOnClickOutside, useToggle } from 'usehooks-ts'
 
 export type ToggleContentOptions = {
   onClick?: () => void
@@ -23,6 +24,7 @@ export type ToggleContentProps = {
   squareClassName?: string
   squareRootOpenClassName?: string
   squareRootCloseClassName?: string
+  useClickOutside?: boolean
 }
 
 export const ToggleContent = ({
@@ -32,20 +34,26 @@ export const ToggleContent = ({
   squareRootOpenClassName,
   squareRootCloseClassName,
   squareClassName,
+  useClickOutside,
   ...props
 }: ToggleContentProps) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, toggle] = useToggle(false)
+
+  const ref = useRef(null)
+
+  const handleClickOutside = () => {
+    if (!useClickOutside || !isOpen) return
+    toggle()
+  }
+
+  useOnClickOutside(ref, handleClickOutside)
 
   const child = Children.only(children) as ReactElement
 
-  const onClick = () => {
-    setIsOpen(!isOpen)
-  }
-
   return (
-    <div {...props}>
+    <div {...props} ref={ref}>
       {element({
-        onClick
+        onClick: toggle
       })}
       <div
         className={classNames(

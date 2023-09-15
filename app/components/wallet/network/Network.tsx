@@ -2,11 +2,11 @@ import { Children, type HTMLProps } from 'react'
 
 import {
   ChevronDownIcon,
-  CodeBracketIcon,
   CheckBadgeIcon,
   PuzzlePieceIcon,
   ExclamationTriangleIcon
 } from '@heroicons/react/24/solid'
+
 import { NetworkThumbnail } from './Thumbnail'
 import classNames from 'classnames'
 import ToggleContent from '@/app/components/ToggleContent'
