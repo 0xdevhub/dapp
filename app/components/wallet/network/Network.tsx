@@ -26,7 +26,7 @@ export const Network = ({ chain, chains, ...props }: NetworkProps) => {
     <ToggleContent
       key='network-toggle'
       className='flex flex-col space-y-2'
-      element={({ onClick }) => (
+      element={({ onClick, isOpen }) => (
         <div
           onClick={onClick}
           className='flex cursor-pointer justify-between space-x-2'
@@ -41,7 +41,13 @@ export const Network = ({ chain, chains, ...props }: NetworkProps) => {
             )}
             <span>{chain.unsupported ? 'Não suportada' : chain.name}</span>
           </div>
-          <ChevronDownIcon width={18} />
+          <ChevronDownIcon
+            width={18}
+            className={classNames('transform', {
+              'rotate-180': isOpen,
+              'rotate-0': !isOpen
+            })}
+          />
         </div>
       )}
     >

@@ -13,7 +13,8 @@ import classNames from 'classnames'
 import { useOnClickOutside, useToggle } from 'usehooks-ts'
 
 export type ToggleContentOptions = {
-  onClick?: () => void
+  onClick: () => void
+  isOpen: boolean
 }
 
 export type ToggleContentProps = {
@@ -53,7 +54,8 @@ export const ToggleContent = ({
   return (
     <div {...props} ref={ref}>
       {element({
-        onClick: toggle
+        onClick: toggle,
+        isOpen
       })}
       <div
         className={classNames(
