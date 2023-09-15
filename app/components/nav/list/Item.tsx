@@ -3,6 +3,8 @@
 import Link, { LinkProps } from 'next/link'
 import classNames from 'classnames'
 import { usePathname } from 'next/navigation'
+import { useI18n } from '@/locales/client'
+import { Locales } from '@/locales/locales'
 
 export const Variant = {
   default: {
@@ -33,6 +35,8 @@ export const NavListItem = ({
   variant = 'default',
   ...props
 }: NavListItemProps) => {
+  const t = useI18n()
+
   const pathname = usePathname()
 
   return (
@@ -46,7 +50,7 @@ export const NavListItem = ({
           : Variant[variant || 'default'].classes
       ])}
     >
-      {label}
+      {t(label as Locales)}
     </Link>
   )
 }

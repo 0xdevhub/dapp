@@ -6,7 +6,7 @@ import { Separator } from '@/app/components/Separator'
 import { Logo } from '@/app/components/logo'
 import { NavMain } from '@/app/components/nav'
 import { Loading } from '@/app/components/Loading'
-import { LanguageSelector } from '@/app/components/LanguageSelector'
+import { LanguageSelector } from '@/app/components/Language'
 import HeaderShadow from './Shadow'
 
 const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {

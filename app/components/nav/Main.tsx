@@ -6,7 +6,7 @@ import { useToggle, useMediaQuery } from 'usehooks-ts'
 import classNames from 'classnames'
 import { ArrowLongLeftIcon } from '@heroicons/react/24/outline'
 import { NavList } from './list'
-import { LanguageSelector } from '@/app/components/LanguageSelector'
+import { LanguageSelector } from '@/app/components/Language'
 
 export type NavLink = {
   label: string
