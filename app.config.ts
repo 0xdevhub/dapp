@@ -1,15 +1,17 @@
+import { Locales } from './locales/locales'
+
 export const routes = [
   {
-    label: 'NAVIGATION_MENU_ITEM_LABEL_HOME',
+    label: Locales.NAVIGATION_MENU_ITEM_LABEL_HOME,
     href: '/'
   },
   {
-    label: 'NAVIGATION_MENU_ITEM_LABEL_APPS',
+    label: Locales.NAVIGATION_MENU_ITEM_LABEL_APPS,
     href: '/apps/',
     variant: 'secondary'
   },
   {
-    label: 'NAVIGATION_MENU_ITEM_LABEL_DOCS',
+    label: Locales.NAVIGATION_MENU_ITEM_LABEL_DOCS,
     href: '/docs/'
   }
 ]

@@ -3,6 +3,7 @@
 import useWallet from '@/app/lib/wallet/hooks/useWallet'
 import Button, { ButtonProps } from '@/app/components/Button'
 import { useI18n } from '@/locales/client'
+import { Locales } from '@/locales/locales'
 
 export type ConnectButtonProps = ButtonProps
 /// bkp:  'rotate-bg bg-gradient-radial from-yellow-400 via-sky-400 to-lime-400'
@@ -30,8 +31,8 @@ export const ConnectButton = (props: ConnectButtonProps) => {
       disabled={props.disabled || isConnecting}
     >
       {isConnecting
-        ? t('WALLET_CONNECT_CONNECTING_BUTTON_LABEL')
-        : t('WALLET_CONNECT_STANDBY_BUTTON_LABEL')}
+        ? t(Locales.WALLET_CONNECT_CONNECTING_BUTTON_LABEL)
+        : t(Locales.WALLET_CONNECT_STANDBY_BUTTON_LABEL)}
     </Button>
   )
 }
