@@ -1,28 +1,29 @@
 'use client'
 
-import { type HTMLProps, type ReactNode, useState } from 'react'
+import { type ReactNode, useState } from 'react'
 import classNames from 'classnames'
 import { useElementSize } from 'usehooks-ts'
 
-export type PanelButtonProps = {
+export type ToggleContentOptions = {
   onClick?: () => void
 }
-export type PanelProps = {
+export type ToggleContentProps = {
   children: ReactNode
-  element: (props: PanelButtonProps) => ReactNode
-  minHeight?: string
+  element: (props: ToggleContentOptions) => ReactNode
+  squareMinHeight?: string
   className?: string
   squareRootClassName?: string
   squareClassName?: string
 }
 
-export const Panel = ({
+export const ToggleContent = ({
   children,
   element,
   squareRootClassName,
   squareClassName,
+  squareMinHeight,
   ...props
-}: PanelProps) => {
+}: ToggleContentProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [squareRef, { height }] = useElementSize()
 
@@ -36,7 +37,7 @@ export const Panel = ({
         {`
           :global(.square-root) {
             --square-size: ${!isOpen ? '0' : height / 16 + 'rem'};
-            --square-min-height: ${props.minHeight || 'auto'};
+            --square-min-height: ${squareMinHeight || 'auto'};
           }
 
           .square-root {
@@ -74,4 +75,4 @@ export const Panel = ({
   )
 }
 
-export default Panel
+export default ToggleContent
