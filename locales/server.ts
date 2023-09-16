@@ -4,7 +4,8 @@ import pt from './pt'
 export const { getI18n, getScopedI18n, getCurrentLocale, getStaticParams } =
   createI18nServer(
     {
-      pt: () => import('./pt')
+      pt: () => import('./pt'),
+      en: () => import('./en')
     },
     {
       // Uncomment to use custom segment name

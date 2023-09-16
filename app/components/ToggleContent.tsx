@@ -66,9 +66,7 @@ export const ToggleContent = ({
             : ['invisible h-0 opacity-0', squareRootCloseClassName]
         )}
       >
-        {cloneElement(child, {
-          className: classNames(squareClassName)
-        })}
+        {children}
       </div>
     </div>
   )

@@ -6,7 +6,7 @@ export const HeaderShadow = () => {
       className='select-none'
       src='/assets/images/header/shadow.png'
       alt='header shadow'
-      loading='lazy'
+      priority
       fill
     />
   )

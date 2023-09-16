@@ -9,7 +9,8 @@ export const {
   useCurrentLocale
 } = createI18nClient(
   {
-    pt: () => import('./pt')
+    pt: () => import('./pt'),
+    en: () => import('./en')
   },
   {
     // Uncomment to set base path

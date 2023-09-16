@@ -9,6 +9,6 @@ export enum Locales {
   NAVIGATION_MENU_ITEM_LABEL_DOCS = 'NAVIGATION_MENU_ITEM_LABEL_DOCS'
 }
 
-export type Locale = {
+export type LocalesKeys = {
   [key in Locales]: string
 }

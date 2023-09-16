@@ -25,13 +25,12 @@ export const Panel = ({ avatarProps, ...props }: PanelProps) => {
       )}
       squareRootOpenClassName='lg:w-60 w-full'
       squareRootCloseClassName='w-0'
-      squareClassName={classNames(
-        'px-12 py-12 lg:px-6 lg:py-4 h-full',
-        'gradient-border-bg before:from-lime-400 before:to-sky-400',
-        'before:bg-gradient-to-b lg:before:rounded-2xl lg:before:p-0.5'
-      )}
-      element={({ onClick }) => (
-        <div className='relative z-20'>
+      element={({ onClick, isOpen }) => (
+        <div
+          className={classNames('relative', {
+            'z-[20]': isOpen
+          })}
+        >
           <Avatar
             title={address}
             address={address}
@@ -41,7 +40,15 @@ export const Panel = ({ avatarProps, ...props }: PanelProps) => {
         </div>
       )}
     >
-      <PanelDetails {...props}>
+      <PanelDetails
+        {...props}
+        className={classNames(
+          props.className,
+          'h-full p-6',
+          'gradient-border-bg before:from-lime-400 before:to-sky-400',
+          'before:bg-gradient-to-b lg:before:rounded-2xl lg:before:p-0.5'
+        )}
+      >
         <DisconnectButton />
       </PanelDetails>
     </ToggleContent>

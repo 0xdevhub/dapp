@@ -71,27 +71,24 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
         >
           <div
             className={classNames([
-              'relative z-10 flex h-full flex-col justify-between p-12',
+              'relative z-10 flex h-full flex-col justify-between p-6',
               isOpened ? 'blur-0' : 'blur-lg'
             ])}
           >
             {isOpened && (
-              <div className='flex h-full flex-col items-start justify-between'>
-                <div className='flex flex-col space-y-10'>
-                  <ArrowLongLeftIcon
-                    width={36}
-                    className='cursor-pointer text-gray-300'
-                    onClick={toggle}
-                  />
+              <div className='flex flex-col space-y-10'>
+                <ArrowLongLeftIcon
+                  width={36}
+                  className='cursor-pointer text-gray-300'
+                  onClick={toggle}
+                />
 
-                  <NavList
-                    tabIndex={tabIndex}
-                    navLinks={navLinks}
-                    className='flex flex-col space-y-4'
-                    onItemClick={handleToggle}
-                  />
-                </div>
-                <LanguageSelector />
+                <NavList
+                  tabIndex={tabIndex}
+                  navLinks={navLinks}
+                  className='flex flex-col space-y-4'
+                  onItemClick={handleToggle}
+                />
               </div>
             )}
           </div>

@@ -1,8 +1,6 @@
-import { Locale } from './locales'
+import { LocalesKeys } from './locales'
 
-console.log('Loaded PT')
-
-const pt: Locale = {
+const pt: LocalesKeys = {
   // Wallet
   WALLET_CONNECT_STANDBY_BUTTON_LABEL: 'Acessar',
   WALLET_CONNECT_CONNECTING_BUTTON_LABEL: 'Acessando',

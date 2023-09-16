@@ -31,10 +31,7 @@ export const Header = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
           <NavMain tabIndex={2} navLinks={appConfig.routes} />
         </div>
         <div className='flex items-center space-x-4'>
-          <LanguageSelector
-            className='hidden lg:inline-flex'
-            tabIndex={appConfig.routes.length + 2}
-          />
+          <LanguageSelector tabIndex={appConfig.routes.length + 2} />
           <Separator className='hidden lg:inline-flex' />
           <Wallet
             connectButtonProps={{
