@@ -4,9 +4,9 @@ import classnames from 'classnames'
 import appConfig from '@/app.config'
 import { Separator } from '@/app/components/Separator'
 import { Logo } from '@/app/components/logo'
-import { NavMain } from '@/app/components/nav'
+import { NavMain } from '@/app/components/nav/Main'
 import { Loading } from '@/app/components/Loading'
-import { Language } from '@/app/components/Language'
+import { Language } from '@/app/components/Language/Language'
 import { HeaderShadow } from './Shadow'
 
 const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {

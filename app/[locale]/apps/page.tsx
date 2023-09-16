@@ -1,7 +1,6 @@
 import { type Metadata } from 'next'
 import appConfig from '@/app.config'
-import Heading from '@/app/components/Heading'
-import { getI18n } from '@/locales/server'
+import { Heading } from '@/app/components/Heading'
 
 export const metadata: Metadata = {
   title: `${appConfig.name} - Aplicativos`,
