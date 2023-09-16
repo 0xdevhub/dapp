@@ -10,7 +10,7 @@ export default function BaseLayout({ children }: { children: ReactNode }) {
     <LanguageProvider>
       <WalletProvider>
         <StyledJsxRegistry>
-          <Header className='py-2 lg:py-4' />
+          <Header className='min-h-[4.5rem] py-2 lg:py-4' />
           <main className='my-16'>{children}</main>
         </StyledJsxRegistry>
       </WalletProvider>

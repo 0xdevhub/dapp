@@ -21,7 +21,6 @@ export const Header = (props: HTMLProps<HTMLDivElement>) => {
         {...props}
         className={classnames([
           props.className,
-          'min-h-[4.5rem]',
           'flex items-center justify-between space-x-4 lg:space-x-0'
         ])}
       >
