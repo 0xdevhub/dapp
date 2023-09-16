@@ -1,14 +1,6 @@
 'use client'
 
-import {
-  type ReactNode,
-  useState,
-  Children,
-  cloneElement,
-  ReactElement,
-  useRef
-} from 'react'
-
+import { type ReactNode, useRef } from 'react'
 import classNames from 'classnames'
 import { useOnClickOutside, useToggle } from 'usehooks-ts'
 
@@ -48,8 +40,6 @@ export const ToggleContent = ({
   }
 
   useOnClickOutside(ref, handleClickOutside)
-
-  const child = Children.only(children) as ReactElement
 
   return (
     <div {...props} ref={ref}>

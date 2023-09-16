@@ -1,7 +1,7 @@
 'use client'
 
 import useWallet from '@/app/lib/wallet/hooks/useWallet'
-import Button, { ButtonProps } from '@/app/components/Button'
+import { Button, ButtonProps } from '@/app/components/Button'
 
 export type DisconnectButtonProps = ButtonProps
 

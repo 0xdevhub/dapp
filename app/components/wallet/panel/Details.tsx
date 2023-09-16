@@ -4,13 +4,13 @@ import { type HTMLProps } from 'react'
 import classNames from 'classnames'
 import { useWallet, useBalance } from '@/app/lib/wallet/hooks'
 import addressUtils from '@/app/lib/utils/address'
-
-import Heading from '@/app/components/Heading'
+import { Heading } from '@/app/components/Heading'
 import balanceUtils from '@/app/lib/utils/balance'
 import { Square2StackIcon } from '@heroicons/react/24/outline'
 import { useCopyToClipboard } from 'usehooks-ts'
 import { Network } from '../network'
 import useNetwork from '@/app/lib/wallet/hooks/useNetwork'
+import { DisconnectButton } from '../button/Disconnect'
 
 export const PanelDetails = (props: HTMLProps<HTMLDivElement>) => {
   const { balance } = useBalance()
@@ -23,7 +23,9 @@ export const PanelDetails = (props: HTMLProps<HTMLDivElement>) => {
       {...props}
       className={classNames(
         props?.className,
-        'flex  flex-col justify-between space-y-4'
+        'flex  h-full flex-col justify-between space-y-4 p-6',
+        'gradient-border-bg before:from-lime-400 before:to-sky-400',
+        'before:bg-gradient-to-b lg:before:rounded-2xl lg:before:p-0.5'
       )}
     >
       <div className='flex flex-col space-y-4'>
@@ -51,7 +53,9 @@ export const PanelDetails = (props: HTMLProps<HTMLDivElement>) => {
           </div>
         </div>
       </div>
-      <div>{props.children}</div>
+      <div>
+        <DisconnectButton />
+      </div>
     </section>
   )
 }

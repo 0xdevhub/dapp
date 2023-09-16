@@ -1,14 +1,11 @@
 import { type HTMLProps } from 'react'
 import classNames from 'classnames'
 
-export const Separator = ({
-  className,
-  ...props
-}: HTMLProps<HTMLDivElement>) => (
+export const Separator = (props: HTMLProps<HTMLDivElement>) => (
   <span
     aria-hidden
     {...props}
-    className={classNames(className, ' select-none text-white/20')}
+    className={classNames(props.className, ' select-none text-white/20')}
   >
     |
   </span>

@@ -1,19 +1,15 @@
-'use client'
 import { type HTMLProps } from 'react'
-import { useWallet } from '@/app/lib/wallet/hooks'
-import { Avatar, AvatarProps } from '../avatar/Avatar'
+import { AvatarProps } from '../avatar/Avatar'
 import { ToggleContent } from '@/app/components/ToggleContent'
-import { DisconnectButton } from '../button/Disconnect'
 import { PanelDetails } from './Details'
 import classNames from 'classnames'
+import PanelSelector from './Selector'
 
 type PanelProps = HTMLProps<HTMLDivElement> & {
   avatarProps?: AvatarProps
 }
 
 export const Panel = ({ avatarProps, ...props }: PanelProps) => {
-  const { address } = useWallet()
-
   return (
     <ToggleContent
       key='panel-toggle'
@@ -26,31 +22,16 @@ export const Panel = ({ avatarProps, ...props }: PanelProps) => {
       squareRootOpenClassName='lg:w-60 w-full'
       squareRootCloseClassName='w-0'
       element={({ onClick, isOpen }) => (
-        <div
+        <PanelSelector
           className={classNames('relative', {
             'z-[20]': isOpen
           })}
-        >
-          <Avatar
-            title={address}
-            address={address}
-            onClick={onClick}
-            {...avatarProps}
-          />
-        </div>
+          isOpen={isOpen}
+          onClick={onClick}
+        />
       )}
     >
-      <PanelDetails
-        {...props}
-        className={classNames(
-          props.className,
-          'h-full p-6',
-          'gradient-border-bg before:from-lime-400 before:to-sky-400',
-          'before:bg-gradient-to-b lg:before:rounded-2xl lg:before:p-0.5'
-        )}
-      >
-        <DisconnectButton />
-      </PanelDetails>
+      <PanelDetails {...props} />
     </ToggleContent>
   )
 }
