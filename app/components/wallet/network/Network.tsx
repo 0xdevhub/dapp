@@ -18,7 +18,7 @@ export const Network = ({ chain, chains, ...props }: NetworkProps) => {
         <NetworkSelector onClick={onClick} chain={chain} isOpen={isOpen} />
       )}
     >
-      <NetworkList {...props} chain={chain} chains={chains} />
+      {() => <NetworkList {...props} chain={chain} chains={chains} />}
     </ToggleContent>
   )
 }

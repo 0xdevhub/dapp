@@ -4,6 +4,7 @@ import { ToggleContent } from '@/app/components/ToggleContent'
 import { PanelContainer } from './Container'
 import classNames from 'classnames'
 import { PanelSelector } from './Selector'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 
 type PanelProps = HTMLProps<HTMLDivElement> & {
   avatarProps?: AvatarProps
@@ -13,7 +14,8 @@ export const Panel = ({ avatarProps, ...props }: PanelProps) => {
   return (
     <ToggleContent
       key='panel-toggle'
-      className='lg:relative'
+      {...props}
+      className={classNames(props.className, 'lg:relative')}
       useClickOutside={true}
       squareRootClassName={classNames(
         'backdrop-blur-sm lg:rounded-2xl absolute z-[19] bg-black/70',
@@ -25,14 +27,21 @@ export const Panel = ({ avatarProps, ...props }: PanelProps) => {
       element={({ onClick, isOpen }) => (
         <PanelSelector
           className={classNames('relative', {
-            'z-[20]': isOpen
+            'lg:z-[20]': isOpen
           })}
           isOpen={isOpen}
           onClick={onClick}
         />
       )}
     >
-      <PanelContainer {...props} />
+      {({ onClick }) => (
+        <>
+          <div className='absolute right-6 top-6 lg:hidden' onClick={onClick}>
+            <XMarkIcon width={32} />
+          </div>
+          <PanelContainer />
+        </>
+      )}
     </ToggleContent>
   )
 }

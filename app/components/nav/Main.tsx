@@ -6,6 +6,7 @@ import { useToggle, useMediaQuery } from 'usehooks-ts'
 import classNames from 'classnames'
 import { ArrowLongLeftIcon } from '@heroicons/react/24/outline'
 import { NavList } from './list'
+import { Language } from '@/app/components/Language'
 
 export type NavLink = {
   label: string
@@ -75,19 +76,22 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
             ])}
           >
             {isOpened && (
-              <div className='flex flex-col space-y-10'>
-                <ArrowLongLeftIcon
-                  width={36}
-                  className='cursor-pointer text-gray-300'
-                  onClick={toggle}
-                />
+              <div className='flex h-full flex-col justify-between'>
+                <div className='flex flex-col space-y-10'>
+                  <ArrowLongLeftIcon
+                    width={36}
+                    className='cursor-pointer text-gray-300'
+                    onClick={toggle}
+                  />
 
-                <NavList
-                  tabIndex={tabIndex}
-                  navLinks={navLinks}
-                  className='flex flex-col space-y-4'
-                  onItemClick={handleToggle}
-                />
+                  <NavList
+                    tabIndex={tabIndex}
+                    navLinks={navLinks}
+                    className='flex flex-col space-y-4'
+                    onItemClick={handleToggle}
+                  />
+                </div>
+                <Language />
               </div>
             )}
           </div>

@@ -9,7 +9,7 @@ export const LanguageContainer = (props: HTMLProps<HTMLDivElement>) => {
       {...props}
       className={classNames(
         props.className,
-        'flex flex-col justify-between space-y-4 p-6 lg:h-full',
+        'flex flex-col justify-between space-y-4 p-6',
         'before:from-lime-400 before:to-sky-400 before:gradient-mask',
         'before:bg-gradient-to-b lg:before:rounded-2xl lg:before:p-0.5'
       )}

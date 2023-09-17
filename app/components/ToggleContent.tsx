@@ -10,8 +10,8 @@ export type ToggleContentOptions = {
 }
 
 export type ToggleContentProps = {
-  children: ReactNode
-  element: (props: ToggleContentOptions) => ReactNode
+  children: ReactNode | ((props: ToggleContentOptions) => ReactNode)
+  element: ReactNode | ((props: ToggleContentOptions) => ReactNode)
   className?: string
   squareRootClassName?: string
   squareClassName?: string
@@ -43,20 +43,27 @@ export const ToggleContent = ({
 
   return (
     <div {...props} ref={ref}>
-      {element({
-        onClick: toggle,
-        isOpen
-      })}
+      {typeof element !== 'function'
+        ? element
+        : element({
+            onClick: toggle,
+            isOpen
+          })}
       <div
         className={classNames(
           squareRootClassName,
-          'overflow-hidden ',
+          'overflow-hidden',
           isOpen
             ? ['visible h-auto opacity-100', squareRootOpenClassName]
             : ['invisible h-0 opacity-0', squareRootCloseClassName]
         )}
       >
-        {children}
+        {typeof children !== 'function'
+          ? children
+          : children({
+              onClick: toggle,
+              isOpen
+            })}
       </div>
     </div>
   )

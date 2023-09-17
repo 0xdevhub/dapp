@@ -18,9 +18,9 @@ export const LanguageSelector = ({
 
   return (
     <div {...props}>
-      <div className='flex cursor-pointer items-center space-x-2 rounded-md bg-black/10 px-4 py-2'>
+      <div className='flex cursor-pointer justify-between space-x-2 rounded-md bg-black/10 px-4 py-2'>
         <div className='flex items-center space-x-2'>
-          <span className='font-bold text-white'>{currentLocale}</span>
+          <span className='text-xs font-bold text-white'>{currentLocale}</span>
         </div>
         <ChevronDownIcon
           width={18}

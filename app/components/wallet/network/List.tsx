@@ -5,6 +5,7 @@ import { CheckBadgeIcon, PuzzlePieceIcon } from '@heroicons/react/24/solid'
 import classNames from 'classnames'
 import useNetwork, { ChainConfig } from '@/app/lib/wallet/hooks/useNetwork'
 import Loading from '@/app/components/Loading'
+import { ExclamationCircleIcon } from '@heroicons/react/24/outline'
 
 type NetworkListProps = HTMLProps<HTMLUListElement> & {
   chain: ChainConfig
@@ -38,9 +39,9 @@ export const NetworkList = ({ chain, chains, ...props }: NetworkListProps) => {
                 )}
               </span>
               {chainItem.testnet === true && (
-                <PuzzlePieceIcon
+                <ExclamationCircleIcon
                   width={18}
-                  className='text-dark-green'
+                  className='text-yellow-400'
                   title='testnet'
                 />
               )}

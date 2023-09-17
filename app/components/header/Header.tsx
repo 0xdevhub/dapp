@@ -22,21 +22,16 @@ export const Header = (props: HTMLProps<HTMLDivElement>) => {
         {...props}
         className={classnames([
           props.className,
-          'flex items-center justify-between space-x-4 lg:space-x-0'
+          'flex items-center justify-between space-x-4'
         ])}
       >
-        <div className='flex flex-1 items-center  justify-start space-x-4 lg:space-x-8'>
-          <Logo tabIndex={1} />
-          <Separator />
+        <Logo tabIndex={1} />
+        <div className='flex items-center space-x-4'>
           <NavMain tabIndex={2} navLinks={appConfig.routes} />
-        </div>
-        <div className='flex items-center space-x-2'>
-          <div>
-            <BoltSlashIcon width={18} />
-          </div>
-          <Separator className='hidden lg:inline-flex' />
-          <Language tabIndex={appConfig.routes.length + 2} />
-          <Separator className='hidden lg:inline-flex' />
+          <Language
+            tabIndex={appConfig.routes.length + 2}
+            className='hidden lg:inline-flex'
+          />
           <Wallet
             connectButtonProps={{
               tabIndex: appConfig.routes.length + 3
