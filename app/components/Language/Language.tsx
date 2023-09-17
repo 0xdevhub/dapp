@@ -15,7 +15,7 @@ export const Language = (props: HTMLProps<HTMLDivElement>) => {
       className={classNames(props.className, 'lg:relative')}
       useClickOutside={true}
       squareRootClassName={classNames(
-        'backdrop-blur-sm lg:rounded-2xl absolute z-[18] bg-black/90 lg:bg-black/70',
+        'backdrop-blur-sm lg:rounded-2xl absolute z-[18] bg-black/95 lg:bg-black/70',
         'bottom-0 left-0 right-0 top-0',
         'lg:-right-1 lg:-top-1 lg:bottom-auto lg:left-auto'
       )}

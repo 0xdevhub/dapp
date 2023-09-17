@@ -28,10 +28,12 @@ export const Header = (props: HTMLProps<HTMLDivElement>) => {
         <Logo tabIndex={1} />
         <div className='flex items-center space-x-4'>
           <NavMain tabIndex={2} navLinks={appConfig.routes} />
+          <Separator className='hidden lg:inline-flex' />
           <Language
             tabIndex={appConfig.routes.length + 2}
             className='hidden lg:inline-flex'
           />
+          <Separator className='hidden lg:inline-flex' />
           <Wallet
             connectButtonProps={{
               tabIndex: appConfig.routes.length + 3

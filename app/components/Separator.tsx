@@ -5,7 +5,7 @@ export const Separator = (props: HTMLProps<HTMLDivElement>) => (
   <span
     aria-hidden
     {...props}
-    className={classNames(props.className, ' select-none text-white/20')}
+    className={classNames(props.className, ' select-none text-secondary/20')}
   >
     |
   </span>
