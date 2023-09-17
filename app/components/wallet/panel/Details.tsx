@@ -23,8 +23,8 @@ export const PanelDetails = (props: HTMLProps<HTMLDivElement>) => {
       {...props}
       className={classNames(
         props?.className,
-        'flex  h-full flex-col justify-between space-y-4 p-6',
-        'gradient-border-bg before:from-lime-400 before:to-sky-400',
+        'flex h-full flex-col justify-between space-y-4 p-6',
+        'before:gradient-mask before:from-lime-400 before:to-sky-400',
         'before:bg-gradient-to-b lg:before:rounded-2xl lg:before:p-0.5'
       )}
     >

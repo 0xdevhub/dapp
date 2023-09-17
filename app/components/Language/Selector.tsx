@@ -18,7 +18,7 @@ export const LanguageSelector = ({
 
   return (
     <div {...props}>
-      <div className='flex cursor-pointer items-center space-x-2 p-4'>
+      <div className='flex cursor-pointer items-center space-x-2 p-3'>
         <div className='flex items-center space-x-2'>
           <span className='font-bold'>{currentLocale}</span>
         </div>

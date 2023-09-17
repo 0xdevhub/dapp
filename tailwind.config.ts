@@ -42,15 +42,66 @@ export const container = plugin(({ addUtilities }) => {
   addUtilities(utility)
 })
 
+export const gradientBorder = plugin(({ addUtilities }) => {
+  const utility = {
+    '.gradient-mask': {
+      content: '""',
+      position: 'absolute',
+      inset: '0',
+      '-webkit-mask':
+        'linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)',
+      mask: 'linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)',
+      '-webkit-mask-composite': 'xor',
+      'mask-composite': 'exclude',
+      'pointer-events': 'none'
+    }
+  }
+
+  addUtilities(utility)
+})
+
 const config: Config = {
   content: ['./app/**/*.{js,ts,jsx,tsx,mdx}'],
   corePlugins: {
     container: false
   },
-  plugins: [container],
+  plugins: [container, gradientBorder],
   darkMode: 'class',
   theme: {
     extend: {
+      keyframes: {
+        'left-to-right-width': {
+          '0%': {
+            width: '0',
+            right: '100%'
+          },
+          '50%': {
+            width: '50%'
+          },
+          '100%': {
+            width: '0',
+            right: '0'
+          }
+        },
+        'rotate-gradient': {
+          '0%': {
+            backgroundPosition: '-50% 0%'
+          },
+          '50%': {
+            backgroundPosition: '300% 150%'
+          },
+          '100%': {
+            backgroundPosition: '-50% 0%'
+          }
+        }
+      },
+      animation: {
+        'line-loading': 'left-to-right-width 1s linear infinite',
+        'rotate-gradient': 'rotate-gradient 5s linear infinite'
+      },
+      backgroundSize: {
+        '300': '300% 300%'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
