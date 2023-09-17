@@ -23,9 +23,16 @@ export const AvatarThumbnail = ({
       )}
     >
       {src ? (
-        <Image src={src} alt='avatar' />
+        <Image
+          src={src}
+          alt='avatar'
+          width={26}
+          height={26}
+          objectFit='cover'
+          objectPosition='center'
+        />
       ) : (
-        <Jazzicon diameter={36} seed={jsNumberForAddress(address)} />
+        <Jazzicon diameter={26} seed={jsNumberForAddress(address)} />
       )}
     </div>
   )

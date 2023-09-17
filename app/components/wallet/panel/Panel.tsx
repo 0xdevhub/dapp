@@ -20,7 +20,7 @@ export const Panel = ({ avatarProps, ...props }: PanelProps) => {
       squareRootClassName={classNames(
         'backdrop-blur-sm lg:rounded-2xl absolute z-[19] bg-black/70',
         'bottom-0 left-0 right-0 top-0',
-        'lg:-right-2 lg:-top-2 lg:bottom-auto lg:left-auto'
+        'lg:-right-1 lg:-top-1 lg:bottom-auto lg:left-auto'
       )}
       squareRootOpenClassName='lg:w-60 w-full'
       squareRootCloseClassName='w-0'
@@ -36,7 +36,7 @@ export const Panel = ({ avatarProps, ...props }: PanelProps) => {
     >
       {({ onClick }) => (
         <>
-          <div className='absolute right-6 top-6 lg:hidden' onClick={onClick}>
+          <div className='absolute right-5 top-5 lg:hidden' onClick={onClick}>
             <XMarkIcon width={32} />
           </div>
           <PanelContainer />

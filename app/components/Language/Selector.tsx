@@ -17,19 +17,21 @@ export const LanguageSelector = ({
   const currentLocale = useCurrentLocale()
 
   return (
-    <div {...props}>
-      <div className='flex cursor-pointer justify-between space-x-2 rounded-md bg-black/10 px-4 py-2'>
-        <div className='flex items-center space-x-2'>
-          <span className='text-xs font-bold text-white'>{currentLocale}</span>
-        </div>
-        <ChevronDownIcon
-          width={18}
-          className={classNames('transform', {
-            'rotate-180': isOpen,
-            'rotate-0': !isOpen
-          })}
-        />
-      </div>
+    <div
+      {...props}
+      className={classNames(
+        props.className,
+        'flex cursor-pointer justify-between space-x-2 rounded-md bg-black/10 px-2 py-1'
+      )}
+    >
+      <span className='text-sm font-bold text-white'>{currentLocale}</span>
+      <ChevronDownIcon
+        width={18}
+        className={classNames('transform', {
+          'rotate-180': isOpen,
+          'rotate-0': !isOpen
+        })}
+      />
     </div>
   )
 }

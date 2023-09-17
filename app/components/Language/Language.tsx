@@ -17,7 +17,7 @@ export const Language = (props: HTMLProps<HTMLDivElement>) => {
       squareRootClassName={classNames(
         'backdrop-blur-sm lg:rounded-2xl absolute z-[18] bg-black/90 lg:bg-black/70',
         'bottom-0 left-0 right-0 top-0',
-        'lg:-right-2 lg:-top-2 lg:bottom-auto lg:left-auto'
+        'lg:-right-1 lg:-top-1 lg:bottom-auto lg:left-auto'
       )}
       squareRootOpenClassName='lg:w-60 w-full'
       squareRootCloseClassName='w-0'
@@ -33,12 +33,10 @@ export const Language = (props: HTMLProps<HTMLDivElement>) => {
     >
       {({ onClick }) => (
         <>
-          <div className='absolute right-6 top-6 lg:hidden' onClick={onClick}>
+          <div className='absolute right-5 top-5 lg:hidden' onClick={onClick}>
             <XMarkIcon width={32} />
           </div>
-          <LanguageContainer
-            className={classNames(props.className, 'lg:h-full')}
-          />
+          <LanguageContainer className='lg:h-full' />
         </>
       )}
     </ToggleContent>

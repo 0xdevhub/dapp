@@ -1,10 +1,9 @@
 'use client'
 
 import { useEffect, type HTMLProps, useCallback } from 'react'
-import { Bars3BottomLeftIcon } from '@heroicons/react/24/solid'
+import { ArrowLeftIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/solid'
 import { useToggle, useMediaQuery } from 'usehooks-ts'
 import classNames from 'classnames'
-import { ArrowLongLeftIcon } from '@heroicons/react/24/outline'
 import { NavList } from './list'
 import { Language } from '@/app/components/Language'
 
@@ -78,8 +77,8 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
             {isOpened && (
               <div className='flex h-full flex-col justify-between'>
                 <div className='flex flex-col space-y-10'>
-                  <ArrowLongLeftIcon
-                    width={36}
+                  <ArrowLeftIcon
+                    width={24}
                     className='cursor-pointer text-gray-300'
                     onClick={toggle}
                   />
