@@ -14,6 +14,8 @@ export const AvatarThumbnail = ({
   address,
   ...props
 }: AvatarThumbnailProps) => {
+  const SIZE = 26
+
   return (
     <div
       {...props}
@@ -26,13 +28,13 @@ export const AvatarThumbnail = ({
         <Image
           src={src}
           alt='avatar'
-          width={26}
-          height={26}
+          width={SIZE}
+          height={SIZE}
           objectFit='cover'
           objectPosition='center'
         />
       ) : (
-        <Jazzicon diameter={26} seed={jsNumberForAddress(address)} />
+        <Jazzicon diameter={SIZE} seed={jsNumberForAddress(address)} />
       )}
     </div>
   )
