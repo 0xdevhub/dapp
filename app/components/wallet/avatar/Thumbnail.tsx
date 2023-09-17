@@ -19,7 +19,7 @@ export const AvatarThumbnail = ({
       {...props}
       className={classNames(
         className,
-        'flex h-10 w-10 items-center justify-center rounded-full bg-lime-400'
+        'flex items-center justify-center rounded-full bg-lime-400'
       )}
     >
       {src ? (

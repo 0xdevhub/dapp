@@ -12,7 +12,7 @@ import { Network } from '../network'
 import useNetwork from '@/app/lib/wallet/hooks/useNetwork'
 import { DisconnectButton } from '../button/Disconnect'
 
-export const PanelDetails = (props: HTMLProps<HTMLDivElement>) => {
+export const PanelContainer = (props: HTMLProps<HTMLDivElement>) => {
   const { balance } = useBalance()
   const { chain, chains } = useNetwork()
   const { address } = useWallet()
@@ -24,7 +24,7 @@ export const PanelDetails = (props: HTMLProps<HTMLDivElement>) => {
       className={classNames(
         props?.className,
         'flex h-full flex-col justify-between space-y-4 p-6',
-        'before:gradient-mask before:from-lime-400 before:to-sky-400',
+        'before:from-lime-400 before:to-sky-400 before:gradient-mask',
         'before:bg-gradient-to-b lg:before:rounded-2xl lg:before:p-0.5'
       )}
     >
@@ -60,4 +60,4 @@ export const PanelDetails = (props: HTMLProps<HTMLDivElement>) => {
   )
 }
 
-export default PanelDetails
+export default PanelContainer

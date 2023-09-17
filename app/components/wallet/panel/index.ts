@@ -1,3 +1,3 @@
 export { default as Panel } from './Panel'
 export { default as PanelSelector } from './Selector'
-export { default as PanelDetails } from './Details'
+export { default as PanelContainer } from './Container'

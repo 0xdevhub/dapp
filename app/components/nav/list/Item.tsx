@@ -2,7 +2,7 @@
 
 import Link, { LinkProps } from 'next/link'
 import classNames from 'classnames'
-import { usePathname, useParams } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { useCurrentLocale, useI18n } from '@/locales/client'
 import { LocalesKeys } from '@/locales/locales'
 
@@ -37,13 +37,7 @@ export const NavListItem = ({
 }: NavListItemProps) => {
   const t = useI18n()
   const currentLocale = useCurrentLocale()
-
   const pathname = usePathname()
-  const params = useParams()
-
-  console.log(pathname, href, params)
-  console.log(currentLocale + href)
-
   return (
     <Link
       {...props}

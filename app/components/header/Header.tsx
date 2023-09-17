@@ -8,6 +8,7 @@ import { NavMain } from '@/app/components/nav/Main'
 import { Loading } from '@/app/components/Loading'
 import { Language } from '@/app/components/Language/Language'
 import { HeaderShadow } from './Shadow'
+import { BoltSlashIcon } from '@heroicons/react/24/solid'
 
 const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {
   ssr: false,
@@ -29,7 +30,11 @@ export const Header = (props: HTMLProps<HTMLDivElement>) => {
           <Separator />
           <NavMain tabIndex={2} navLinks={appConfig.routes} />
         </div>
-        <div className='flex items-center space-x-4'>
+        <div className='flex items-center space-x-2'>
+          <div>
+            <BoltSlashIcon width={18} />
+          </div>
+          <Separator className='hidden lg:inline-flex' />
           <Language tabIndex={appConfig.routes.length + 2} />
           <Separator className='hidden lg:inline-flex' />
           <Wallet

@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { Heading } from '@/app/components/Heading'
 import { LanguageList } from './List'
 
-export const LanguagePanel = (props: HTMLProps<HTMLDivElement>) => {
+export const LanguageContainer = (props: HTMLProps<HTMLDivElement>) => {
   return (
     <div
       {...props}
@@ -20,4 +20,4 @@ export const LanguagePanel = (props: HTMLProps<HTMLDivElement>) => {
   )
 }
 
-export default LanguagePanel
+export default LanguageContainer
