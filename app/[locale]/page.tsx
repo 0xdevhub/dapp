@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 import appConfig from '@/app.config'
-import Heading from '@/app/components/Heading'
 import { getI18n } from '@/locales/server'
 import { Locales } from '@/locales/locales'
+import { HomeContainer } from './components/Container'
 
 export async function generateMetadata(): Promise<Metadata> {
   const i118n = await getI18n()
@@ -17,9 +17,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Dashboard() {
-  return (
-    <section>
-      <Heading variant='h2'>Meu Portfólio</Heading>
-    </section>
-  )
+  return <HomeContainer />
 }

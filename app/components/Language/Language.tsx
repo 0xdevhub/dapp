@@ -4,7 +4,7 @@ import { type HTMLProps } from 'react'
 import classNames from 'classnames'
 import { ToggleContent } from '@/app/components/ToggleContent'
 import { LanguageSelector } from './Selector'
-import { LanguagePanel } from './Panel'
+import { LanguagePanel } from './Container'
 
 export const Language = (props: HTMLProps<HTMLDivElement>) => {
   return (
@@ -23,7 +23,7 @@ export const Language = (props: HTMLProps<HTMLDivElement>) => {
           isOpen={isOpen}
           onClick={onClick}
           className={classNames('relative', {
-            ' z-[20]': isOpen
+            'z-[20]': isOpen
           })}
         />
       )}

@@ -20,7 +20,7 @@ export const LanguageSelector = ({
     <div {...props}>
       <div className='flex cursor-pointer items-center space-x-2 p-3'>
         <div className='flex items-center space-x-2'>
-          <span className='font-bold'>{currentLocale}</span>
+          <span className='font-bold text-white'>{currentLocale}</span>
         </div>
         <ChevronDownIcon
           width={18}

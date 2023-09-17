@@ -13,11 +13,11 @@ export const Logo = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
         tabIndex={tabIndex}
       >
         <h1 className='flex items-center space-x-px'>
-          <span className='font-light'>defi</span>
+          <span className='font-light text-white'>defi</span>
           <span className='relative'>
             <span
               className={classNames([
-                'animate-rotate-gradient bg-300 bg-gradient-conic from-yellow-400 via-sky-400 to-lime-400 bg-clip-text font-extrabold text-transparent',
+                'animate-rotate-gradient bg-gradient-conic from-yellow-400 via-sky-400 to-lime-400 bg-300 bg-clip-text font-extrabold text-transparent',
                 'shadow-black drop-shadow'
               ])}
             >
@@ -26,7 +26,7 @@ export const Logo = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
             <span
               aria-hidden
               className={classNames([
-                'animate-rotate-gradient bg-300 absolute bg-gradient-conic from-yellow-400 via-sky-400 to-lime-400 bg-clip-text font-extrabold text-transparent blur',
+                'absolute animate-rotate-gradient bg-gradient-conic from-yellow-400 via-sky-400 to-lime-400 bg-300 bg-clip-text font-extrabold text-transparent blur',
                 'left-0 right-0 z-[-1]'
               ])}
             >

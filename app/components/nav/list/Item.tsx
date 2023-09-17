@@ -2,25 +2,25 @@
 
 import Link, { LinkProps } from 'next/link'
 import classNames from 'classnames'
-import { usePathname } from 'next/navigation'
-import { useI18n } from '@/locales/client'
+import { usePathname, useParams } from 'next/navigation'
+import { useCurrentLocale, useI18n } from '@/locales/client'
 import { LocalesKeys } from '@/locales/locales'
 
 export const Variant = {
   default: {
     default: '',
     active: 'text-white font-bold',
-    classes: 'text-white'
+    classes: 'text-white hover:text-white/75'
   },
   primary: {
     default: '',
     active: 'text-primary font-bold',
-    classes: 'text-primary'
+    classes: 'text-primary hover:text-primary/75'
   },
   secondary: {
     default: '',
     active: 'text-secondary font-bold',
-    classes: 'text-secondary'
+    classes: 'text-secondary hover:text-secondary/75'
   }
 } as const
 
@@ -36,8 +36,13 @@ export const NavListItem = ({
   ...props
 }: NavListItemProps) => {
   const t = useI18n()
+  const currentLocale = useCurrentLocale()
 
   const pathname = usePathname()
+  const params = useParams()
+
+  console.log(pathname, href, params)
+  console.log(currentLocale + href)
 
   return (
     <Link
@@ -45,7 +50,7 @@ export const NavListItem = ({
       href={href}
       className={classNames([
         [Variant[variant || 'default'].default],
-        pathname === href
+        pathname === `/${currentLocale + href}`
           ? [Variant[variant || 'default'].active]
           : Variant[variant || 'default'].classes
       ])}

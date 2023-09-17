@@ -2,10 +2,14 @@ import { type ReactNode } from 'react'
 
 import { Header } from '@/app/components/header'
 import { WalletProvider } from '@/app/components/wallet'
-import StyledJsxRegistry from '@/app/registry'
+import { StyledJsxRegistry } from '@/app/registry'
 import { LanguageProvider } from '@/app/components/Language'
 
-export default function BaseLayout({ children }: { children: ReactNode }) {
+export type BaseLayoutProps = {
+  children: ReactNode
+}
+
+export default function BaseLayout({ children }: BaseLayoutProps) {
   return (
     <LanguageProvider>
       <WalletProvider>
