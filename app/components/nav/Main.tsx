@@ -5,9 +5,6 @@ import { ArrowLeftIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/solid'
 import { useToggle, useMediaQuery } from 'usehooks-ts'
 import classNames from 'classnames'
 import { NavList } from './list'
-import { Language } from '@/app/components/Language'
-import { Heading } from '@/app/components/Heading'
-import { Locales } from '@/locales/locales'
 import { useI18n } from '@/locales/client'
 
 export type NavLink = {
