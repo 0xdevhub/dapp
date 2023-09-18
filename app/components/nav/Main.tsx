@@ -6,6 +6,9 @@ import { useToggle, useMediaQuery } from 'usehooks-ts'
 import classNames from 'classnames'
 import { NavList } from './list'
 import { Language } from '@/app/components/Language'
+import { Heading } from '@/app/components/Heading'
+import { Locales } from '@/locales/locales'
+import { useI18n } from '@/locales/client'
 
 export type NavLink = {
   label: string
@@ -17,6 +20,7 @@ type NavMainProps = HTMLProps<HTMLElement> & {
 }
 
 export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
+  const t = useI18n()
   const [isOpened, toggle] = useToggle()
   const matches = useMediaQuery(`(min-width: 1024px`)
 
@@ -63,19 +67,19 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
       >
         <div
           className={classNames([
-            'fixed bottom-0 right-0 top-0 z-[999] h-screen w-screen',
-            'bg-white/70 backdrop-blur-sm dark:bg-black/70',
+            'fixed bottom-0 right-0 top-0 z-[999] h-screen w-screen overflow-hidden',
+            'bg-white/75 backdrop-blur-sm dark:bg-black/75',
             isOpened ? 'left-0' : '-left-full'
           ])}
         >
           <div
             className={classNames([
-              'relative z-10 flex h-full flex-col justify-between p-6',
+              'relative z-10 flex h-full flex-col justify-between overflow-y-auto p-6',
               isOpened ? 'blur-0' : 'blur-lg'
             ])}
           >
             {isOpened && (
-              <div className='flex h-full flex-col justify-between'>
+              <>
                 <div className='flex flex-col space-y-10'>
                   <ArrowLeftIcon
                     width={24}
@@ -90,10 +94,14 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
                     onItemClick={handleToggle}
                   />
                 </div>
-                <div>
-                  <Language className='w-full' />
+
+                <div className='flex flex-col space-y-2'>
+                  <Heading variant='h4'>
+                    {t(Locales.PANEL_LANGUAGE_TITLE)}
+                  </Heading>
+                  <Language />
                 </div>
-              </div>
+              </>
             )}
           </div>
         </div>

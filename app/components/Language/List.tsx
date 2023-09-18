@@ -19,8 +19,8 @@ export const LanguageList = (props: HTMLProps<HTMLUListElement>) => {
               locale !== currentLocale && changeLocale(locale as Locale)
             }
             className={classNames(
-              'dark:bg-black/70 hover:dark:bg-black/40 hover:dark:text-white',
-              'bg-white/70 hover:bg-white/40 ',
+              'dark:bg-black/75 hover:dark:bg-black/40 hover:dark:text-white',
+              'bg-white/75 hover:bg-white/40 ',
               'flex cursor-pointer items-center justify-between space-x-2 p-2'
             )}
           >

@@ -29,7 +29,7 @@ export const PanelContainer = ({
       {...props}
       className={classNames(
         className,
-        'flex h-full flex-col justify-between space-y-4 p-6 lg:p-4'
+        'flex flex-col justify-between space-y-4 p-6 lg:p-4'
       )}
     >
       <div className='flex flex-col space-y-4'>
