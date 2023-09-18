@@ -64,7 +64,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
         <div
           className={classNames([
             'fixed bottom-0 right-0 top-0 z-[999] h-screen w-screen',
-            'bg-white backdrop-blur-sm dark:bg-black/95',
+            'bg-white/70 backdrop-blur-sm dark:bg-black/70',
             isOpened ? 'left-0' : '-left-full'
           ])}
         >
