@@ -30,7 +30,7 @@ export const Header = (props: HTMLProps<HTMLDivElement>) => {
           <Wallet tabIndex={appConfig.routes.length + 4} />
         </div>
       </div>
-      <div className='relative h-16 overflow-hidden'>
+      <div className='relative h-12 overflow-hidden'>
         <div className='absolute left-0 right-0 z-0 h-full w-full opacity-20 dark:opacity-100'>
           <HeaderShadow />
         </div>

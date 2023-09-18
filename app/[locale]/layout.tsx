@@ -30,7 +30,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
               )}
             >
               <Header />
-              <main className='my-16 container'>{children}</main>
+              <main className='container'>{children}</main>
             </div>
           </div>
         </StyledJsxRegistry>
