@@ -2,29 +2,40 @@
 
 import { Children, type HTMLProps } from 'react'
 import classNames from 'classnames'
-import { useChangeLocale, useCurrentLocale } from '@/locales/client'
-import { localeConfig, Locale } from '@/locales/config'
+import { useDarkMode } from 'usehooks-ts'
 import { CheckBadgeIcon } from '@heroicons/react/24/solid'
 
-export const LanguageList = (props: HTMLProps<HTMLUListElement>) => {
-  const currentLocale = useCurrentLocale()
-  const changeLocale = useChangeLocale()
+export const ThemeList = (props: HTMLProps<HTMLUListElement>) => {
+  const { isDarkMode, enable, disable } = useDarkMode()
+
+  const themes = [
+    {
+      label: 'Claro',
+      value: 'light',
+      onClick: disable,
+      active: !isDarkMode
+    },
+    {
+      label: 'Escuro',
+      value: 'dark',
+      onClick: enable,
+      active: isDarkMode
+    }
+  ]
 
   return (
     <ul {...props}>
       {Children.toArray(
-        localeConfig.locales.map((locale) => (
+        themes.map((theme) => (
           <li
-            onClick={() =>
-              locale !== currentLocale && changeLocale(locale as Locale)
-            }
             className={classNames(
               'cursor-pointer bg-black/70 p-2 hover:bg-black/40 hover:text-white',
               'flex items-center justify-between space-x-2'
             )}
+            {...theme}
           >
-            <span>{locale}</span>
-            {locale === currentLocale && (
+            <span>{theme.label}</span>
+            {theme.active && (
               <CheckBadgeIcon
                 width={18}
                 className='text-green-400'
@@ -38,4 +49,4 @@ export const LanguageList = (props: HTMLProps<HTMLUListElement>) => {
   )
 }
 
-export default LanguageList
+export default ThemeList

@@ -6,7 +6,6 @@ import { Cog6ToothIcon } from '@heroicons/react/24/outline'
 
 export type SettingsSelectorProps = HTMLProps<HTMLDivElement> & {
   isOpen?: boolean
-  onClick?: () => void
 }
 
 export const SettingsSelector = ({

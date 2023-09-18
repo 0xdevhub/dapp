@@ -33,14 +33,14 @@ export const Loading = ({
     <div {...props} className={classNames(className, 'relative h-2 ')}>
       <div
         className={classNames(
-          'animate-line-loading z-1 absolute h-2 rounded-md',
+          'z-1 absolute h-2 animate-line-loading rounded-md',
           Variant[variant].classes
         )}
       />
       <div
         className={classNames(
           'z-0 blur-sm',
-          'animate-line-loading absolute h-2 rounded-md',
+          'absolute h-2 animate-line-loading rounded-md',
           Variant[variant].classes
         )}
       />
