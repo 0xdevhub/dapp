@@ -1,6 +1,6 @@
 'use client'
 
-import { type ReactNode, useRef } from 'react'
+import { type ReactNode, useRef, useEffect } from 'react'
 import classNames from 'classnames'
 import { useOnClickOutside, useToggle } from 'usehooks-ts'
 
@@ -41,6 +41,10 @@ export const ToggleContent = ({
 
   useOnClickOutside(ref, handleClickOutside)
 
+  useEffect(() => {
+    // console.log(ref)
+  }, [ref])
+
   return (
     <div {...props} ref={ref}>
       {typeof element !== 'function'
@@ -54,8 +58,8 @@ export const ToggleContent = ({
           squareRootClassName,
           'overflow-hidden',
           isOpen
-            ? ['visible h-auto opacity-100', squareRootOpenClassName]
-            : ['invisible h-0 opacity-0', squareRootCloseClassName]
+            ? squareRootOpenClassName ?? 'visible h-auto opacity-100'
+            : squareRootCloseClassName ?? 'invisible h-0 opacity-0'
         )}
       >
         {typeof children !== 'function'
