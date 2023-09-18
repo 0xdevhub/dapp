@@ -26,8 +26,8 @@ export const OverlayToggle = ({
         'before:from-lime-400 before:to-sky-400 before:gradient-mask',
         'before:bg-gradient-to-b lg:before:rounded-2xl lg:before:p-0.5'
       )}
-      squareRootOpenClassName='lg:w-60 w-full'
-      squareRootCloseClassName='w-0'
+      squareRootOpenClassName='lg:w-60 lg:h-auto h-screen w-screen'
+      squareRootCloseClassName='w-0 h-0'
       element={({ onClick, isOpen }) =>
         cloneElement(Children.only(selector), {
           className: classNames('relative', {
