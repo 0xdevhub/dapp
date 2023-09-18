@@ -58,41 +58,28 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
       </div>
       <div
         className={classNames([
-          'z-10',
+          'bottom-0 right-0 top-0 z-10 overflow-hidden',
+          'fixed z-[999] h-screen w-screen',
+          'bg-white/75 backdrop-blur-sm dark:bg-black/75',
           isOpened ? 'visible left-0' : 'invisible -left-full'
         ])}
       >
-        <div
-          className={classNames([
-            'fixed bottom-0 right-0 top-0 z-[999] h-screen w-screen overflow-hidden',
-            'bg-white/75 backdrop-blur-sm dark:bg-black/75',
-            isOpened ? 'left-0' : '-left-full'
-          ])}
-        >
-          <div
-            className={classNames([
-              'relative z-10 flex h-full flex-col space-y-6 overflow-y-auto p-6',
-              isOpened ? 'blur-0' : 'blur-lg'
-            ])}
-          >
-            {isOpened && (
-              <>
-                <ArrowLeftIcon
-                  width={24}
-                  className='cursor-pointer dark:text-gray-300'
-                  onClick={toggle}
-                />
+        {isOpened && (
+          <div className='flex-col space-y-6 p-6'>
+            <ArrowLeftIcon
+              width={24}
+              className='cursor-pointer dark:text-gray-300'
+              onClick={toggle}
+            />
 
-                <NavList
-                  tabIndex={tabIndex}
-                  navLinks={navLinks}
-                  className='flex flex-col space-y-4'
-                  onItemClick={handleToggle}
-                />
-              </>
-            )}
+            <NavList
+              tabIndex={tabIndex}
+              navLinks={navLinks}
+              className='flex flex-col space-y-4'
+              onItemClick={handleToggle}
+            />
           </div>
-        </div>
+        )}
       </div>
     </nav>
   )
