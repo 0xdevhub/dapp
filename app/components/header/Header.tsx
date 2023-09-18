@@ -7,11 +7,15 @@ import { Logo } from '@/app/components/logo'
 import { NavMain } from '@/app/components/nav/Main'
 import { Loading } from '@/app/components/Loading'
 import { HeaderShadow } from './Shadow'
-import { Settings } from '@/app/components/settings/Settings'
 
 const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {
   ssr: false,
-  loading: () => <Loading className='w-24' variant='green' />
+  loading: () => <Loading className='w-12' variant='green' />
+})
+
+const Settings = dynamic(() => import('@/app/components/settings/Settings'), {
+  ssr: false,
+  loading: () => <Loading className='w-12' variant='green' />
 })
 
 export const Header = (props: HTMLProps<HTMLDivElement>) => {

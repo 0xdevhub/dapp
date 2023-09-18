@@ -1,7 +1,7 @@
 'use client'
 
 import { Children, type HTMLProps } from 'react'
-import { CheckBadgeIcon, PuzzlePieceIcon } from '@heroicons/react/24/solid'
+import { CheckBadgeIcon } from '@heroicons/react/24/solid'
 import classNames from 'classnames'
 import useNetwork, { ChainConfig } from '@/app/lib/wallet/hooks/useNetwork'
 import Loading from '@/app/components/Loading'

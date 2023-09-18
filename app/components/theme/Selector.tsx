@@ -10,7 +10,7 @@ export type ThemeSelectorProps = HTMLProps<HTMLDivElement> & {
 }
 
 export const ThemeSelector = ({ isOpen, ...props }: ThemeSelectorProps) => {
-  const { isDarkMode } = useDarkMode(true)
+  const { isDarkMode } = useDarkMode()
 
   return (
     <div

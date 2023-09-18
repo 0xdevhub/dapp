@@ -14,7 +14,7 @@ export type BaseLayoutProps = {
 }
 
 export default function BaseLayout({ children }: BaseLayoutProps) {
-  const { isDarkMode } = useDarkMode()
+  const { isDarkMode } = useDarkMode(true)
   return (
     <LanguageProvider>
       <WalletProvider>
