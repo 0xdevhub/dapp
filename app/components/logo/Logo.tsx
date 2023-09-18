@@ -11,13 +11,16 @@ export const Logo = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
         className='select-none text-2xl'
         href='/'
         tabIndex={tabIndex}
+        translate='no'
       >
         <h1 className='flex items-center space-x-px'>
           <span className='dark:text-white'>defi</span>
           <span className='relative'>
             <span
               className={classNames([
-                'animate-rotate-gradient bg-gradient-conic from-yellow-400 via-sky-400 to-lime-400 bg-300 bg-clip-text font-extrabold text-transparent',
+                'dark:from-yellow-400 dark:via-sky-400 dark:to-lime-400',
+                'from-primary-dark via-secondary-dark to-lime-700',
+                'animate-rotate-gradient bg-gradient-conic bg-300 bg-clip-text font-extrabold text-transparent',
                 'shadow-black drop-shadow'
               ])}
             >
@@ -26,7 +29,9 @@ export const Logo = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
             <span
               aria-hidden
               className={classNames([
-                'absolute animate-rotate-gradient bg-gradient-conic from-yellow-400 via-sky-400 to-lime-400 bg-300 bg-clip-text font-extrabold text-transparent blur',
+                'dark:from-yellow-400 dark:via-sky-400 dark:to-lime-400',
+                'from-yellow-700 via-sky-700 to-lime-700',
+                'absolute animate-rotate-gradient bg-gradient-conic bg-300 bg-clip-text font-extrabold text-transparent blur',
                 'left-0 right-0 z-[-1]'
               ])}
             >
