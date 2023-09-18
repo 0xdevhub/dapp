@@ -22,7 +22,7 @@ export const OverlayToggle = ({
         'lg:rounded-2xl absolute z-[19] ',
         'bottom-0 left-0 right-0 top-0',
         'lg:-right-1 lg:-top-1 lg:bottom-auto lg:left-auto',
-        'bg-white/70 dark:bg-black/95 lg:dark:bg-black/70 backdrop-blur-sm',
+        'bg-white/70 dark:bg-black/70 backdrop-blur-sm',
         'before:from-lime-400 before:to-sky-400 before:gradient-mask',
         'before:bg-gradient-to-b lg:before:rounded-2xl lg:before:p-0.5'
       )}
