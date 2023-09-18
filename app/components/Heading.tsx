@@ -3,19 +3,19 @@ import { type HTMLProps, createElement } from 'react'
 
 export const Variant = {
   h1: {
-    classes: 'text-3xl font-bold text-white'
+    classes: 'text-3xl font-bold dark:text-white'
   },
   h2: {
-    classes: 'text-2xl font-bold text-white'
+    classes: 'text-2xl font-bold dark:text-white'
   },
   h3: {
-    classes: 'text-xl font-bold text-white'
+    classes: 'text-xl font-bold dark:text-white'
   },
   h4: {
-    classes: 'text-base font-medium text-white'
+    classes: 'text-base font-medium dark:text-white'
   },
   h5: {
-    classes: 'text-base font-normal text-white'
+    classes: 'text-base font-normal dark:text-white'
   }
 } as const
 

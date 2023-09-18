@@ -43,7 +43,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
       <div className='lg:hidden'>
         <Bars3BottomLeftIcon
           width={24}
-          className='cursor-pointer text-gray-300'
+          className='cursor-pointer dark:text-gray-300'
           onClick={toggle}
         />
       </div>
@@ -63,8 +63,8 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
       >
         <div
           className={classNames([
-            'fixed bottom-0 right-0 top-0 h-screen w-screen',
-            'z-[999] bg-black/95 backdrop-blur-sm',
+            'fixed bottom-0 right-0 top-0 z-[999] h-screen w-screen',
+            'bg-white backdrop-blur-sm dark:bg-black/95',
             isOpened ? 'left-0' : '-left-full'
           ])}
         >
@@ -79,7 +79,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
                 <div className='flex flex-col space-y-10'>
                   <ArrowLeftIcon
                     width={24}
-                    className='cursor-pointer text-gray-300'
+                    className='cursor-pointer dark:text-gray-300'
                     onClick={toggle}
                   />
 

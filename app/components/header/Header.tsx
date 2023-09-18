@@ -14,38 +14,28 @@ const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {
 })
 
 const Settings = dynamic(() => import('@/app/components/settings/Settings'), {
-  ssr: false,
   loading: () => <Loading className='w-12' variant='green' />
 })
 
 export const Header = (props: HTMLProps<HTMLDivElement>) => {
   return (
-    <>
-      <header
-        {...props}
-        className={classnames([
-          props.className,
-          'flex items-center justify-between space-x-4'
-        ])}
-      >
+    <header {...props}>
+      <div className='flex min-h-[4.5rem] items-center justify-between space-x-4 py-2 container lg:py-4'>
         <Logo tabIndex={1} />
         <div className='flex items-center space-x-4'>
           <NavMain tabIndex={2} navLinks={appConfig.routes} />
           <Separator className='hidden lg:inline-flex' />
-          <Settings />
-          {/* <Separator className='hidden lg:inline-flex' />
-          <Language
-            tabIndex={appConfig.routes.length + 2}
-            className='hidden lg:inline-flex'
-          /> */}
+          <Settings tabIndex={3} />
           <Separator className='hidden lg:inline-flex' />
-          <Wallet tabIndex={appConfig.routes.length + 3} />
+          <Wallet tabIndex={appConfig.routes.length + 4} />
         </div>
-      </header>
-      <div className='absolute left-0 right-0 h-11 w-full overflow-hidden'>
-        <HeaderShadow />
       </div>
-    </>
+      <div className='relative h-16 overflow-hidden'>
+        <div className='absolute left-0 right-0 z-0 h-full w-full opacity-20 dark:opacity-100'>
+          <HeaderShadow />
+        </div>
+      </div>
+    </header>
   )
 }
 

@@ -9,22 +9,23 @@ import { LocalesKeys } from '@/locales/locales'
 export const Variant = {
   default: {
     default: '',
-    active: 'text-white font-bold',
-    classes: 'text-white hover:text-white/75'
+    active: 'dark:text-white font-bold',
+    classes: 'dark:text-white hover:dark:text-white/75'
   },
   primary: {
     default: '',
-    active: 'text-primary font-bold',
-    classes: 'text-primary hover:text-primary/75'
+    active: 'dark:text-primary font-bold',
+    classes: 'dark:text-primary hover:dark:text-primary/75'
   },
   secondary: {
     default: '',
-    active: 'text-secondary font-bold',
-    classes: 'text-secondary hover:text-secondary/75'
+    active: 'dark:text-secondary font-bold',
+    classes: 'dark:text-secondary hover:dark:text-secondary/75'
   }
 } as const
 
 export type NavListItemProps = LinkProps & {
+  tabIndex?: number
   label: string
   variant?: keyof typeof Variant
 }

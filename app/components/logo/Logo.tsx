@@ -13,7 +13,7 @@ export const Logo = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
         tabIndex={tabIndex}
       >
         <h1 className='flex items-center space-x-px'>
-          <span className='font-light text-white'>defi</span>
+          <span className='dark:text-white'>defi</span>
           <span className='relative'>
             <span
               className={classNames([

@@ -16,8 +16,12 @@ export const NavList = ({
     <ul {...props}>
       {Children.toArray(
         navLinks.map((navLink, index) => (
-          <li tabIndex={tabIndex + index}>
-            <NavListItem {...navLink} onClick={onItemClick} />
+          <li>
+            <NavListItem
+              {...navLink}
+              onClick={onItemClick}
+              tabIndex={tabIndex + index}
+            />
           </li>
         ))
       )}

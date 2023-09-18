@@ -1,5 +1,5 @@
 import { type HTMLProps } from 'react'
-import { ToggleContent } from '@/app/components/ToggleContent'
+import { ToggleContent } from '@/app/components/toggle/ToggleContent'
 import { ChainConfig } from '@/app/lib/wallet/hooks/useNetwork'
 import { NetworkList } from './List'
 import { NetworkSelector } from './Selector'

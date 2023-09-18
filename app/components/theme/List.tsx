@@ -27,8 +27,9 @@ export const ThemeList = (props: HTMLProps<HTMLUListElement>) => {
         themes.map((theme) => (
           <li
             className={classNames(
-              'cursor-pointer bg-black/70 p-2 hover:bg-black/40 hover:text-white',
-              'flex items-center justify-between space-x-2'
+              'dark:bg-black/70 hover:dark:bg-black/40 hover:dark:text-white',
+              'bg-white/70 hover:bg-white/40 ',
+              'flex cursor-pointer items-center justify-between space-x-2 p-2'
             )}
             onClick={theme.onClick}
           >

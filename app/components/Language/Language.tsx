@@ -2,7 +2,7 @@
 
 import { type HTMLProps } from 'react'
 import classNames from 'classnames'
-import { ToggleContent } from '@/app/components/ToggleContent'
+import { ToggleContent } from '@/app/components/toggle/ToggleContent'
 import { LanguageSelector } from './Selector'
 import { LanguageList } from './List'
 
