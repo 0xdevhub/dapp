@@ -11,10 +11,7 @@ export const SettingsContainer = (props: HTMLProps<HTMLDivElement>) => {
   return (
     <div
       {...props}
-      className={classNames(
-        props.className,
-        'flex flex-col justify-between space-y-4 p-6'
-      )}
+      className={classNames(props.className, 'flex flex-col space-y-4 p-6')}
     >
       <div className='flex flex-col space-y-2'>
         <Heading variant='h4'>{t(Locales.PANEL_LANGUAGE_TITLE)}</Heading>
