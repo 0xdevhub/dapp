@@ -11,11 +11,14 @@ import { useCopyToClipboard } from 'usehooks-ts'
 import { Network } from '../network'
 import useNetwork from '@/app/lib/wallet/hooks/useNetwork'
 import { DisconnectButton } from '../button/Disconnect'
+import { useI18n } from '@/locales/client'
+import { Locales } from '@/locales/locales'
 
 export const PanelContainer = ({
   className,
   ...props
 }: HTMLProps<HTMLDivElement>) => {
+  const t = useI18n()
   const { balance } = useBalance()
   const { chain, chains } = useNetwork()
   const { address } = useWallet()
@@ -30,7 +33,7 @@ export const PanelContainer = ({
       )}
     >
       <div className='flex flex-col space-y-4'>
-        <Heading variant='h4'>Minha carteira</Heading>
+        <Heading variant='h4'>{t(Locales.PANEL_WALLET_TITLE)}</Heading>
         <div className='flex flex-col space-y-1'>
           <Heading variant='h5'>ID</Heading>
           <div className='flex justify-between space-x-4'>
@@ -43,11 +46,15 @@ export const PanelContainer = ({
           </div>
         </div>
         <div className='flex flex-col space-y-1'>
-          <Heading variant='h5'>Rede</Heading>
+          <Heading variant='h5'>
+            {t(Locales.PANEL_WALLET_NETWORK_LABEL)}
+          </Heading>
           <Network chain={chain!} chains={chains} />
         </div>
         <div className='flex flex-col space-y-1'>
-          <Heading variant='h5'>Saldo</Heading>
+          <Heading variant='h5'>
+            {t(Locales.PANEL_WALLET_BALANCE_LABEL)}
+          </Heading>
           <div className='flex space-x-2'>
             <span>{balanceUtils.cropDecimals(balance?.formatted)}</span>
             <span>{balance?.symbol}</span>

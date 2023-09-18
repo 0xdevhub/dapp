@@ -26,11 +26,7 @@ export const LanguageList = (props: HTMLProps<HTMLUListElement>) => {
           >
             <span>{locale}</span>
             {locale === currentLocale && (
-              <CheckBadgeIcon
-                width={18}
-                className='text-green-400'
-                title='Ativo'
-              />
+              <CheckBadgeIcon width={18} className='text-green-400' />
             )}
           </li>
         ))

@@ -4,18 +4,21 @@ import { Children, type HTMLProps } from 'react'
 import classNames from 'classnames'
 import { useDarkMode } from 'usehooks-ts'
 import { CheckBadgeIcon } from '@heroicons/react/24/solid'
+import { useI18n } from '@/locales/client'
+import { Locales } from '@/locales/locales'
 
 export const ThemeList = (props: HTMLProps<HTMLUListElement>) => {
+  const t = useI18n()
   const { isDarkMode, enable, disable } = useDarkMode()
 
   const themes = [
     {
-      label: 'Claro',
+      label: t(Locales.PANEL_THEME_TYPE_LIGHT_LABEL),
       onClick: disable,
       active: !isDarkMode
     },
     {
-      label: 'Escuro',
+      label: t(Locales.PANEL_THEME_TYPE_DARK_LABEL),
       onClick: enable,
       active: isDarkMode
     }
@@ -36,11 +39,7 @@ export const ThemeList = (props: HTMLProps<HTMLUListElement>) => {
             <span>{theme.label}</span>
             {theme.active && (
               <span>
-                <CheckBadgeIcon
-                  width={18}
-                  className='text-green-400'
-                  title='Ativo'
-                />
+                <CheckBadgeIcon width={18} className='text-green-400' />
               </span>
             )}
           </li>

@@ -31,11 +31,7 @@ export const NetworkList = ({ chain, chains, ...props }: NetworkListProps) => {
             <span>{chainItem.name}</span>
             <span className='flex items-center space-x-px'>
               {chain.id === chainItem.id && (
-                <CheckBadgeIcon
-                  width={18}
-                  className='text-green-400'
-                  title='conectado'
-                />
+                <CheckBadgeIcon width={18} className='text-green-400' />
               )}
               {chainItem.testnet === true && (
                 <ExclamationCircleIcon

@@ -3,8 +3,11 @@ import classNames from 'classnames'
 import { Heading } from '@/app/components/Heading'
 import { Language } from '@/app/components/Language'
 import { Theme } from '@/app/components/theme'
+import { useI18n } from '@/locales/client'
+import { Locales } from '@/locales/locales'
 
 export const SettingsContainer = (props: HTMLProps<HTMLDivElement>) => {
+  const t = useI18n()
   return (
     <div
       {...props}
@@ -14,11 +17,11 @@ export const SettingsContainer = (props: HTMLProps<HTMLDivElement>) => {
       )}
     >
       <div className='flex flex-col space-y-2'>
-        <Heading variant='h4'>Idioma</Heading>
+        <Heading variant='h4'>{t(Locales.PANEL_LANGUAGE_TITLE)}</Heading>
         <Language />
       </div>
       <div className='flex flex-col space-y-2'>
-        <Heading variant='h4'>Tema</Heading>
+        <Heading variant='h4'>{t(Locales.PANEL_THEME_TITLE)}</Heading>
         <Theme />
       </div>
     </div>
