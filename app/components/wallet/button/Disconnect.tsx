@@ -3,9 +3,7 @@
 import useWallet from '@/app/lib/wallet/hooks/useWallet'
 import { Button, ButtonProps } from '@/app/components/Button'
 
-export type DisconnectButtonProps = ButtonProps
-
-export const DisconnectButton = (props: DisconnectButtonProps) => {
+export const DisconnectButton = (props: ButtonProps) => {
   const { disconnect } = useWallet()
 
   return (

@@ -6,9 +6,8 @@ import { Separator } from '@/app/components/Separator'
 import { Logo } from '@/app/components/logo'
 import { NavMain } from '@/app/components/nav/Main'
 import { Loading } from '@/app/components/Loading'
-import { Language } from '@/app/components/Language/Language'
 import { HeaderShadow } from './Shadow'
-import { BoltSlashIcon } from '@heroicons/react/24/solid'
+import { Settings } from '@/app/components/settings/Settings'
 
 const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {
   ssr: false,
@@ -29,19 +28,14 @@ export const Header = (props: HTMLProps<HTMLDivElement>) => {
         <div className='flex items-center space-x-4'>
           <NavMain tabIndex={2} navLinks={appConfig.routes} />
           <Separator className='hidden lg:inline-flex' />
+          <Settings />
+          {/* <Separator className='hidden lg:inline-flex' />
           <Language
             tabIndex={appConfig.routes.length + 2}
             className='hidden lg:inline-flex'
-          />
+          /> */}
           <Separator className='hidden lg:inline-flex' />
-          <Wallet
-            connectButtonProps={{
-              tabIndex: appConfig.routes.length + 3
-            }}
-            avatarProps={{
-              tabIndex: appConfig.routes.length + 3
-            }}
-          />
+          <Wallet tabIndex={appConfig.routes.length + 3} />
         </div>
       </header>
       <div className='absolute left-0 right-0 h-11 w-full overflow-hidden'>

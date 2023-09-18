@@ -2,31 +2,11 @@
 
 import { type HTMLProps } from 'react'
 import { useWallet } from '@/app/lib/wallet/hooks'
-import { Avatar, AvatarProps } from '../avatar/Avatar'
+import { Avatar } from '../avatar/Avatar'
 
-type PanelProps = HTMLProps<HTMLDivElement> & {
-  avatarProps?: AvatarProps
-  isOpen?: boolean
-  onClick?: () => void
-}
-
-export const PanelSelector = ({
-  avatarProps,
-  onClick,
-  isOpen,
-  ...props
-}: PanelProps) => {
+export const PanelSelector = (props: HTMLProps<HTMLDivElement>) => {
   const { address } = useWallet()
 
-  return (
-    <div {...props}>
-      <Avatar
-        title={address}
-        address={address}
-        onClick={onClick}
-        {...avatarProps}
-      />
-    </div>
-  )
+  return <Avatar title={address} address={address} {...props} />
 }
 export default PanelSelector

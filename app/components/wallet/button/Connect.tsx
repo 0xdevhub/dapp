@@ -5,10 +5,9 @@ import { Button, ButtonProps } from '@/app/components/Button'
 import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
 
-export type ConnectButtonProps = ButtonProps
 /// bkp:  'rotate-bg bg-gradient-radial from-yellow-400 via-sky-400 to-lime-400'
 
-export const ConnectButton = (props: ConnectButtonProps) => {
+export const ConnectButton = (props: ButtonProps) => {
   const t = useI18n()
   const {
     connectors: [connector],

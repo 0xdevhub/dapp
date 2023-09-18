@@ -64,7 +64,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
         <div
           className={classNames([
             'fixed bottom-0 right-0 top-0 h-screen w-screen',
-            'z-[999] ',
+            'z-[999] bg-black/95 backdrop-blur-sm',
             isOpened ? 'left-0' : '-left-full'
           ])}
         >
@@ -96,11 +96,6 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
               </div>
             )}
           </div>
-          <div
-            className={classNames([
-              'absolute top-0 z-0 h-full w-full bg-black/70 backdrop-blur-sm'
-            ])}
-          />
         </div>
       </div>
     </nav>

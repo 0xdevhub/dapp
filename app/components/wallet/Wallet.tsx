@@ -1,28 +1,19 @@
 'use client'
+
 import { type HTMLProps } from 'react'
 import { useWallet } from '@/app/lib/wallet/hooks'
-import { ConnectButton, ConnectButtonProps } from './button/Connect'
-import { AvatarProps } from './avatar/Avatar'
+import { ConnectButton } from './button/Connect'
 import { Panel } from './panel'
 
-type WalletProps = HTMLProps<HTMLDivElement> & {
-  connectButtonProps?: ConnectButtonProps
-  avatarProps?: AvatarProps
-}
-
-export const Wallet = ({
-  connectButtonProps,
-  avatarProps,
-  ...props
-}: WalletProps) => {
+export const Wallet = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
   const { isConnected } = useWallet()
 
   return (
     <div {...props}>
       {!isConnected ? (
-        <ConnectButton {...connectButtonProps} />
+        <ConnectButton tabIndex={tabIndex} />
       ) : (
-        <Panel avatarProps={avatarProps} />
+        <Panel tabIndex={tabIndex} />
       )}
     </div>
   )

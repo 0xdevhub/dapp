@@ -1,20 +1,18 @@
 import { type HTMLProps } from 'react'
 import { AvatarThumbnail } from './Thumbnail'
 import { ZeroAddress } from 'ethers'
+import classNames from 'classnames'
 
 export type AvatarProps = HTMLProps<HTMLDivElement> & {
-  src?: string
   address?: string
 }
 
-export const Avatar = ({ src, address, tabIndex, ...props }: AvatarProps) => {
+export const Avatar = ({ src, address, ...props }: AvatarProps) => {
   return (
     <div {...props}>
       <AvatarThumbnail
-        tabIndex={tabIndex}
-        src={src}
         address={address || ZeroAddress}
-        className='cursor-pointer'
+        className={classNames(props.className, 'cursor-pointer')}
       />
     </div>
   )
