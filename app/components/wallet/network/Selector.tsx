@@ -24,7 +24,7 @@ export const NetworkSelector = ({
       {...props}
       className={classNames(
         props.className,
-        'flex cursor-pointer justify-between space-x-2'
+        'flex cursor-pointer justify-between'
       )}
     >
       <div className='flex items-center space-x-2'>

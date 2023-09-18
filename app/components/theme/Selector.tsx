@@ -20,7 +20,7 @@ export const ThemeSelector = ({ isOpen, ...props }: ThemeSelectorProps) => {
       {...props}
       className={classNames(
         props.className,
-        'flex cursor-pointer justify-between space-x-2'
+        'flex cursor-pointer justify-between'
       )}
     >
       <span className='text-sm'>
