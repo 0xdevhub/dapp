@@ -12,7 +12,7 @@ export const SettingsContainer = (props: HTMLProps<HTMLDivElement>) => {
         'flex flex-col justify-between space-y-4 p-6'
       )}
     >
-      <div>
+      <div className='flex flex-col space-y-4'>
         <Heading variant='h4'>Idioma</Heading>
         <Language />
       </div>

@@ -21,7 +21,7 @@ export const LanguageSelector = ({
       {...props}
       className={classNames(
         props.className,
-        'flex cursor-pointer justify-between space-x-2 rounded-md bg-black/10 px-2 py-1'
+        'flex cursor-pointer justify-between space-x-2 py-1'
       )}
     >
       <span className='text-sm font-bold text-white'>{currentLocale}</span>

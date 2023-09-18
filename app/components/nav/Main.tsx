@@ -75,7 +75,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
             ])}
           >
             {isOpened && (
-              <div className='flex h-full flex-col items-start justify-between'>
+              <div className='flex h-full flex-col justify-between'>
                 <div className='flex flex-col space-y-10'>
                   <ArrowLeftIcon
                     width={24}
@@ -91,7 +91,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
                   />
                 </div>
                 <div>
-                  <Language />
+                  <Language className='w-full' />
                 </div>
               </div>
             )}
