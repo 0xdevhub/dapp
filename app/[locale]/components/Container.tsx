@@ -7,7 +7,7 @@ export const HomeContainer = () => {
   const t = useI18n()
 
   return (
-    <section>
+    <section className='my-12'>
       <Heading variant='h2'>{t(Locales.HEADING_HOME_TITLE)}</Heading>
     </section>
   )

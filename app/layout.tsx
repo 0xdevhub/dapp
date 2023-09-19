@@ -7,7 +7,7 @@ import { getCurrentLocale } from '@/locales/server'
 import classNames from 'classnames'
 import appConfig from '@/app.config'
 
-const font = Inter({ subsets: ['latin'] })
+const font = Inter({ subsets: ['latin'], weight: ['400', '500', '700', '900'] })
 
 export const metadata: Metadata = {
   title: `${appConfig.name} - Welcome`,
