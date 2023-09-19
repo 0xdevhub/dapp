@@ -60,7 +60,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
         className={classNames([
           'bottom-0 right-0 top-0 z-10 overflow-hidden',
           'fixed z-[999] h-screen w-screen',
-          'bg-white/75 backdrop-blur-sm dark:bg-black/75',
+          'bg-white/75 backdrop-blur-lg dark:bg-black/75',
           isOpened ? 'visible left-0' : 'invisible -left-full'
         ])}
       >
