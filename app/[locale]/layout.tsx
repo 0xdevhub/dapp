@@ -5,7 +5,7 @@ import { type ReactNode } from 'react'
 import { Header } from '@/app/components/header'
 import { WalletProvider } from '@/app/components/wallet'
 import { StyledJsxRegistry } from '@/app/registry'
-import { LanguageProvider } from '@/app/components/Language'
+import { LanguageProvider } from '@/app/components/language'
 import { useDarkMode, useIsClient } from 'usehooks-ts'
 import classNames from 'classnames'
 
