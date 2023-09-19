@@ -15,7 +15,10 @@ export const SettingsSelector = ({
   return (
     <div
       {...props}
-      className={classNames(props.className, 'cursor-pointer py-1.5')}
+      className={classNames(
+        props.className,
+        'flex h-7 w-7 cursor-pointer justify-center'
+      )}
     >
       <Cog6ToothIcon
         width={18}

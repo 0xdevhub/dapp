@@ -14,7 +14,7 @@ export const Logo = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
         translate='no'
       >
         <h1 className='flex items-center space-x-px'>
-          <span className='dark:text-white'>defi</span>
+          <span className='dark:text-white'>chain</span>
           <span className='relative'>
             <span
               className={classNames([

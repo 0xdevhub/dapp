@@ -17,7 +17,7 @@ export const routes = [
 ]
 
 const appConfig = {
-  name: 'defihub',
+  name: 'chainhub',
   meta: {
     description: 'Decentralized finance utility tools'
   },
