@@ -22,16 +22,16 @@ export const Header = (props: HTMLProps<HTMLDivElement>) => {
     <header {...props}>
       <div className='flex min-h-[4.5rem] items-center justify-between space-x-4 py-2 container lg:py-4'>
         <Logo tabIndex={1} />
-        <div className='flex items-center space-x-2'>
-          <NavMain tabIndex={2} navLinks={appConfig.routes} />
-          <Separator className='hidden lg:inline-flex' />
-          <Settings tabIndex={3} />
-          <Separator className='hidden lg:inline-flex' />
+        <div className='flex items-center'>
+          <NavMain tabIndex={2} navLinks={appConfig.routes} className='mr-4' />
+          <Separator className='hidden lg:mr-2 lg:inline-flex' />
+          <Settings tabIndex={3} className='mr-4 lg:mr-2' />
+          <Separator className='hidden lg:mr-4 lg:inline-flex' />
           <Wallet tabIndex={appConfig.routes.length + 4} />
         </div>
       </div>
       <div className='relative h-12 overflow-hidden'>
-        <div className='absolute left-0 right-0 z-0 h-full w-full opacity-20 dark:opacity-100'>
+        <div className='absolute left-0 right-0 z-0 h-full w-full opacity-40 dark:opacity-100'>
           <HeaderShadow />
         </div>
       </div>

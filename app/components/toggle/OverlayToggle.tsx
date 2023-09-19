@@ -40,7 +40,7 @@ export const OverlayToggle = ({
     >
       {({ onClick }) => (
         <div className='flex h-full flex-col overflow-y-auto'>
-          <div className='flex-none px-5 pt-5 lg:hidden' onClick={onClick}>
+          <div className='flex-none px-6 pt-6 lg:hidden' onClick={onClick}>
             <ArrowLeftIcon width={24} />
           </div>
           {cloneElement(Children.only(container), {

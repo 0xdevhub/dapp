@@ -15,7 +15,8 @@ export const Variant = {
   default: {
     classes: 'bg-light-blue text-white dark:bg-lime-400 dark:text-dark-blue',
     disabled:
-      'bg-light-blue/70 text-white/80 dark:bg-lime-400/70 dark:text-light-blue'
+      'bg-light-blue/70 text-white/80 dark:bg-lime-400/70 dark:text-light-blue',
+    hover: 'hover:bg-light-blue/90 dark:hover:bg-lime-400/90'
   }
 } as const
 
@@ -43,6 +44,7 @@ export const Button = ({
         'flex items-center',
         props.className,
         props.disabled ? Variant[variant].disabled : Variant[variant].classes,
+        Variant[variant].hover,
         Sizes[size].classes
       ])}
     >

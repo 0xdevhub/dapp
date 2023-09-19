@@ -23,7 +23,7 @@ export const SettingsSelector = ({
       <Cog6ToothIcon
         width={18}
         className={classNames({
-          'dark:text-gray-400': isOpen,
+          'dark:text-stone-200': isOpen,
           'dark:text-white': !isOpen
         })}
       />

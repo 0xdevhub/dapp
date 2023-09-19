@@ -7,7 +7,7 @@ import { getCurrentLocale } from '@/locales/server'
 import classNames from 'classnames'
 import appConfig from '@/app.config'
 
-const inter = Inter({ subsets: ['latin'] })
+const font = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: `${appConfig.name} - Welcome`,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang={getCurrentLocale()}>
-      <body className={classNames([inter.className])}>{children}</body>
+      <body className={classNames([font.className])}>{children}</body>
     </html>
   )
 }

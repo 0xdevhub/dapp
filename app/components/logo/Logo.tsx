@@ -3,9 +3,26 @@ import Link from 'next/link'
 import appConfig from '@/app.config'
 import classNames from 'classnames'
 
-export const Logo = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
+import { Righteous } from 'next/font/google'
+
+const font = Righteous({
+  weight: ['400'],
+  subsets: ['latin']
+})
+
+export const Logo = ({
+  tabIndex,
+  className,
+  ...props
+}: HTMLProps<HTMLDivElement>) => {
+  const defaultClasses = [
+    'dark:from-yellow-300 dark:via-sky-300 dark:to-lime-300',
+    'from-yellow-500 via-sky-500 to-lime-500',
+    'animate-rotate-gradient bg-gradient-conic bg-300 bg-clip-text font-extrabold text-transparent'
+  ]
+
   return (
-    <div {...props}>
+    <div {...props} className={classNames(className, font.className)}>
       <Link
         title={appConfig.name}
         className='select-none text-2xl'
@@ -15,13 +32,11 @@ export const Logo = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
       >
         <h1 className='flex items-center space-x-px'>
           <span className='dark:text-white'>chain</span>
-          <span className='relative'>
+          <span className='z-1 relative'>
             <span
               className={classNames([
-                'dark:from-yellow-400 dark:via-sky-400 dark:to-lime-400',
-                'from-primary-dark via-secondary-dark to-lime-700',
-                'animate-rotate-gradient bg-gradient-conic bg-300 bg-clip-text font-extrabold text-transparent',
-                'shadow-black drop-shadow'
+                defaultClasses,
+                'shadow-black dark:drop-shadow'
               ])}
             >
               hub
@@ -29,10 +44,8 @@ export const Logo = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
             <span
               aria-hidden
               className={classNames([
-                'dark:from-yellow-400 dark:via-sky-400 dark:to-lime-400',
-                'from-yellow-700 via-sky-700 to-lime-700',
-                'absolute animate-rotate-gradient bg-gradient-conic bg-300 bg-clip-text font-extrabold text-transparent blur',
-                'left-0 right-0 z-[-1]'
+                defaultClasses,
+                'absolute left-0 right-0 h-full w-full opacity-75 blur-sm'
               ])}
             >
               hub
