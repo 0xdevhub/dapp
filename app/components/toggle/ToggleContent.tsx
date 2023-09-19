@@ -59,7 +59,7 @@ export const ToggleContent = ({
           'overflow-hidden',
           isOpen
             ? squareRootOpenClassName ?? 'visible h-auto opacity-100'
-            : squareRootCloseClassName ?? 'invisible h-0 opacity-0'
+            : squareRootCloseClassName ?? 'invisible !m-0 h-0 !p-0 opacity-0'
         )}
       >
         {typeof children !== 'function'
