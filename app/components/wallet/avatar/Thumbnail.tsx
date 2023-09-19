@@ -18,7 +18,7 @@ export const AvatarThumbnail = ({
       {...props}
       className={classNames(
         className,
-        'flex h-7 w-7 items-center justify-center overflow-hidden rounded-md bg-lime-400'
+        'flex h-6 w-6 items-center justify-center overflow-hidden rounded-md bg-lime-400'
       )}
     >
       <Jazzicon diameter={SIZE} seed={jsNumberForAddress(address)} />

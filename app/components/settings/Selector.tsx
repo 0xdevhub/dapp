@@ -17,11 +17,11 @@ export const SettingsSelector = ({
       {...props}
       className={classNames(
         props.className,
-        'flex h-7 w-7 cursor-pointer justify-center'
+        'flex cursor-pointer justify-center'
       )}
     >
       <Cog6ToothIcon
-        width={18}
+        width={20}
         className={classNames({
           'dark:text-stone-200': isOpen,
           'dark:text-white': !isOpen
