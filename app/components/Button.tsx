@@ -15,7 +15,7 @@ export const Variant = {
   default: {
     classes: 'bg-light-blue text-white dark:bg-lime-400 dark:text-dark-blue',
     disabled:
-      'bg-dark-blue text-white/80 dark:bg-lime-400/70 dark:text-light-blue'
+      'bg-light-blue/70 text-white/80 dark:bg-lime-400/70 dark:text-light-blue'
   }
 } as const
 

@@ -19,7 +19,7 @@ export const OverlayToggle = ({
       className={classNames(props.className, 'lg:relative')}
       useClickOutside={true}
       squareRootClassName={classNames(
-        'lg:rounded-2xl absolute z-[19]',
+        'lg:rounded-2xl fixed z-[19]',
         'bottom-0 left-0 right-0 top-0',
         'lg:-right-1 lg:-top-1 lg:bottom-auto lg:left-auto',
         'bg-white/75 dark:bg-black/75 backdrop-blur-sm',

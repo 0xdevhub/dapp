@@ -4,7 +4,7 @@ import classNames from 'classnames'
 export const Variant = {
   default: {
     classes:
-      'bg-gradient-radial from-yellow-400 via-sky-400 to-lime-400  rotate-bg '
+      'bg-gradient-radial from-yellow-400 via-sky-400 to-lime-400 rotate-bg '
   },
   primary: {
     classes: 'bg-primary'
