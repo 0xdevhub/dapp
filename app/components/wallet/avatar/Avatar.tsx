@@ -16,9 +16,10 @@ export const Avatar = ({ src, address, className, ...props }: AvatarProps) => {
       className={classNames(
         className,
         'flex h-6 w-6 items-center justify-center overflow-hidden rounded-md',
-        'dark:from-yellow-300 dark:via-sky-300 dark:to-lime-300',
-        'from-yellow-500 via-sky-500 to-lime-500',
-        'border-2 border-transparent bg-gradient-radial'
+        // 'dark:from-yellow-300 dark:via-sky-300 dark:to-lime-300',
+        // 'from-yellow-500 via-sky-500 to-lime-500',
+        'dark:bg-black/55 bg-black/20',
+        'border-2 border-transparent'
       )}
     >
       <Jazzicon
