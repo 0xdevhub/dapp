@@ -26,7 +26,10 @@ export const Header = (props: HTMLProps<HTMLDivElement>) => {
           <Separator className='hidden lg:inline-flex' />
           <Settings tabIndex={3} className='box-content' />
           <Separator className='hidden lg:inline-flex' />
-          <Wallet tabIndex={appConfig.routes.length + 4} />
+          <Wallet
+            tabIndex={appConfig.routes.length + 4}
+            className='box-content'
+          />
         </div>
       </div>
       <div className='relative h-12 overflow-hidden'>

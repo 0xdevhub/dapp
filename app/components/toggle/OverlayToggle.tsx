@@ -21,10 +21,11 @@ export const OverlayToggle = ({
       squareRootClassName={classNames(
         'lg:rounded-lg absolute z-[19]',
         'bottom-0 left-0 right-0 top-0',
-        'lg:-right-1 lg:-top-1 lg:bottom-auto lg:left-auto',
+        'lg:-right-2 lg:-top-2 lg:bottom-auto lg:left-auto',
         'bg-white/75 dark:bg-black/75 backdrop-blur-lg',
+        'lg:before:rounded-lg lg:before:p-0.5',
         'before:from-lime-400 before:to-sky-400 before:gradient-mask',
-        'before:bg-gradient-to-b lg:before:rounded-lg lg:before:p-0.5'
+        'before:bg-gradient-to-b'
       )}
       squareRootOpenClassName='visible opacity-100 lg:w-60 lg:h-auto h-screen w-screen'
       squareRootCloseClassName='invisible opacity-0 w-0 h-0'

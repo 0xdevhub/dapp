@@ -21,12 +21,7 @@ export const PanelSelector = ({
       {...props}
       title={!isOpen ? address : ''}
       address={address}
-      className={classNames(
-        className,
-        'cursor-pointer border-2',
-        'bg-stone-500/70 dark:bg-cyan-50/70',
-        { 'border-transparent': !isOpen }
-      )}
+      className={classNames(className, 'cursor-pointer ')}
     />
   )
 }
