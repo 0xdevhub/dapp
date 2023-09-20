@@ -13,9 +13,9 @@ export const Sizes = {
 
 export const Variant = {
   default: {
-    classes: 'bg-light-blue text-white dark:bg-lime-400 dark:text-dark-blue',
+    classes: 'bg-light-blue text-cyan-50 dark:bg-lime-400 dark:text-dark-blue',
     disabled:
-      'bg-light-blue/70 text-white/80 dark:bg-lime-400/70 dark:text-light-blue',
+      'bg-light-blue/70 text-cyan-50/80 dark:bg-lime-400/70 dark:text-light-blue',
     hover: 'hover:bg-light-blue/90 dark:hover:bg-lime-400/90'
   }
 } as const

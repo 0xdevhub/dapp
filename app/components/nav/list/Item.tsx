@@ -9,8 +9,8 @@ import { LocalesKeys } from '@/locales/locales'
 export const Variant = {
   default: {
     default: '',
-    active: 'dark:text-stone-200 font-bold',
-    classes: 'dark:text-stone-200 hover:dark:text-stone-200/75'
+    active: 'dark:text-cyan-50 font-bold hover:dark:text-cyan-50/75',
+    classes: 'dark:text-cyan-50 hover:dark:text-cyan-50/75'
   },
   primary: {
     default: '',
