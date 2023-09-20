@@ -12,15 +12,11 @@ export const Variant = {
     active: 'dark:text-cyan-50 font-bold hover:dark:text-cyan-50/75',
     classes: 'dark:text-cyan-50 hover:dark:text-cyan-50/75'
   },
-  primary: {
-    default: '',
-    active: 'dark:text-primary font-bold',
-    classes: 'dark:text-primary hover:dark:text-primary/75'
-  },
   secondary: {
     default: '',
-    active: 'dark:text-secondary font-bold',
-    classes: 'dark:text-secondary hover:dark:text-secondary/75'
+    active: 'text-secondary dark:text-primary font-bold',
+    classes:
+      'text-secondary hover:text-secondary/75 dark:text-primary hover:dark:text-primary/75'
   }
 } as const
 

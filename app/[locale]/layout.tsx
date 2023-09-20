@@ -25,8 +25,10 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
             <div
               className={classNames(
                 'h-screen overflow-x-hidden text-sm font-normal',
-                'bg-zinc-300 text-stone-500',
-                'dark:bg-dark-blue dark:bg-gradient-radial dark:from-dark-green/60 dark:to-dark-blue dark:text-gray-400'
+                // 'bg-zinc-300 text-stone-500',
+                'bg-gradient-radial',
+                'bg-zinc-300  from-zinc-100 to-zinc-400/60 text-stone-500/70',
+                'dark:bg-dark-blue dark:from-dark-green/60 dark:to-dark-blue dark:text-gray-400'
               )}
             >
               <Header />

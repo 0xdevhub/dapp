@@ -11,11 +11,11 @@ const pt: LocalesKeys = {
 
   // Navigation
   NAVIGATION_MENU_ITEM_LABEL_HOME: 'Início',
-  NAVIGATION_MENU_ITEM_LABEL_APPS: 'Aplicativos',
-  NAVIGATION_MENU_ITEM_LABEL_DOCS: 'Documentação',
+  NAVIGATION_MENU_ITEM_LABEL_WIZARD: 'Wizard',
 
   // Headings
   HEADING_HOME_TITLE: 'Meu Portfólio',
+  HEADING_WIZARD_TITLE: 'Wizard',
 
   // Language
   PANEL_LANGUAGE_TITLE: 'Idioma',

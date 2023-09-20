@@ -33,7 +33,12 @@ export const PanelContainer = ({
       )}
     >
       <div className='flex flex-col space-y-4'>
-        <Heading variant='h4'>{t(Locales.PANEL_WALLET_TITLE)}</Heading>
+        <Heading
+          variant='h4'
+          className='border-b border-zinc-200 pb-2 dark:border-gray-800'
+        >
+          {t(Locales.PANEL_WALLET_TITLE)}
+        </Heading>
         <div className='flex flex-col space-y-1'>
           <Heading variant='h5'>ID</Heading>
           <div className='flex justify-between space-x-4'>

@@ -14,11 +14,21 @@ export const SettingsContainer = (props: HTMLProps<HTMLDivElement>) => {
       className={classNames(props.className, 'flex flex-col space-y-4 p-6')}
     >
       <div className='flex flex-col space-y-2'>
-        <Heading variant='h4'>{t(Locales.PANEL_LANGUAGE_TITLE)}</Heading>
+        <Heading
+          variant='h4'
+          className='border-b border-zinc-200 pb-2 dark:border-gray-800'
+        >
+          {t(Locales.PANEL_LANGUAGE_TITLE)}
+        </Heading>
         <Language />
       </div>
       <div className='flex flex-col space-y-2'>
-        <Heading variant='h4'>{t(Locales.PANEL_THEME_TITLE)}</Heading>
+        <Heading
+          variant='h4'
+          className='border-b border-zinc-200 pb-2 dark:border-gray-800'
+        >
+          {t(Locales.PANEL_THEME_TITLE)}
+        </Heading>
         <Theme />
       </div>
     </div>
