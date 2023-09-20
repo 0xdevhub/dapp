@@ -9,17 +9,19 @@ export type PanelSelectorProps = HTMLProps<HTMLDivElement> & {
   isOpen?: boolean
 }
 
-export const PanelSelector = ({ isOpen, ...props }: PanelSelectorProps) => {
+export const PanelSelector = ({
+  isOpen,
+  className,
+  ...props
+}: PanelSelectorProps) => {
   const { address } = useWallet()
 
   return (
     <Avatar
-      title={address}
-      address={address}
       {...props}
-      className={classNames(props.className, {
-        'opacity-90': isOpen
-      })}
+      title={!isOpen ? address : ''}
+      address={address}
+      className={classNames(className, 'cursor-pointer')}
     />
   )
 }

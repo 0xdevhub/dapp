@@ -1,6 +1,5 @@
 import { type HTMLProps } from 'react'
 import dynamic from 'next/dynamic'
-import classnames from 'classnames'
 import appConfig from '@/app.config'
 import { Separator } from '@/app/components/Separator'
 import { Logo } from '@/app/components/logo'
