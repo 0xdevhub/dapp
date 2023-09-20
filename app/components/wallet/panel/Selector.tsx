@@ -21,7 +21,7 @@ export const PanelSelector = ({
       {...props}
       title={!isOpen ? address : ''}
       address={address}
-      className={classNames(className, 'cursor-pointer')}
+      className={classNames(className, 'cursor-pointer', {})}
     />
   )
 }
