@@ -8,7 +8,6 @@ import { Loading } from '@/app/components/Loading'
 import { HeaderShadow } from './Shadow'
 
 const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {
-  ssr: false,
   loading: () => <Loading className='w-12' variant='green' />
 })
 

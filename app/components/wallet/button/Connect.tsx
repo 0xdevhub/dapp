@@ -4,35 +4,35 @@ import useWallet from '@/app/lib/wallet/hooks/useWallet'
 import { Button, ButtonProps } from '@/app/components/Button'
 import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
-import { useDarkMode } from 'usehooks-ts'
+import { useDarkMode, useIsClient } from 'usehooks-ts'
 
-/// bkp:  'rotate-bg bg-gradient-radial from-yellow-400 via-sky-400 to-lime-400'
-
-export const ConnectButton = (props: ButtonProps) => {
+export const ConnectButton = ({ loading, ...props }: ButtonProps) => {
   const t = useI18n()
+  const isClient = useIsClient()
   const { isDarkMode } = useDarkMode()
 
   const {
     connectors: [connector],
     connect,
-    isConnecting
+    isConnecting,
+    isReconnecting
   } = useWallet()
 
   return (
     <Button
+      {...props}
       loadingProps={{
-        variant: !isDarkMode ? 'secondary' : isConnecting ? 'dark' : 'default',
+        variant: isDarkMode ? 'dark' : 'default',
         className: 'w-8'
       }}
       className='w-full justify-center rounded-md'
       type='button'
       key={connector.id}
       onClick={() => connect({ connector })}
-      {...props}
-      loading={props.loading || isConnecting}
+      loading={isClient && (loading || isReconnecting || isConnecting)}
       disabled={props.disabled || isConnecting}
     >
-      {isConnecting
+      {isClient && (loading || isReconnecting || isConnecting)
         ? t(Locales.WALLET_CONNECT_CONNECTING_BUTTON_LABEL)
         : t(Locales.WALLET_CONNECT_STANDBY_BUTTON_LABEL)}
     </Button>
