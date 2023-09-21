@@ -1,4 +1,4 @@
-# chainhub - defi utility tools hub
+# 0xdevhub
 
 ## Getting Started
 
