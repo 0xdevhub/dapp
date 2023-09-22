@@ -15,7 +15,7 @@ export const routes = [
 const appConfig = {
   name: '0xdevhub',
   meta: {
-    description: 'Decentralized finance utility tools'
+    description: 'on-chain & off-chain dev hub'
   },
   routes
 }
