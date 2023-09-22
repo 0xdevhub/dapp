@@ -8,11 +8,13 @@ import { Loading } from '@/app/components/Loading'
 import { HeaderShadow } from './Shadow'
 
 const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {
-  loading: () => <Loading className='w-12' variant='green' />
+  loading: () => <Loading className='w-12' variant='green' />,
+  ssr: false
 })
 
 const Settings = dynamic(() => import('@/app/components/settings/Settings'), {
-  loading: () => <Loading className='w-12' variant='green' />
+  loading: () => <Loading className='w-12' variant='green' />,
+  ssr: false
 })
 
 export const Header = (props: HTMLProps<HTMLDivElement>) => {

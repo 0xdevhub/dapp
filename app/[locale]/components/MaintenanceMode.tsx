@@ -1,6 +1,6 @@
 import { Language } from '@/app/components/language'
 import { Logo } from '@/app/components/logo'
-import SocialMedia from '@/app/components/social/SocialMedia'
+import { SocialMedia } from '@/app/components/social/SocialMedia'
 import { Theme } from '@/app/components/theme'
 
 export const MaintenanceMode = () => {

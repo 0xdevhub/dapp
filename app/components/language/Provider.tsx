@@ -1,4 +1,3 @@
-'use client'
 import { type ReactNode } from 'react'
 import { pt } from '@/locales'
 import { I18nProviderClient } from '@/locales/client'

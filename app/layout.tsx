@@ -1,22 +1,17 @@
 import './globals.css'
 
 import { type ReactNode } from 'react'
-import { type Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import classNames from 'classnames'
-import appConfig from '@/app.config'
 
-const font = Inter({ subsets: ['latin'], weight: ['400', '500', '700', '900'] })
-
-export const metadata: Metadata = {
-  title: `${appConfig.name} - Welcome`,
-  description: appConfig.meta.description
-}
+const font = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900']
+})
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html>
-      <body className={classNames([font.className])}>{children}</body>
+    <html lang='en'>
+      <body className={font.className}>{children}</body>
     </html>
   )
 }
