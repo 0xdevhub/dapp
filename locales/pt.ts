@@ -11,11 +11,11 @@ const pt: LocalesKeys = {
 
   // Navigation
   NAVIGATION_MENU_ITEM_LABEL_HOME: 'Início',
-  NAVIGATION_MENU_ITEM_LABEL_WIZARD: 'Wizard',
+  NAVIGATION_MENU_ITEM_LABEL_WIZARD: 'Criador',
 
   // Headings
   HEADING_HOME_TITLE: 'Meu Portfólio',
-  HEADING_WIZARD_TITLE: 'Wizard',
+  HEADING_WIZARD_TITLE: 'Criador',
 
   // Language
   PANEL_LANGUAGE_TITLE: 'Idioma',
