@@ -2,11 +2,16 @@
 
 import { type HTMLProps } from 'react'
 import classNames from 'classnames'
-import { ToggleContent } from '@/app/components/toggle/ToggleContent'
+import {
+  ToggleContent,
+  ToggleContentProps
+} from '@/app/components/toggle/ToggleContent'
 import { ThemeSelector } from './Selector'
 import { ThemeList } from './List'
 
-export const Theme = (props: HTMLProps<HTMLDivElement>) => {
+export const Theme = (
+  props: HTMLProps<HTMLDivElement> & Partial<ToggleContentProps>
+) => {
   return (
     <ToggleContent
       key='Theme-toggle'
