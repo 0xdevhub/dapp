@@ -4,6 +4,7 @@ import appConfig from '@/app.config'
 import { getI18n } from '@/locales/server'
 import { Locales } from '@/locales/locales'
 import { HomeContainer } from './components/Container'
+import { Locale } from '@/locales/config'
 
 export async function generateMetadata(): Promise<Metadata> {
   const i118n = await getI18n()

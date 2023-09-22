@@ -3,7 +3,6 @@ import './globals.css'
 import { type ReactNode } from 'react'
 import { type Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { getCurrentLocale } from '@/locales/server'
 import classNames from 'classnames'
 import appConfig from '@/app.config'
 
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang={getCurrentLocale()}>
+    <html>
       <body className={classNames([font.className])}>{children}</body>
     </html>
   )
