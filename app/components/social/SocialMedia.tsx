@@ -4,6 +4,7 @@ import TwitterIcon from './icons/Twitter'
 import classNames from 'classnames'
 import { socialMedia } from '@/app.config'
 import Link from 'next/link'
+import GithubIcon from './icons/Github'
 
 export type SocialMediaProps = HTMLProps<HTMLUListElement> & {
   iconProps?: SVGProps<SVGSVGElement>
@@ -25,7 +26,8 @@ export const SocialMedia = ({
             {
               {
                 discord: <DiscordIcon {...iconProps} />,
-                twitter: <TwitterIcon {...iconProps} />
+                twitter: <TwitterIcon {...iconProps} />,
+                github: <GithubIcon {...iconProps} />
               }[icon]
             }
           </Link>

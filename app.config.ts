@@ -22,6 +22,11 @@ export const socialMedia = [
     label: 'Discord',
     href: 'https://discord.gg/GJrdB4Yp',
     icon: 'discord'
+  },
+  {
+    label: 'Github',
+    href: 'https://github.com/0xdevhub',
+    icon: 'github'
   }
 ]
 
