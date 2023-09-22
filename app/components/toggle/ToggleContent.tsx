@@ -3,6 +3,7 @@
 import { type ReactNode, useRef, useEffect } from 'react'
 import classNames from 'classnames'
 import { useOnClickOutside, useToggle } from 'usehooks-ts'
+import Card from '@/app/components/card/Card'
 
 export type ToggleContentOptions = {
   onClick: () => void
@@ -53,7 +54,7 @@ export const ToggleContent = ({
             onClick: toggle,
             isOpen
           })}
-      <div
+      <Card
         className={classNames(
           squareRootClassName,
           'overflow-hidden',
@@ -68,7 +69,7 @@ export const ToggleContent = ({
               onClick: toggle,
               isOpen
             })}
-      </div>
+      </Card>
     </div>
   )
 }

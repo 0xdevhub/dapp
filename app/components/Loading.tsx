@@ -13,7 +13,7 @@ export const Variant = {
     classes: 'bg-secondary'
   },
   dark: {
-    classes: 'bg-dark-blue'
+    classes: 'bg-third-third'
   },
   green: {
     classes: 'bg-lime-400'

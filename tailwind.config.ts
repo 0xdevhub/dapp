@@ -8,9 +8,6 @@ export enum CONTAINER_SIZES {
 }
 
 export const colors = {
-  ['dark-blue']: '#26405D',
-  ['light-blue']: '#2E4B6A',
-  ['dark-green']: '#668672',
   primary: {
     DEFAULT: '#FFDA5C',
     dark: '#EFA236'

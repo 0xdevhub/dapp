@@ -6,6 +6,7 @@ import { useToggle, useMediaQuery } from 'usehooks-ts'
 import classNames from 'classnames'
 import { NavList } from './list'
 import { useI18n } from '@/locales/client'
+import Card from '@/app/components/card/Card'
 
 export type NavLink = {
   label: string
@@ -56,11 +57,10 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
           onItemClick={handleToggle}
         />
       </div>
-      <div
+      <Card
         className={classNames([
           'bottom-0 right-0 top-0 z-10 overflow-hidden',
           'fixed z-[999] h-screen w-screen',
-          'bg-white/75 backdrop-blur dark:bg-black/75',
           isOpened ? 'visible left-0' : 'invisible -left-full'
         ])}
       >
@@ -80,7 +80,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
             />
           </div>
         )}
-      </div>
+      </Card>
     </nav>
   )
 }
