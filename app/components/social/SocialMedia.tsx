@@ -1,10 +1,8 @@
 import { Children, HTMLProps, SVGProps } from 'react'
-import DiscordIcon from './icons/Discord'
-import TwitterIcon from './icons/Twitter'
+import { Discord, Twitter, Github } from './icons'
 import classNames from 'classnames'
 import { socialMedia } from '@/app.config'
 import Link from 'next/link'
-import GithubIcon from './icons/Github'
 
 export type SocialMediaProps = HTMLProps<HTMLUListElement> & {
   iconProps?: SVGProps<SVGSVGElement>
@@ -25,9 +23,9 @@ export const SocialMedia = ({
           <Link href={href} title={label} target='_blank'>
             {
               {
-                discord: <DiscordIcon {...iconProps} />,
-                twitter: <TwitterIcon {...iconProps} />,
-                github: <GithubIcon {...iconProps} />
+                discord: <Discord {...iconProps} />,
+                twitter: <Twitter {...iconProps} />,
+                github: <Github {...iconProps} />
               }[icon]
             }
           </Link>

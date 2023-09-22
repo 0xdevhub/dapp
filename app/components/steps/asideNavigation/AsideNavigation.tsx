@@ -1,7 +1,7 @@
 import Card from '@/app/components/card/Card'
 import { CommandLineIcon, PuzzlePieceIcon } from '@heroicons/react/24/solid'
 
-export const WizardStepper = () => {
+export const AsideNavigation = () => {
   return (
     <Card className='flex rounded-lg'>
       <aside>
@@ -27,4 +27,4 @@ export const WizardStepper = () => {
   )
 }
 
-export default WizardStepper
+export default AsideNavigation

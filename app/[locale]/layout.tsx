@@ -8,7 +8,7 @@ import { useDarkMode, useIsClient } from 'usehooks-ts'
 import classNames from 'classnames'
 import { MaintenanceMode } from './components/MaintenanceMode'
 import { Footer } from '@/app/components/footer/Footer'
-import StyledJsxRegistry from '../registry'
+import StyledJsxRegistry from '@/app/registry'
 
 export type BaseLayoutProps = {
   children: ReactNode
@@ -38,7 +38,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
                 <>
                   <Header />
                   <main className='flex-1 container'>{children}</main>
-                  <Footer className='py-12 text-black/30' />
+                  <Footer className='py-4 text-black/30' />
                 </>
               )}
             </div>
