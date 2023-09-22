@@ -9,6 +9,7 @@ import { LanguageProvider } from '@/app/components/language'
 import { useDarkMode, useIsClient } from 'usehooks-ts'
 import classNames from 'classnames'
 import MaintenanceMode from './components/MaintenanceMode'
+import Footer from '@/app/components/footer/Footer'
 
 export type BaseLayoutProps = {
   children: ReactNode
@@ -25,6 +26,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
           <div className={!isClient ? 'dark' : isDarkMode ? 'dark' : 'light'}>
             <div
               className={classNames(
+                'flex min-h-screen flex-col',
                 'h-screen overflow-x-hidden text-sm font-normal',
                 'bg-gradient-radial',
                 'from-stone-100 via-stone-200 to-stone-300 text-stone-600/70',
@@ -36,7 +38,8 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
               ) : (
                 <>
                   <Header />
-                  <main className='container'>{children}</main>
+                  <main className='flex-1 container'>{children}</main>
+                  <Footer className='py-12 text-black/30' />
                 </>
               )}
             </div>
