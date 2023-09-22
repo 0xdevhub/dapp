@@ -8,6 +8,7 @@ import { StyledJsxRegistry } from '@/app/registry'
 import { LanguageProvider } from '@/app/components/language'
 import { useDarkMode, useIsClient } from 'usehooks-ts'
 import classNames from 'classnames'
+import MaintenanceMode from './components/MaintenanceMode'
 
 export type BaseLayoutProps = {
   children: ReactNode
@@ -31,8 +32,14 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
                 'dark:bg-dark-blue dark:from-dark-green/60 dark:to-dark-blue dark:text-gray-400'
               )}
             >
-              <Header />
-              <main className='container'>{children}</main>
+              {Boolean(process.env.NEXT_PUBLIC_MAINTENANCE_MODE) ? (
+                <MaintenanceMode />
+              ) : (
+                <>
+                  <Header />
+                  <main className='container'>{children}</main>
+                </>
+              )}
             </div>
           </div>
         </StyledJsxRegistry>
