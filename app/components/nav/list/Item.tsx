@@ -14,9 +14,9 @@ export const Variant = {
   },
   secondary: {
     default: '',
-    active: 'text-secondary dark:text-primary font-bold',
+    active: 'text-secondary dark:text-lime-400 font-bold',
     classes:
-      'text-secondary hover:text-secondary/75 dark:text-primary hover:dark:text-primary/75'
+      'text-secondary hover:text-secondary/75 dark:text-lime-400 hover:dark:text-lime-400/75'
   }
 } as const
 

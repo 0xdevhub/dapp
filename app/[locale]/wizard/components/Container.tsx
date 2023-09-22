@@ -8,7 +8,9 @@ export const WizardContainer = () => {
 
   return (
     <section className='my-2 lg:my-6'>
-      <Heading variant='h2'>{t(Locales.HEADING_WIZARD_TITLE)}</Heading>
+      <Heading variant='h2' className='text-center'>
+        {t(Locales.HEADING_WIZARD_TITLE)}
+      </Heading>
     </section>
   )
 }

@@ -20,7 +20,7 @@ export const Header = (props: HTMLProps<HTMLDivElement>) => {
     <header {...props}>
       <div className='flex min-h-[4.5rem] items-center justify-between py-2 container lg:py-4'>
         <Logo tabIndex={1} />
-        <div className='flex items-center space-x-4 lg:space-x-2'>
+        <div className='flex items-center space-x-4'>
           <NavMain tabIndex={2} navLinks={appConfig.routes} />
           <Separator className='hidden lg:inline-flex' />
           <Settings tabIndex={3} className='box-content' />
