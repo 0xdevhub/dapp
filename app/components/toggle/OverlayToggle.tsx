@@ -23,7 +23,7 @@ export const OverlayToggle = ({
         'bottom-0 left-0 right-0 top-0',
         'lg:-right-2 lg:-top-2 lg:bottom-auto lg:left-auto',
         'bg-white/75 dark:bg-black/75 backdrop-blur',
-        'border-secondary dark:border-lime-400 border-2'
+        'lg:border-secondary lg:dark:border-lime-400 border-2'
         // Todo: test iOS
         // 'lg:before:rounded-lg lg:before:p-0.5',
         // 'before:from-lime-400 before:to-sky-400 before:gradient-mask',
