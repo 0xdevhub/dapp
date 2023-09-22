@@ -21,7 +21,7 @@ export const SocialMedia = ({
     {Children.toArray(
       socialMedia.map(({ href, label, icon }) => (
         <li>
-          <Link href={href} title={label}>
+          <Link href={href} title={label} target='_blank'>
             {
               {
                 discord: <DiscordIcon {...iconProps} />,

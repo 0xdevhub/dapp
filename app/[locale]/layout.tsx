@@ -32,7 +32,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
                 'dark:bg-dark-blue dark:from-dark-green/60 dark:to-dark-blue dark:text-gray-400'
               )}
             >
-              {Boolean(process.env.NEXT_PUBLIC_MAINTENANCE_MODE) ? (
+              {process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true' ? (
                 <MaintenanceMode />
               ) : (
                 <>
