@@ -8,6 +8,7 @@ const pt: LocalesKeys = {
   WALLET_CONNECT_STANDBY_BUTTON_LABEL: 'Acessar',
   WALLET_CONNECT_CONNECTING_BUTTON_LABEL: 'Acessando',
   WALLET_DESCONNECT_BUTTON_LABEL: 'Desconectar',
+  WALLET_CHAIN_NOT_ALLOWED_LABEL: 'Não suportada',
 
   // Navigation
   NAVIGATION_MENU_ITEM_LABEL_HOME: 'Início',

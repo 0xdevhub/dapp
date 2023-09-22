@@ -5,7 +5,7 @@ import { CheckBadgeIcon } from '@heroicons/react/24/solid'
 import classNames from 'classnames'
 import useNetwork, { ChainConfig } from '@/app/lib/wallet/hooks/useNetwork'
 import Loading from '@/app/components/Loading'
-import { ExclamationCircleIcon } from '@heroicons/react/24/outline'
+import { ExclamationCircleIcon } from '@heroicons/react/24/solid'
 
 type NetworkListProps = HTMLProps<HTMLUListElement> & {
   chain: ChainConfig
@@ -22,8 +22,8 @@ export const NetworkList = ({ chain, chains, ...props }: NetworkListProps) => {
         chains.map((chainItem) => (
           <li
             className={classNames(
-              'dark:bg-black/75 hover:dark:bg-black/40 hover:dark:text-cyan-50',
-              'bg-white/75 hover:bg-white/40 ',
+              'dark:bg-black/75 hover:dark:bg-white/5 hover:dark:text-cyan-50',
+              'bg-white/75 hover:bg-black/10',
               'flex cursor-pointer items-center justify-between space-x-2 p-2'
             )}
             onClick={() => switchNetwork && switchNetwork(chainItem.id)}

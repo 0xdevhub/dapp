@@ -1,3 +1,5 @@
+'use client'
+
 import { type HTMLProps } from 'react'
 
 import {
@@ -8,6 +10,8 @@ import {
 import { NetworkThumbnail } from './Thumbnail'
 import classNames from 'classnames'
 import { ChainConfig } from '@/app/lib/wallet/hooks/useNetwork'
+import { useI18n } from '@/locales/client'
+import { Locales } from '@/locales/locales'
 
 type NetworkSelectorProps = HTMLProps<HTMLDivElement> & {
   chain: ChainConfig
@@ -19,6 +23,8 @@ export const NetworkSelector = ({
   isOpen,
   ...props
 }: NetworkSelectorProps) => {
+  const t = useI18n()
+
   return (
     <div
       {...props}
@@ -35,7 +41,11 @@ export const NetworkSelector = ({
         ) : (
           <NetworkThumbnail src={`/assets/images/chains/${chain.id}.svg`} />
         )}
-        <span>{chain.unsupported ? 'Não suportada' : chain.name}</span>
+        <span>
+          {chain.unsupported
+            ? t(Locales.WALLET_CHAIN_NOT_ALLOWED_LABEL)
+            : chain.name}
+        </span>
       </div>
       <ChevronDownIcon
         width={18}

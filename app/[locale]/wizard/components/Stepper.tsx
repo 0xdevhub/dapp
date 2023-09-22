@@ -12,7 +12,7 @@ export const WizardStepper = () => {
             </span>
             <span className='font-bold'>App</span>
           </li>
-          <li className='flex cursor-not-allowed flex-col items-center space-y-2 p-6 opacity-30'>
+          <li className='flex cursor-not-allowed flex-col items-center space-y-2 p-6 opacity-70 dark:opacity-30'>
             <span>
               <CommandLineIcon width={20} />
             </span>

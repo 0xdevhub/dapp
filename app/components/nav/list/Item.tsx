@@ -9,12 +9,15 @@ import { LocalesKeys } from '@/locales/locales'
 export const Variant = {
   default: {
     default: '',
-    active: 'dark:text-cyan-50 font-bold hover:dark:text-cyan-50/75',
-    classes: 'dark:text-cyan-50 hover:dark:text-cyan-50/75'
+    active:
+      'dark:text-cyan-50 font-bold hover:dark:text-cyan-50/75 hover:text-stone-500/75',
+    classes:
+      'dark:text-cyan-50 hover:dark:text-cyan-50/75 hover:text-stone-500/75'
   },
   secondary: {
     default: '',
-    active: 'text-secondary dark:text-lime-400 font-bold',
+    active:
+      'text-secondary hover:text-secondary/75 dark:text-lime-400 dark:hover:text-lime-400/75 font-bold',
     classes:
       'text-secondary hover:text-secondary/75 dark:text-lime-400 hover:dark:text-lime-400/75'
   }
