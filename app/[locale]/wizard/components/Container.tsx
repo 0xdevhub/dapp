@@ -8,12 +8,12 @@ export const WizardContainer = () => {
   const t = useI18n()
 
   return (
-    <section className='mt-2 flex flex-col space-y-12 lg:mt-6'>
+    <section className='flex flex-col space-y-12'>
       <Heading variant='h2'>{t(Locales.HEADING_WIZARD_TITLE)}</Heading>
       <div className='flex w-full rounded-lg bg-white/75 backdrop-blur dark:bg-black/75'>
         <aside>
           <ul className='flex flex-col'>
-            <li className='flex cursor-pointer flex-col items-center space-y-2 p-6 text-secondary'>
+            <li className='flex cursor-pointer flex-col items-center space-y-2 p-6 text-secondary dark:text-lime-400'>
               <span>
                 <PuzzlePieceIcon width={20} />
               </span>
