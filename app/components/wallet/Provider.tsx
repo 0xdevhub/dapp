@@ -1,3 +1,5 @@
+'use client'
+
 import type { ReactNode } from 'react'
 import { WagmiConfig } from 'wagmi'
 import config from '@/app/lib/wallet/config'

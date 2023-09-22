@@ -1,11 +1,12 @@
 import './globals.css'
 
 import { type ReactNode } from 'react'
-import { Inter } from 'next/font/google'
+import { Rubik } from 'next/font/google'
 
-const font = Inter({
+const font = Rubik({
   subsets: ['latin'],
-  weight: ['400', '500', '700', '900']
+  weight: ['400'],
+  preload: true
 })
 
 export default function RootLayout({ children }: { children: ReactNode }) {
