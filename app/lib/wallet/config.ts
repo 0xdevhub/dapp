@@ -4,7 +4,7 @@ import { polygonMumbai, polygon } from 'wagmi/chains'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [polygonMumbai, polygon],
+  [polygonMumbai],
   [
     alchemyProvider({
       apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY!
