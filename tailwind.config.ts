@@ -18,6 +18,11 @@ export const colors = {
   secondary: {
     DEFAULT: '#43B4D3',
     dark: '#0084A8'
+  },
+  third: {
+    100: '#425759',
+    300: '#3A525C',
+    500: '#2A435D'
   }
 }
 

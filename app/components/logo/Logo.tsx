@@ -31,7 +31,7 @@ export const Logo = ({
         translate='no'
       >
         <h1 className='flex items-center space-x-px'>
-          <span className='text-stone-600 dark:text-cyan-50'>0xdev</span>
+          <span className='text-stone-500 dark:text-cyan-50'>0xdev</span>
           <span className='z-1 relative'>
             <span
               className={classNames([
