@@ -8,7 +8,6 @@ import { StyledJsxRegistry } from '@/app/registry'
 import { LanguageProvider } from '@/app/components/language'
 import { useDarkMode, useIsClient } from 'usehooks-ts'
 import classNames from 'classnames'
-import { Locale } from '@/locales/config'
 
 export type BaseLayoutProps = {
   children: ReactNode
