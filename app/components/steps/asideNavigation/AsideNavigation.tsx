@@ -1,27 +1,47 @@
-import Card from '@/app/components/card/Card'
-import { CommandLineIcon, PuzzlePieceIcon } from '@heroicons/react/24/solid'
+import { Children, type HTMLProps, type ReactNode } from 'react'
+import Link from 'next/link'
+import { Card } from '@/app/components/card/Card'
+import classNames from 'classnames'
 
-export const AsideNavigation = () => {
+export type AsideNavigationNavLink = {
+  id: string
+  icon: ReactNode
+  label: string
+  href: string
+}
+
+export type AsideNavigationProps = HTMLProps<HTMLDivElement> & {
+  navLinks: AsideNavigationNavLink[]
+  children?: ReactNode
+}
+
+export const AsideNavigation = ({
+  className,
+  navLinks,
+  children,
+  ...props
+}: AsideNavigationProps) => {
   return (
-    <Card className='flex rounded-lg'>
-      <aside>
+    <Card
+      {...props}
+      className={classNames(className, 'grid h-full grid-cols-12 rounded-2xl')}
+    >
+      <aside className='col-span-1'>
         <ul className='flex flex-col'>
-          <li className='flex cursor-pointer flex-col items-center space-y-2 p-6 text-secondary dark:text-lime-400'>
-            <span>
-              <PuzzlePieceIcon width={20} />
-            </span>
-            <span className='font-bold'>App</span>
-          </li>
-          <li className='flex cursor-not-allowed flex-col items-center space-y-2 p-6 opacity-70 dark:opacity-30'>
-            <span>
-              <CommandLineIcon width={20} />
-            </span>
-            <span>Modulo</span>
-          </li>
+          {Children.toArray(
+            navLinks.map(({ href, icon, label }) => (
+              <li className='max-w-[8rem] text-center'>
+                <Link href={href} className='flex flex-col items-center p-4 '>
+                  <span>{icon}</span>
+                  <span className='text-base'>{label}</span>
+                </Link>
+              </li>
+            ))
+          )}
         </ul>
       </aside>
-      <div className='flex-1 rounded-lg border-l-2 border-secondary p-6 dark:border-lime-400'>
-        content
+      <div className='col-span-11 rounded-2xl border-l-2 border-stone-400 dark:border-lime-400'>
+        {children}
       </div>
     </Card>
   )

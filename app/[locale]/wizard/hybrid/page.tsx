@@ -9,12 +9,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: `${appConfig.name} - ${i118n(
-      Locales.NAVIGATION_MENU_ITEM_LABEL_WIZARD
+      Locales.NAVIGATION_WIZARD_ITEM_LABEL_HYBRID
     )}`,
     description: appConfig.meta.description
   }
 }
 
-export default function WizardPage() {
-  return <div>wizard</div>
+export default function HybridPage() {
+  return <div>hybrid</div>
 }

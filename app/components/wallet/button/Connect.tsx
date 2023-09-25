@@ -22,7 +22,7 @@ export const ConnectButton = ({ loading, ...props }: ButtonProps) => {
     <Button
       {...props}
       loadingProps={{
-        variant: isDarkMode ? 'dark' : 'default',
+        variant: isDarkMode ? 'dark' : 'primary',
         className: 'w-8'
       }}
       className='w-full justify-center rounded-md'

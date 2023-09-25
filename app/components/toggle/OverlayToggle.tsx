@@ -1,7 +1,7 @@
 import { type HTMLProps, Children, cloneElement, ReactElement } from 'react'
 import { ToggleContent } from './ToggleContent'
 import classNames from 'classnames'
-import { XMarkIcon } from '@heroicons/react/24/solid'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 
 export type OverlayToggleProps = HTMLProps<HTMLDivElement> & {
   selector: ReactElement
@@ -38,8 +38,8 @@ export const OverlayToggle = ({
     >
       {({ onClick }) => (
         <div className='flex h-full flex-col overflow-y-auto'>
-          <div className='flex-none px-6 pt-6 lg:hidden' onClick={onClick}>
-            <XMarkIcon width={24} />
+          <div className='ml-6 mt-6 flex-none lg:hidden' onClick={onClick}>
+            <XMarkIcon width={24} title='exit' />
           </div>
           {cloneElement(Children.only(container), {
             className: 'flex-1'

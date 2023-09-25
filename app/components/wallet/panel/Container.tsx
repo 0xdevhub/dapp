@@ -33,9 +33,8 @@ export const PanelContainer = ({
       )}
     >
       <div className='flex flex-col space-y-4'>
-        <Heading variant='h4'>{t(Locales.PANEL_WALLET_TITLE)}</Heading>
         <div className='flex flex-col space-y-1'>
-          <Heading variant='h5'>ID</Heading>
+          <Heading variant='h4'>{t(Locales.PANEL_WALLET_TITLE)}</Heading>
           <div className='flex justify-between space-x-4'>
             <p>{addressUtils.toEllipsis(address!, 8, 6)}</p>
             <Square2StackIcon
@@ -46,13 +45,13 @@ export const PanelContainer = ({
           </div>
         </div>
         <div className='flex flex-col space-y-1'>
-          <Heading variant='h5'>
+          <Heading variant='h4'>
             {t(Locales.PANEL_WALLET_NETWORK_LABEL)}
           </Heading>
           <Network chain={chain!} chains={chains} />
         </div>
         <div className='flex flex-col space-y-1'>
-          <Heading variant='h5'>
+          <Heading variant='h4'>
             {t(Locales.PANEL_WALLET_BALANCE_LABEL)}
           </Heading>
           <div className='flex space-x-2'>

@@ -9,11 +9,11 @@ import { HeaderShadow } from './Shadow'
 
 const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {
   ssr: false,
-  loading: () => <Loading className='w-12' variant='green' />
+  loading: () => <Loading className='w-12' />
 })
 
 const Settings = dynamic(() => import('@/app/components/settings/Settings'), {
-  loading: () => <Loading className='w-12' variant='green' />
+  loading: () => <Loading className='w-12' />
 })
 
 export const Header = (props: HTMLProps<HTMLDivElement>) => {
