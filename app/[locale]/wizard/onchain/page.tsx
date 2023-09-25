@@ -14,5 +14,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function OnChainPage() {
-  return <div>onchain</div>
+  return <div className='p-6'>onchain</div>
 }

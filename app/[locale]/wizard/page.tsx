@@ -14,5 +14,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function WizardPage() {
-  return <div>wizard</div>
+  return <div className='p-6'>wizard</div>
 }

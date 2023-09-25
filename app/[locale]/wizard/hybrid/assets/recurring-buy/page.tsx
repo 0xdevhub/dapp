@@ -14,5 +14,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function RecurringBuyPage() {
-  return <div>recurring-buy</div>
+  return <div className='p-6'>recurring-buy</div>
 }

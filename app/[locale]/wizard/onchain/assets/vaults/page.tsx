@@ -14,5 +14,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function VaultsPage() {
-  return <div>vaults</div>
+  return <div className='p-6'>vaults</div>
 }

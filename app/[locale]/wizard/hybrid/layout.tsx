@@ -21,7 +21,7 @@ export default function wizardLayout({ children }: wizardLayoutProps) {
     {
       href: '/wizard/hybrid/assets/',
       id: 'assets',
-      icon: <CurrencyDollarIcon width={24} />,
+      icon: <CurrencyDollarIcon width={18} />,
       label: t(Locales.ASSETS)
     }
   ]

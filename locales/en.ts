@@ -1,7 +1,7 @@
 import { LocalesKeys } from './locales'
 
 const pt: LocalesKeys = {
-  MY_WALLET: 'My Wallet',
+  WALLET: 'My Wallet',
   BALANCE: 'Balance',
   NETWORK: 'Network',
   CONNECT: 'Connect',

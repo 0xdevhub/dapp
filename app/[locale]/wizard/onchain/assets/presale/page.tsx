@@ -14,5 +14,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function PreSalePage() {
-  return <div>presale</div>
+  return <div className='p-6'>presale</div>
 }

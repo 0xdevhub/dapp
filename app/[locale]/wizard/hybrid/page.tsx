@@ -14,5 +14,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function HybridPage() {
-  return <div>hybrid</div>
+  return <div className='p-6'>hybrid</div>
 }

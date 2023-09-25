@@ -20,13 +20,13 @@ export default function wizardLayout({ children }: wizardLayoutProps) {
     {
       href: '/wizard/onchain/',
       id: 'onchain',
-      icon: <GlobeAltIcon width={24} />,
+      icon: <GlobeAltIcon width={18} />,
       label: t(Locales.ONCHAIN)
     },
     {
       href: '/wizard/hybrid/',
       id: 'hybrid',
-      icon: <SquaresPlusIcon width={24} />,
+      icon: <SquaresPlusIcon width={18} />,
       label: t(Locales.HYBRID)
     }
   ]

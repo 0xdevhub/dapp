@@ -21,13 +21,13 @@ export default function AsetsLayout({ children }: AsetsLayoutProps) {
     {
       href: '/wizard/onchain/assets/vaults/',
       id: 'vaults',
-      icon: <BanknotesIcon width={24} />,
+      icon: <BanknotesIcon width={18} />,
       label: t(Locales.VAULTS)
     },
     {
       href: '/wizard/onchain/assets/presale/',
       id: 'presale',
-      icon: <ShoppingBagIcon width={24} />,
+      icon: <ShoppingBagIcon width={18} />,
       label: t(Locales.PRESALE)
     }
   ]

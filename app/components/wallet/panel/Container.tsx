@@ -34,7 +34,7 @@ export const PanelContainer = ({
     >
       <div className='flex flex-col space-y-4'>
         <div className='flex flex-col space-y-1'>
-          <Heading variant='h4'>{t(Locales.MY_WALLET)}</Heading>
+          <Heading variant='h4'>{t(Locales.WALLET)}</Heading>
           <div className='flex justify-between space-x-4'>
             <p>{addressUtils.toEllipsis(address!, 8, 6)}</p>
             <Square2StackIcon

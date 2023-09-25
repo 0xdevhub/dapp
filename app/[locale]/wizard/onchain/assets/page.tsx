@@ -14,5 +14,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function AssetsPage() {
-  return <div>assets</div>
+  return <div className='p-6'>assets</div>
 }

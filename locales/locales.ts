@@ -1,6 +1,6 @@
 export enum Locales {
   // Wallet
-  MY_WALLET = 'MY_WALLET',
+  WALLET = 'WALLET',
   BALANCE = 'BALANCE',
   NETWORK = 'NETWORK',
   CONNECT = 'CONNECT',
