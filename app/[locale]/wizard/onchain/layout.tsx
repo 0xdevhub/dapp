@@ -6,7 +6,7 @@ import { Locales } from '@/locales/locales'
 
 import AsideNavigation, {
   AsideNavigationNavLink
-} from '@/app/components/nav/asideNavigation/AsideNavigation'
+} from '@/app/components/navigation/aside/AsideNavigation'
 
 import { CurrencyDollarIcon } from '@heroicons/react/24/solid'
 

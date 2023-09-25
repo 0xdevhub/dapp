@@ -1,6 +1,6 @@
 'use client'
 
-import { Heading } from '@/app/components/Heading'
+import { Heading } from '@/app/components/typograph/Heading'
 import { Locales } from '@/locales/locales'
 import { useI18n } from '@/locales/client'
 

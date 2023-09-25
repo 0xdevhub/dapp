@@ -1,12 +1,12 @@
 'use client'
 
 import { type ReactNode } from 'react'
-import { Heading } from '@/app/components/Heading'
+import { Heading } from '@/app/components/typograph/Heading'
 import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
 import AsideNavigation, {
   AsideNavigationNavLink
-} from '@/app/components/nav/asideNavigation/AsideNavigation'
+} from '@/app/components/navigation/aside/AsideNavigation'
 import { GlobeAltIcon, SquaresPlusIcon } from '@heroicons/react/24/outline'
 
 export type wizardLayoutProps = {

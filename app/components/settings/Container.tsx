@@ -1,6 +1,6 @@
 import { type HTMLProps } from 'react'
 import classNames from 'classnames'
-import { Heading } from '@/app/components/Heading'
+import { Heading } from '@/app/components/typograph/Heading'
 import { Language } from '@/app/components/language'
 import { Theme } from '@/app/components/theme'
 import { useI18n } from '@/locales/client'
