@@ -13,6 +13,7 @@ const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {
 })
 
 const Settings = dynamic(() => import('@/app/components/settings/Settings'), {
+  ssr: false,
   loading: () => <Loading className='w-12' />
 })
 

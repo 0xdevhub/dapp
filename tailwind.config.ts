@@ -29,15 +29,7 @@ export const container = plugin(({ addUtilities }) => {
       width: CONTAINER_SIZES.fallback,
       margin: 'auto',
       paddingRight: '16px',
-      paddingLeft: '16px',
-
-      '@screen md': {
-        maxWidth: CONTAINER_SIZES.md
-      },
-
-      '@screen lg': {
-        maxWidth: CONTAINER_SIZES.lg
-      }
+      paddingLeft: '16px'
     }
   }
 
