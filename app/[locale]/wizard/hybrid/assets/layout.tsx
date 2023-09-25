@@ -6,7 +6,7 @@ import { Locales } from '@/locales/locales'
 
 import AsideNavigation, {
   AsideNavigationNavLink
-} from '@/app/components/steps/asideNavigation/AsideNavigation'
+} from '@/app/components/nav/asideNavigation/AsideNavigation'
 
 import { BanknotesIcon, ShoppingBagIcon } from '@heroicons/react/24/outline'
 

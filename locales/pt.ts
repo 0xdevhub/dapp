@@ -13,6 +13,7 @@ const pt: LocalesKeys = {
   // Navigation Bar
   NAVIGATION_MENU_ITEM_LABEL_HOME: 'Início',
   NAVIGATION_MENU_ITEM_LABEL_WIZARD: 'Criador',
+  NAVIGATION_MENU_ITEM_LABEL_STORE: 'Loja',
 
   // Navigation Wizard
   NAVIGATION_WIZARD_ITEM_LABEL_ONCHAIN: 'Em-rede',

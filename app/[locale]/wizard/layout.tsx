@@ -6,7 +6,7 @@ import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
 import AsideNavigation, {
   AsideNavigationNavLink
-} from '@/app/components/steps/asideNavigation/AsideNavigation'
+} from '@/app/components/nav/asideNavigation/AsideNavigation'
 import { GlobeAltIcon, SquaresPlusIcon } from '@heroicons/react/24/outline'
 
 export type wizardLayoutProps = {

@@ -9,6 +9,10 @@ export const routes = [
     label: Locales.NAVIGATION_MENU_ITEM_LABEL_WIZARD,
     href: '/wizard/',
     variant: 'secondary'
+  },
+  {
+    label: Locales.NAVIGATION_MENU_ITEM_LABEL_STORE,
+    href: '/store/'
   }
 ]
 
