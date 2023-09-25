@@ -8,9 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const i118n = await getI18n()
 
   return {
-    title: `${appConfig.name} - ${i118n(
-      Locales.NAVIGATION_WIZARD_ITEM_LABEL_HYBRID
-    )}`,
+    title: `${appConfig.name} - ${i118n(Locales.HYBRID)}`,
     description: appConfig.meta.description
   }
 }

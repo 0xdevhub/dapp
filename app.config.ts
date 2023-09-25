@@ -2,16 +2,16 @@ import { Locales } from './locales/locales'
 
 export const routes = [
   {
-    label: Locales.NAVIGATION_MENU_ITEM_LABEL_HOME,
+    label: Locales.HOME,
     href: '/'
   },
   {
-    label: Locales.NAVIGATION_MENU_ITEM_LABEL_WIZARD,
+    label: Locales.WIZARD,
     href: '/wizard/',
     variant: 'secondary'
   },
   {
-    label: Locales.NAVIGATION_MENU_ITEM_LABEL_STORE,
+    label: Locales.STORE,
     href: '/store/'
   }
 ]

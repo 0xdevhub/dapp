@@ -21,19 +21,19 @@ export default function wizardLayout({ children }: wizardLayoutProps) {
       href: '/wizard/onchain/',
       id: 'onchain',
       icon: <GlobeAltIcon width={24} />,
-      label: t(Locales.NAVIGATION_WIZARD_ITEM_LABEL_ONCHAIN)
+      label: t(Locales.ONCHAIN)
     },
     {
       href: '/wizard/hybrid/',
       id: 'hybrid',
       icon: <SquaresPlusIcon width={24} />,
-      label: t(Locales.NAVIGATION_WIZARD_ITEM_LABEL_HYBRID)
+      label: t(Locales.HYBRID)
     }
   ]
 
   return (
     <section className='flex flex-col space-y-4'>
-      <Heading variant='h2'>{t(Locales.HEADING_WIZARD_TITLE)}</Heading>
+      <Heading variant='h2'>{t(Locales.WIZARD)}</Heading>
       <AsideNavigation navLinks={navLinks}>{children}</AsideNavigation>
     </section>
   )

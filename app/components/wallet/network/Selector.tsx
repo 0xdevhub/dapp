@@ -41,11 +41,7 @@ export const NetworkSelector = ({
         ) : (
           <NetworkThumbnail src={`/assets/images/chains/${chain.id}.svg`} />
         )}
-        <span>
-          {chain.unsupported
-            ? t(Locales.WALLET_CHAIN_NOT_ALLOWED_LABEL)
-            : chain.name}
-        </span>
+        <span>{chain.unsupported ? t(Locales.NOT_ALLOWED) : chain.name}</span>
       </div>
       <ChevronDownIcon
         width={18}

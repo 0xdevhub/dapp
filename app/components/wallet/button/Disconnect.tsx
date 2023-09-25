@@ -16,7 +16,7 @@ export const DisconnectButton = (props: ButtonProps) => {
       onClick={() => disconnect()}
       {...props}
     >
-      {t(Locales.WALLET_DESCONNECT_BUTTON_LABEL)}
+      {t(Locales.DISCONNECT)}
     </Button>
   )
 }

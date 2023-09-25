@@ -1,39 +1,27 @@
 import { LocalesKeys } from './locales'
 
 const pt: LocalesKeys = {
-  // Wallet
-  PANEL_WALLET_TITLE: 'My Wallet',
-  PANEL_WALLET_BALANCE_LABEL: 'Balance',
-  PANEL_WALLET_NETWORK_LABEL: 'Network',
-  WALLET_CONNECT_STANDBY_BUTTON_LABEL: 'Connect',
-  WALLET_CONNECT_CONNECTING_BUTTON_LABEL: 'Connecting',
-  WALLET_DESCONNECT_BUTTON_LABEL: 'Disconnect',
-  WALLET_CHAIN_NOT_ALLOWED_LABEL: 'Not allowed',
-
-  // Navigation Bar
-  NAVIGATION_MENU_ITEM_LABEL_HOME: 'Home',
-  NAVIGATION_MENU_ITEM_LABEL_WIZARD: 'Wizard',
-  NAVIGATION_MENU_ITEM_LABEL_STORE: 'Store',
-
-  // Navigation Wizard
-  NAVIGATION_WIZARD_ITEM_LABEL_ONCHAIN: 'On-chain',
-  NAVIGATION_WIZARD_ITEM_LABEL_HYBRID: 'Hybrid',
-  NAVIGATION_WIZARD_ITEM_LABEL_ASSETS: 'Assets',
-  NAVIGATION_WIZARD_ITEM_LABEL_VAULTS: 'Vaults',
-  NAVIGATION_WIZARD_ITEM_LABEL_PRESALE: 'Presale',
-  NAVIGATION_WIZARD_ITEM_LABEL_RECURRING_BUY: 'Recurring Buy',
-
-  // Headings
-  HEADING_HOME_TITLE: 'My Portfolio',
-  HEADING_WIZARD_TITLE: 'Wizard',
-
-  // Language
-  PANEL_LANGUAGE_TITLE: 'Language',
-
-  // Themes
-  PANEL_THEME_TITLE: 'Theme',
-  PANEL_THEME_TYPE_LIGHT_LABEL: 'Light',
-  PANEL_THEME_TYPE_DARK_LABEL: 'Dark'
+  MY_WALLET: 'My Wallet',
+  BALANCE: 'Balance',
+  NETWORK: 'Network',
+  CONNECT: 'Connect',
+  CONNECTING: 'Connecting',
+  DISCONNECT: 'Disconnect',
+  NOT_ALLOWED: 'Not allowed',
+  HOME: 'Home',
+  WIZARD: 'Wizard',
+  STORE: 'Store',
+  ONCHAIN: 'On-chain',
+  HYBRID: 'Hybrid',
+  ASSETS: 'Assets',
+  VAULTS: 'Vaults',
+  PRESALE: 'Presale',
+  RECURRING_BUY: 'Recurring Buy',
+  MY_PORTFOLIO: 'My Portfolio',
+  LANGUAGE: 'Language',
+  THEME: 'Theme',
+  LIGHT: 'Light',
+  DARK: 'Dark'
 } as const
 
 export default pt

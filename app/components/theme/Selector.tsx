@@ -24,9 +24,7 @@ export const ThemeSelector = ({ isOpen, ...props }: ThemeSelectorProps) => {
       )}
     >
       <span className='text-sm'>
-        {isDarkMode
-          ? t(Locales.PANEL_THEME_TYPE_DARK_LABEL)
-          : t(Locales.PANEL_THEME_TYPE_LIGHT_LABEL)}
+        {isDarkMode ? t(Locales.DARK) : t(Locales.LIGHT)}
       </span>
       <ChevronDownIcon
         width={18}

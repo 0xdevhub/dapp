@@ -33,8 +33,8 @@ export const ConnectButton = ({ loading, ...props }: ButtonProps) => {
       disabled={props.disabled || isConnecting}
     >
       {isClient && (loading || isReconnecting || isConnecting)
-        ? t(Locales.WALLET_CONNECT_CONNECTING_BUTTON_LABEL)
-        : t(Locales.WALLET_CONNECT_STANDBY_BUTTON_LABEL)}
+        ? t(Locales.CONNECTING)
+        : t(Locales.CONNECT)}
     </Button>
   )
 }

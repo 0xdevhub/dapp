@@ -22,7 +22,7 @@ export default function AsetsLayout({ children }: AsetsLayoutProps) {
       href: '/wizard/hybrid/assets/recurring-buy/',
       id: 'vaults',
       icon: <BanknotesIcon width={24} />,
-      label: t(Locales.NAVIGATION_WIZARD_ITEM_LABEL_RECURRING_BUY)
+      label: t(Locales.RECURRING_BUY)
     }
   ]
 

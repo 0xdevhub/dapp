@@ -13,12 +13,12 @@ export const ThemeList = (props: HTMLProps<HTMLUListElement>) => {
 
   const themes = [
     {
-      label: t(Locales.PANEL_THEME_TYPE_LIGHT_LABEL),
+      label: t(Locales.LIGHT),
       onClick: disable,
       active: !isDarkMode
     },
     {
-      label: t(Locales.PANEL_THEME_TYPE_DARK_LABEL),
+      label: t(Locales.DARK),
       onClick: enable,
       active: isDarkMode
     }

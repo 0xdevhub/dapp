@@ -9,7 +9,7 @@ export const HomeContainer = () => {
 
   return (
     <section>
-      <Heading variant='h2'>{t(Locales.HEADING_HOME_TITLE)}</Heading>
+      <Heading variant='h2'>{t(Locales.MY_PORTFOLIO)}</Heading>
     </section>
   )
 }
