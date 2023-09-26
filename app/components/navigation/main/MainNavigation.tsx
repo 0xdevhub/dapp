@@ -4,20 +4,24 @@ import { useEffect, type HTMLProps, useCallback } from 'react'
 import { ArrowLeftIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/solid'
 import { useToggle, useMediaQuery } from 'usehooks-ts'
 import classNames from 'classnames'
-import { NavList } from './list'
+import { ListNavigation } from '@/app/components/navigation/list/ListNavigation'
 import { useI18n } from '@/locales/client'
-import Card from '@/app/components/card/Card'
+import { Card } from '@/app/components/card/Card'
 
 export type NavLink = {
   label: string
   href: string
 }
 
-type NavMainProps = HTMLProps<HTMLElement> & {
+type MainNavigationProps = HTMLProps<HTMLElement> & {
   navLinks: NavLink[]
 }
 
-export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
+export const MainNavigation = ({
+  tabIndex,
+  navLinks,
+  ...props
+}: MainNavigationProps) => {
   const t = useI18n()
   const [isOpened, toggle] = useToggle()
   const matches = useMediaQuery(`(min-width: 1024px`)
@@ -37,9 +41,9 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
     <nav
       {...props}
       className={classNames(props.className, 'text-base tracking-wide')}
-      aria-labelledby='navmain'
+      aria-labelledby='MainNavigation'
     >
-      <span id='navmain' aria-hidden className='hidden'>
+      <span id='MainNavigation' aria-hidden className='hidden'>
         Menu
       </span>
       <div className='lg:hidden'>
@@ -50,7 +54,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
         />
       </div>
       <div className='hidden lg:inline-flex'>
-        <NavList
+        <ListNavigation
           tabIndex={tabIndex}
           navLinks={navLinks}
           className='flex space-x-8'
@@ -72,7 +76,7 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
               onClick={toggle}
             />
 
-            <NavList
+            <ListNavigation
               tabIndex={tabIndex}
               navLinks={navLinks}
               className='flex flex-col space-y-4'
@@ -85,4 +89,4 @@ export const NavMain = ({ tabIndex, navLinks, ...props }: NavMainProps) => {
   )
 }
 
-export default NavMain
+export default MainNavigation

@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import appConfig from '@/app.config'
 import { Separator } from '@/app/components/Separator'
 import { Logo } from '@/app/components/logo'
-import { NavMain } from '@/app/components/navigation/Main'
+import { MainNavigation } from '@/app/components/navigation/main/MainNavigation'
 import { Loading } from '@/app/components/Loading'
 import { HeaderShadow } from './Shadow'
 
@@ -23,7 +23,7 @@ export const Header = (props: HTMLProps<HTMLDivElement>) => {
       <div className='flex min-h-[4.5rem] items-center justify-between py-2 container lg:py-4'>
         <Logo tabIndex={1} />
         <div className='flex items-center space-x-4'>
-          <NavMain tabIndex={2} navLinks={appConfig.routes} />
+          <MainNavigation tabIndex={2} navLinks={appConfig.routes} />
           <Separator className='hidden lg:inline-flex' />
           <Settings tabIndex={3} className='box-content' />
           <Separator className='hidden lg:inline-flex' />

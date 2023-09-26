@@ -23,18 +23,18 @@ export const Variant = {
   }
 } as const
 
-export type NavListItemProps = LinkProps & {
+export type ListNavigationItemProps = LinkProps & {
   tabIndex?: number
   label: string
   variant?: keyof typeof Variant
 }
 
-export const NavListItem = ({
+export const ListNavigationItem = ({
   href,
   label,
   variant = 'default',
   ...props
-}: NavListItemProps) => {
+}: ListNavigationItemProps) => {
   const t = useI18n()
   const currentLocale = useCurrentLocale()
   const pathname = usePathname()
@@ -54,4 +54,4 @@ export const NavListItem = ({
   )
 }
 
-export default NavListItem
+export default ListNavigationItem

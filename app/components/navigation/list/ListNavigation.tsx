@@ -1,23 +1,26 @@
 import { Children, type HTMLProps } from 'react'
-import { NavListItem, NavListItemProps } from './Item'
+import {
+  ListNavigationItem,
+  ListNavigationItemProps
+} from './ListNavigationItem'
 
-type NavListProps = HTMLProps<HTMLUListElement> & {
-  navLinks: NavListItemProps[]
+type ListNavigationProps = HTMLProps<HTMLUListElement> & {
+  navLinks: ListNavigationItemProps[]
   onItemClick?: () => void
 }
 
-export const NavList = ({
+export const ListNavigation = ({
   navLinks,
   onItemClick,
   tabIndex = 0,
   ...props
-}: NavListProps) => {
+}: ListNavigationProps) => {
   return (
     <ul {...props}>
       {Children.toArray(
         navLinks.map((navLink, index) => (
           <li>
-            <NavListItem
+            <ListNavigationItem
               {...navLink}
               onClick={onItemClick}
               tabIndex={tabIndex + index}
@@ -29,4 +32,4 @@ export const NavList = ({
   )
 }
 
-export default NavList
+export default ListNavigation

@@ -1,2 +1,2 @@
-export { default as NavList } from './List'
-export { default as NavListItem } from './Item'
+export { default as ListNavigation } from './ListNavigation'
+export { default as ListNavigationItem } from './ListNavigationItem'
