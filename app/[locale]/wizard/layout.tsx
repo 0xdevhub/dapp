@@ -1,7 +1,7 @@
 'use client'
 
 import { type ReactNode } from 'react'
-import { Heading } from '@/app/components/typograph/Heading'
+import { Heading } from '@/app/components/typography/Heading'
 import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
 import { AsideNavigation } from '@/app/components/navigation/aside/AsideNavigation'

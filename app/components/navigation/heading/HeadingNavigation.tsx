@@ -1,7 +1,7 @@
 'use client'
 
 import { ArrowLeftIcon } from '@heroicons/react/24/outline'
-import { Heading, HeadingProps } from '@/app/components/typograph/Heading'
+import { Heading, HeadingProps } from '@/app/components/typography/Heading'
 import { useRouter } from 'next/navigation'
 import classNames from 'classnames'
 
