@@ -17,23 +17,28 @@ export default function wizardLayout({ children }: wizardLayoutProps) {
 
   const navLinks: AsideNavigationItemProps[] = [
     {
-      href: '/wizard/onchain/',
-      id: 'onchain',
+      href: '/apps#',
       icon: <GlobeAltIcon width={18} />,
-      label: t(Locales.ONCHAIN)
+      label: 'Hub'
     },
     {
-      href: '/wizard/hybrid/',
-      id: 'hybrid',
-      icon: <SquaresPlusIcon width={18} />,
-      label: t(Locales.HYBRID)
+      href: '/apps#',
+      icon: <GlobeAltIcon width={18} />,
+      label: 'New'
+    },
+
+    {
+      href: '/apps#',
+      icon: <GlobeAltIcon width={18} />,
+      label: 'Settings'
     }
   ]
 
   return (
-    <section className='flex flex-col space-y-4'>
-      <Heading variant='h2'>{t(Locales.WIZARD)}</Heading>
-      <AsideNavigation navLinks={navLinks}>{children}</AsideNavigation>
+    <section className='grid h-full'>
+      <AsideNavigation navLinks={navLinks} className='h-full'>
+        {children}
+      </AsideNavigation>
     </section>
   )
 }

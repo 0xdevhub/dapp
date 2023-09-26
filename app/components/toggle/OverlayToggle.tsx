@@ -11,17 +11,18 @@ export type OverlayToggleProps = HTMLProps<HTMLDivElement> & {
 export const OverlayToggle = ({
   selector,
   container,
+  className,
   ...props
 }: OverlayToggleProps) => {
   return (
     <ToggleContent
       {...props}
-      className={classNames(props.className, 'lg:relative')}
+      className={classNames(className, 'lg:relative')}
       useClickOutside={true}
       squareRootClassName={classNames(
         'lg:rounded-lg absolute z-[19]',
         'bottom-0 left-0 right-0 top-0',
-        'lg:-right-2 lg:-top-2 lg:bottom-auto lg:left-auto',
+        'lg:-right-2 lg:-top-2 lg:bottom-auto lg:left-auto backdrop-blur',
         'lg:border-secondary lg:dark:border-lime-400 lg:border-2'
       )}
       squareRootOpenClassName='visible opacity-100 lg:w-60 lg:h-auto h-screen w-screen'

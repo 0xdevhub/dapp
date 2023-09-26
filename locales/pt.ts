@@ -1,6 +1,7 @@
 import { LocalesKeys } from './locales'
 
 const pt: LocalesKeys = {
+  APPS: 'Apps',
   WALLET: 'Minha Carteira',
   BALANCE: 'Saldo',
   NETWORK: 'Rede',
@@ -9,14 +10,6 @@ const pt: LocalesKeys = {
   DISCONNECT: 'Desconectar',
   NOT_ALLOWED: 'Não suportada',
   HOME: 'Início',
-  WIZARD: 'Criador',
-  STORE: 'Loja',
-  ONCHAIN: 'Em-rede',
-  HYBRID: 'Híbrido',
-  ASSETS: 'Ativos',
-  VAULTS: 'Cofres',
-  PRESALE: 'Pré-venda',
-  RECURRING_BUY: 'Compra Recorrente',
   MY_PORTFOLIO: 'Meu Portfólio',
   LANGUAGE: 'Idioma',
   THEME: 'Tema',

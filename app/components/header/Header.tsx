@@ -6,6 +6,7 @@ import { Logo } from '@/app/components/logo'
 import { Menu } from './menu/Menu'
 import { Loading } from '@/app/components/Loading'
 import { HeaderShadow } from './Shadow'
+import classNames from 'classnames'
 
 const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {
   ssr: false,
@@ -17,10 +18,17 @@ const Settings = dynamic(() => import('@/app/components/settings/Settings'), {
   loading: () => <Loading className='w-12' />
 })
 
-export const Header = (props: HTMLProps<HTMLDivElement>) => {
+export const Header = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
   return (
-    <header {...props}>
-      <div className='flex min-h-[4.5rem] items-center justify-between py-2 container lg:py-4'>
+    <header
+      {...props}
+      className={classNames(className, 'sticky top-0 z-10 container')}
+    >
+      <div
+        className={classNames(
+          'flex min-h-[4.5rem] items-center justify-between rounded-2xl'
+        )}
+      >
         <Logo tabIndex={1} />
         <div className='flex items-center space-x-4'>
           <Menu tabIndex={2} navLinks={appConfig.routes} />
@@ -33,7 +41,7 @@ export const Header = (props: HTMLProps<HTMLDivElement>) => {
           />
         </div>
       </div>
-      <div className='relative h-12 overflow-hidden'>
+      <div className='relative h-6 overflow-hidden'>
         <div className='absolute left-0 right-0 z-0 h-full w-full opacity-40 dark:opacity-100'>
           <HeaderShadow />
         </div>

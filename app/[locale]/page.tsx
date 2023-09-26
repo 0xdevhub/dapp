@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import appConfig from '@/app.config'
 import { getI18n } from '@/locales/server'
 import { Locales } from '@/locales/locales'
-import { HomeContainer } from './components/Container'
 
 export async function generateMetadata(): Promise<Metadata> {
   const i118n = await getI18n()
@@ -15,5 +14,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function HomePage() {
-  return <HomeContainer />
+  return <div />
 }

@@ -28,7 +28,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
                 'flex min-h-screen flex-col',
                 'h-screen overflow-x-hidden text-sm font-normal',
                 'bg-gradient-radial',
-                'from-stone-100 via-stone-200 to-stone-300 text-stone-600/70',
+                'from-stone-50 via-stone-100 to-stone-200 text-stone-600/70',
                 'dark:from-third-100 dark:via-third-300 dark:to-third-500 dark:text-gray-400'
               )}
             >

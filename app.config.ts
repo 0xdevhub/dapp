@@ -7,13 +7,9 @@ export const routes: MenuListItemProps[] = [
     href: '/'
   },
   {
-    label: Locales.WIZARD,
-    href: '/wizard/',
+    label: Locales.APPS,
+    href: '/apps/',
     variant: 'secondary'
-  },
-  {
-    label: Locales.STORE,
-    href: '/store/'
   }
 ]
 

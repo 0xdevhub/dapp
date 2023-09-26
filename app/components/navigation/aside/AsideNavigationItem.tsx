@@ -21,6 +21,7 @@ export const AsideNavigationItem = ({
 }: AsideNavigationItemProps) => {
   const currentLocale = useCurrentLocale()
   const pathname = usePathname()
+  const isCurrentPath = pathname === `/${currentLocale + href}`
 
   return (
     <Link
@@ -28,14 +29,13 @@ export const AsideNavigationItem = ({
       href={href}
       className={classNames(
         className,
-        pathname === `/${currentLocale + href}`
-          ? 'text-red-400'
-          : 'text-yellow-300',
-        'flex w-28 flex-col items-center p-4'
+        'group',
+        'flex flex-col items-center p-4'
       )}
+      data-active={isCurrentPath}
     >
       <span>{icon}</span>
-      <span> {label}</span>
+      <span>{label}</span>
     </Link>
   )
 }

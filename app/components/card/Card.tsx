@@ -1,21 +1,23 @@
 import classNames from 'classnames'
-import { HTMLProps } from 'react'
+import { HTMLProps, createElement } from 'react'
+
+export type CardProps = HTMLProps<HTMLDivElement> & {
+  as?: string
+}
 
 export const Card = ({
   children,
   className,
+  as: Component = 'div',
   ...props
 }: HTMLProps<HTMLDivElement>) => {
-  return (
-    <div
-      {...props}
-      className={classNames(
-        className,
-        'bg-white/60 backdrop-blur dark:bg-black/60'
-      )}
-    >
-      {children}
-    </div>
+  return createElement(
+    Component,
+    {
+      ...props,
+      className: classNames(className, 'bg-white/70 dark:bg-black/70')
+    },
+    children
   )
 }
 
