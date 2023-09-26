@@ -15,7 +15,7 @@ export const Card = ({
     Component,
     {
       ...props,
-      className: classNames(className, 'bg-white/70 dark:bg-black/70')
+      className: classNames(className, 'bg-white/70 dark:bg-black/80')
     },
     children
   )

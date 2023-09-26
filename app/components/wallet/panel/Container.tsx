@@ -40,7 +40,7 @@ export const PanelContainer = ({
             <Square2StackIcon
               onClick={() => copy(address!)}
               width={18}
-              className='cursor-pointer  active:text-lime-400'
+              className='cursor-pointer  active:text-secondary active:dark:text-lime-400'
             />
           </div>
         </div>

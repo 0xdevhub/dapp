@@ -56,7 +56,7 @@ export const Menu = ({ tabIndex, navLinks, ...props }: MenuProps) => {
       <Card
         className={classNames([
           'bottom-0 right-0 top-0 z-10 overflow-hidden',
-          'fixed z-[999] h-screen w-screen',
+          'fixed z-[999] h-screen w-screen backdrop-blur',
           isOpened ? 'visible left-0' : 'invisible -left-full'
         ])}
       >
