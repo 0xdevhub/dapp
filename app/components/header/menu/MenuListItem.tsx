@@ -23,21 +23,22 @@ export const Variant = {
   }
 } as const
 
-export type ListNavigationItemProps = LinkProps & {
+export type MenuListItemProps = LinkProps & {
   tabIndex?: number
-  label: string
+  label: keyof LocalesKeys
   variant?: keyof typeof Variant
 }
 
-export const ListNavigationItem = ({
+export const MenuListItem = ({
   href,
   label,
   variant = 'default',
   ...props
-}: ListNavigationItemProps) => {
+}: MenuListItemProps) => {
   const t = useI18n()
   const currentLocale = useCurrentLocale()
   const pathname = usePathname()
+
   return (
     <Link
       {...props}
@@ -49,9 +50,9 @@ export const ListNavigationItem = ({
           : Variant[variant || 'default'].classes
       ])}
     >
-      {t(label as keyof LocalesKeys)}
+      {t(label)}
     </Link>
   )
 }
 
-export default ListNavigationItem
+export default MenuListItem

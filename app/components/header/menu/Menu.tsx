@@ -4,24 +4,16 @@ import { useEffect, type HTMLProps, useCallback } from 'react'
 import { ArrowLeftIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/solid'
 import { useToggle, useMediaQuery } from 'usehooks-ts'
 import classNames from 'classnames'
-import { ListNavigation } from '@/app/components/navigation/list/ListNavigation'
+import { MenuList } from './MenuList'
 import { useI18n } from '@/locales/client'
 import { Card } from '@/app/components/card/Card'
+import { MenuListItemProps } from './MenuListItem'
 
-export type NavLink = {
-  label: string
-  href: string
+type MenuProps = HTMLProps<HTMLElement> & {
+  navLinks: MenuListItemProps[]
 }
 
-type MainNavigationProps = HTMLProps<HTMLElement> & {
-  navLinks: NavLink[]
-}
-
-export const MainNavigation = ({
-  tabIndex,
-  navLinks,
-  ...props
-}: MainNavigationProps) => {
+export const Menu = ({ tabIndex, navLinks, ...props }: MenuProps) => {
   const t = useI18n()
   const [isOpened, toggle] = useToggle()
   const matches = useMediaQuery(`(min-width: 1024px`)
@@ -41,9 +33,9 @@ export const MainNavigation = ({
     <nav
       {...props}
       className={classNames(props.className, 'text-base tracking-wide')}
-      aria-labelledby='MainNavigation'
+      aria-labelledby='menu'
     >
-      <span id='MainNavigation' aria-hidden className='hidden'>
+      <span id='menu' aria-hidden className='hidden'>
         Menu
       </span>
       <div className='lg:hidden'>
@@ -54,7 +46,7 @@ export const MainNavigation = ({
         />
       </div>
       <div className='hidden lg:inline-flex'>
-        <ListNavigation
+        <MenuList
           tabIndex={tabIndex}
           navLinks={navLinks}
           className='flex space-x-8'
@@ -76,7 +68,7 @@ export const MainNavigation = ({
               onClick={toggle}
             />
 
-            <ListNavigation
+            <MenuList
               tabIndex={tabIndex}
               navLinks={navLinks}
               className='flex flex-col space-y-4'
@@ -89,4 +81,4 @@ export const MainNavigation = ({
   )
 }
 
-export default MainNavigation
+export default Menu

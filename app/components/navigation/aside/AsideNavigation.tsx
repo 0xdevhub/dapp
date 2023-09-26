@@ -1,17 +1,13 @@
 import { Children, type HTMLProps, type ReactNode } from 'react'
-import Link from 'next/link'
 import { Card } from '@/app/components/card/Card'
 import classNames from 'classnames'
-
-export type AsideNavigationNavLink = {
-  id: string
-  icon: ReactNode
-  label: string
-  href: string
-}
+import {
+  AsideNavigationItem,
+  AsideNavigationItemProps
+} from './AsideNavigationItem'
 
 export type AsideNavigationProps = HTMLProps<HTMLDivElement> & {
-  navLinks: AsideNavigationNavLink[]
+  navLinks: AsideNavigationItemProps[]
   children?: ReactNode
 }
 
@@ -31,13 +27,7 @@ export const AsideNavigation = ({
           {Children.toArray(
             navLinks.map(({ href, icon, label }) => (
               <li className='text-center'>
-                <Link
-                  href={href}
-                  className='flex w-28 flex-col items-center p-4'
-                >
-                  <span>{icon}</span>
-                  <span>{label}</span>
-                </Link>
+                <AsideNavigationItem href={href} icon={icon} label={label} />
               </li>
             ))
           )}

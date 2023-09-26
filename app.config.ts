@@ -1,6 +1,7 @@
+import { MenuListItemProps } from './app/components/header/menu/MenuListItem'
 import { Locales } from './locales/locales'
 
-export const routes = [
+export const routes: MenuListItemProps[] = [
   {
     label: Locales.HOME,
     href: '/'

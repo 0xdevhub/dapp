@@ -4,10 +4,9 @@ import { type ReactNode } from 'react'
 import { Heading } from '@/app/components/typograph/Heading'
 import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
-import AsideNavigation, {
-  AsideNavigationNavLink
-} from '@/app/components/navigation/aside/AsideNavigation'
+import { AsideNavigation } from '@/app/components/navigation/aside/AsideNavigation'
 import { GlobeAltIcon, SquaresPlusIcon } from '@heroicons/react/24/outline'
+import { AsideNavigationItemProps } from '@/app/components/navigation/aside/AsideNavigationItem'
 
 export type wizardLayoutProps = {
   children: ReactNode
@@ -16,7 +15,7 @@ export type wizardLayoutProps = {
 export default function wizardLayout({ children }: wizardLayoutProps) {
   const t = useI18n()
 
-  const navLinks: AsideNavigationNavLink[] = [
+  const navLinks: AsideNavigationItemProps[] = [
     {
       href: '/wizard/onchain/',
       id: 'onchain',
