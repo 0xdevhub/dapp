@@ -25,7 +25,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
           <StyledJsxRegistry>
             <div
               className={classNames(
-                'flex min-h-screen flex-col',
+                'flex min-h-screen flex-col space-y-4',
                 'h-screen overflow-x-hidden text-sm font-normal',
                 'bg-gradient-radial',
                 'from-stone-100 via-stone-200 to-stone-300 text-stone-600/70',
@@ -38,7 +38,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
                 <>
                   <Header />
                   <main className='flex-1 container'>{children}</main>
-                  <Footer className='py-4 text-black/30' />
+                  <Footer className='pb-4 text-black/30' />
                 </>
               )}
             </div>

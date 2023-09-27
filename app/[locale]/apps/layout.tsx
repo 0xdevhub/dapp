@@ -4,7 +4,7 @@ import { type ReactNode } from 'react'
 import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
 import { AsideNavigation } from '@/app/components/navigation/aside/AsideNavigation'
-import { GlobeAltIcon } from '@heroicons/react/24/outline'
+import { CommandLineIcon, PuzzlePieceIcon } from '@heroicons/react/24/solid'
 import { AsideNavigationItemProps } from '@/app/components/navigation/aside/AsideNavigationItem'
 
 export type wizardLayoutProps = {
@@ -17,12 +17,12 @@ export default function wizardLayout({ children }: wizardLayoutProps) {
   const navLinks: AsideNavigationItemProps[] = [
     {
       href: '/apps/',
-      icon: <GlobeAltIcon width={18} />,
+      icon: <PuzzlePieceIcon width={18} />,
       label: t(Locales.APPS)
     },
     {
       href: '/apps/new/',
-      icon: <GlobeAltIcon width={18} />,
+      icon: <CommandLineIcon width={18} />,
       label: 'New'
     }
   ]

@@ -29,16 +29,16 @@ export const AsideNavigationItem = ({
       className={classNames(
         className,
         'group',
-        'flex flex-col items-center p-4',
+        'flex flex-col items-center p-2 lg:p-4',
         {
-          'bg-secondary text-sky-100 dark:bg-lime-400 dark:text-lime-900':
+          'bg-secondary font-bold text-sky-100 dark:bg-lime-400 dark:text-lime-900':
             isCurrentPath,
           'hover:bg-zinc-200 dark:hover:bg-black/70': !isCurrentPath
         }
       )}
     >
       <span>{icon}</span>
-      <span>{label}</span>
+      <span className='text-sm'>{label}</span>
     </Link>
   )
 }

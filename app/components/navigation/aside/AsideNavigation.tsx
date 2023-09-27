@@ -1,13 +1,11 @@
 import { Children, type HTMLProps, type ReactNode } from 'react'
 import { Card } from '@/app/components/card/Card'
-
 import classNames from 'classnames'
 
 import {
   AsideNavigationItem,
   AsideNavigationItemProps
 } from './AsideNavigationItem'
-import useCurrentPath from '@/app/lib/hooks/useCurrentPath'
 
 export type AsideNavigationProps = HTMLProps<HTMLDivElement> & {
   navLinks: AsideNavigationItemProps[]
@@ -20,14 +18,9 @@ export const AsideNavigation = ({
   children,
   ...props
 }: AsideNavigationProps) => {
-  const { isCurrentPath: isFirstLinkActive } = useCurrentPath(navLinks[0].href)
-
   return (
-    <Card
-      {...props}
-      className={classNames(className, 'flex overflow-hidden rounded-2xl')}
-    >
-      <aside className='flex-none'>
+    <Card {...props} className={classNames(className, 'flex rounded-xl')}>
+      <aside className='rouded-l-xl flex-none overflow-hidden rounded-l-xl'>
         <ul className='flex flex-col'>
           {Children.toArray(
             navLinks.map(({ href, icon, label }) => (
@@ -40,7 +33,8 @@ export const AsideNavigation = ({
       </aside>
       <div
         className={classNames(
-          'flex-1 rounded-b-2xl border-l-4 border-secondary bg-zinc-50 shadow dark:border-lime-400 dark:bg-black/70'
+          'flex-1 rounded-b-xl rounded-r-xl',
+          'border-l-4 border-secondary bg-zinc-100 shadow-xl dark:border-lime-400 dark:bg-zinc-900/70'
         )}
       >
         {children}

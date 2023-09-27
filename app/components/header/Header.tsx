@@ -20,13 +20,10 @@ const Settings = dynamic(() => import('@/app/components/settings/Settings'), {
 
 export const Header = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
   return (
-    <header
-      {...props}
-      className={classNames(className, 'sticky top-0 z-10 container')}
-    >
+    <header {...props} className={classNames(className, 'container')}>
       <div
         className={classNames(
-          'flex min-h-[4.5rem] items-center justify-between rounded-2xl'
+          'flex items-center justify-between rounded-xl py-4'
         )}
       >
         <Logo tabIndex={1} />
@@ -41,10 +38,13 @@ export const Header = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
           />
         </div>
       </div>
-      <div className='relative h-6 overflow-hidden'>
-        <div className='absolute left-0 right-0 z-0 h-full w-full opacity-40 dark:opacity-100'>
-          <HeaderShadow />
-        </div>
+      <div
+        className={classNames(
+          'border-t-[1px] border-stone-500/10 dark:border-white/10',
+          'absolute left-0 right-0 top-14 h-12 w-full overflow-hidden'
+        )}
+      >
+        <HeaderShadow />
       </div>
     </header>
   )

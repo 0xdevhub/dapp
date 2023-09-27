@@ -25,7 +25,7 @@ export const Logo = ({
     <div {...props} className={classNames(className, font.className)}>
       <Link
         title={appConfig.name}
-        className='select-none text-2xl'
+        className='select-none text-xl'
         href='/'
         tabIndex={tabIndex}
         translate='no'
