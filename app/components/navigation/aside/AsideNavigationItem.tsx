@@ -29,7 +29,7 @@ export const AsideNavigationItem = ({
         'group',
         'flex flex-col items-center p-2 lg:p-4',
         {
-          'bg-secondary font-bold text-sky-100 dark:bg-lime-400 dark:text-lime-900':
+          'bg-secondary font-bold text-sky-100 hover:opacity-90 dark:bg-lime-400 dark:text-lime-900':
             isCurrentPath,
           'hover:bg-zinc-200 dark:hover:bg-black/70': !isCurrentPath
         }

@@ -5,6 +5,7 @@ import { Header, Footer, Language, Wallet } from '@/app/components'
 import { useDarkMode, useIsClient } from 'usehooks-ts'
 import classNames from 'classnames'
 import { MaintenanceMode } from './components/MaintenanceMode'
+import StyledJsxRegistry from '@/app/registry'
 
 export type BaseLayoutProps = {
   children: ReactNode
@@ -30,11 +31,11 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
             {process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true' ? (
               <MaintenanceMode />
             ) : (
-              <>
+              <StyledJsxRegistry>
                 <Header.Container />
                 <main className='flex-1 container'>{children}</main>
                 <Footer.Container className='pb-4 text-black/30' />
-              </>
+              </StyledJsxRegistry>
             )}
           </div>
         </div>
