@@ -3,7 +3,7 @@
 import { type HTMLProps } from 'react'
 import { useWallet } from '@/app/lib/wallet/hooks'
 import { ConnectButton } from './button/Connect'
-import { Panel } from './panel'
+import { Panel } from './panel/Panel'
 
 export const Wallet = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
   const { isConnected } = useWallet()

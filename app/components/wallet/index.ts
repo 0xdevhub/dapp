@@ -1,2 +1,2 @@
-export { default as Wallet } from './Wallet'
-export { default as WalletProvider } from './Provider'
+export { default as Container } from './Wallet'
+export { default as Provider } from './Provider'

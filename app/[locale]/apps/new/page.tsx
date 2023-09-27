@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-
 import appConfig from '@/app.config'
 import { AppsNewContainer } from './components/Container'
 

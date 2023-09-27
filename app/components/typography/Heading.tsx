@@ -1,5 +1,5 @@
-import classNames from 'classnames'
 import { type HTMLProps, createElement } from 'react'
+import classNames from 'classnames'
 
 export const Variant = {
   h1: {

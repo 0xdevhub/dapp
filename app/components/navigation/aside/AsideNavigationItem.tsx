@@ -3,8 +3,6 @@
 import Link, { LinkProps } from 'next/link'
 import classNames from 'classnames'
 import { type HTMLProps, type ReactNode } from 'react'
-import { useCurrentLocale } from '@/locales/client'
-import { usePathname } from 'next/navigation'
 import useCurrentPath from '@/app/lib/hooks/useCurrentPath'
 
 export type AsideNavigationItemProps = HTMLProps<HTMLAnchorElement> &

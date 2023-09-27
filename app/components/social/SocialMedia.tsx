@@ -1,4 +1,4 @@
-import { Children, HTMLProps, SVGProps } from 'react'
+import { Children, type HTMLProps, type SVGProps } from 'react'
 import { Discord, Twitter, Github } from './icons'
 import classNames from 'classnames'
 import { socialMedia } from '@/app.config'

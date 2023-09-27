@@ -1,9 +1,9 @@
 'use client'
 
-import { type ReactNode, useRef, useEffect } from 'react'
+import { type ReactNode, useRef } from 'react'
 import classNames from 'classnames'
 import { useOnClickOutside, useToggle } from 'usehooks-ts'
-import Card from '@/app/components/card/Card'
+import { Card } from '@/app/components/card/Card'
 
 export type ToggleContentOptions = {
   onClick: () => void
@@ -32,7 +32,6 @@ export const ToggleContent = ({
   ...props
 }: ToggleContentProps) => {
   const [isOpen, toggle] = useToggle(false)
-
   const ref = useRef(null)
 
   const handleClickOutside = () => {
@@ -41,10 +40,6 @@ export const ToggleContent = ({
   }
 
   useOnClickOutside(ref, handleClickOutside)
-
-  useEffect(() => {
-    // console.log(ref)
-  }, [ref])
 
   return (
     <div {...props} ref={ref}>

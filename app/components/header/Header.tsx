@@ -1,12 +1,10 @@
 import { type HTMLProps } from 'react'
 import dynamic from 'next/dynamic'
 import appConfig from '@/app.config'
-import { Separator } from '@/app/components/Separator'
-import { Logo } from '@/app/components/logo'
-import { Menu } from './menu/Menu'
-import { Loading } from '@/app/components/Loading'
-import { HeaderShadow } from './Shadow'
 import classNames from 'classnames'
+import { Separator, Logo, Loading } from '@/app/components'
+import { Menu } from './menu/Menu'
+import { HeaderShadow } from './Shadow'
 
 const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {
   ssr: false,
@@ -26,7 +24,7 @@ export const Header = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
           'flex items-center justify-between rounded-xl py-4'
         )}
       >
-        <Logo tabIndex={1} />
+        <Logo.Container tabIndex={1} />
         <div className='flex items-center space-x-4'>
           <Menu tabIndex={2} navLinks={appConfig.routes} />
           <Separator className='hidden lg:inline-flex' />

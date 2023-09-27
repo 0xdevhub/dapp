@@ -2,9 +2,9 @@
 
 import Link, { LinkProps } from 'next/link'
 import classNames from 'classnames'
-import { usePathname } from 'next/navigation'
-import { useCurrentLocale, useI18n } from '@/locales/client'
+import { useI18n } from '@/locales/client'
 import { LocalesKeys } from '@/locales/locales'
+import useCurrentPath from '@/app/lib/hooks/useCurrentPath'
 
 export const Variant = {
   default: {
@@ -36,8 +36,7 @@ export const MenuListItem = ({
   ...props
 }: MenuListItemProps) => {
   const t = useI18n()
-  const currentLocale = useCurrentLocale()
-  const pathname = usePathname()
+  const { isCurrentPath } = useCurrentPath(href as string)
 
   return (
     <Link
@@ -45,7 +44,7 @@ export const MenuListItem = ({
       href={href}
       className={classNames([
         [Variant[variant || 'default'].default],
-        pathname === `/${currentLocale + href}`
+        isCurrentPath
           ? [Variant[variant || 'default'].active]
           : Variant[variant || 'default'].classes
       ])}

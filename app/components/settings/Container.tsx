@@ -3,8 +3,7 @@
 import { type HTMLProps } from 'react'
 import classNames from 'classnames'
 import { Heading } from '@/app/components/typography/Heading'
-import { Language } from '@/app/components/language'
-import { Theme } from '@/app/components/theme'
+import { Language, Theme } from '@/app/components'
 import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
 
@@ -17,11 +16,11 @@ export const SettingsContainer = (props: HTMLProps<HTMLDivElement>) => {
     >
       <div className='flex flex-col space-y-2'>
         <Heading as='h4'>{t(Locales.LANGUAGE)}</Heading>
-        <Language />
+        <Language.Container />
       </div>
       <div className='flex flex-col space-y-2'>
         <Heading as='h4'>{t(Locales.THEME)}</Heading>
-        <Theme />
+        <Theme.Container />
       </div>
     </div>
   )

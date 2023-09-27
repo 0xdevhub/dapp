@@ -2,7 +2,6 @@ import { type HTMLProps } from 'react'
 import Link from 'next/link'
 import appConfig from '@/app.config'
 import classNames from 'classnames'
-
 import { Righteous } from 'next/font/google'
 
 const font = Righteous({

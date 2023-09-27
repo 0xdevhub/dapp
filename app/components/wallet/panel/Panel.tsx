@@ -1,7 +1,7 @@
 import { type HTMLProps } from 'react'
 import { PanelContainer } from './Container'
 import { PanelSelector } from './Selector'
-import OverlayToggle from '@/app/components/toggle/OverlayToggle'
+import { OverlayToggle } from '@/app/components/toggle/OverlayToggle'
 
 export const Panel = (props: HTMLProps<HTMLDivElement>) => {
   return (

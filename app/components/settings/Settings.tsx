@@ -1,5 +1,3 @@
-'use client'
-
 import { type HTMLProps } from 'react'
 import { SettingsSelector } from './Selector'
 import { SettingsContainer } from './Container'

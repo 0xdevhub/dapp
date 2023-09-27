@@ -4,8 +4,8 @@ import { type ReactNode } from 'react'
 import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
 import { AsideNavigation } from '@/app/components/navigation/aside/AsideNavigation'
-import { CommandLineIcon, PuzzlePieceIcon } from '@heroicons/react/24/solid'
 import { AsideNavigationItemProps } from '@/app/components/navigation/aside/AsideNavigationItem'
+import { CommandLineIcon, PuzzlePieceIcon } from '@heroicons/react/24/solid'
 
 export type wizardLayoutProps = {
   children: ReactNode

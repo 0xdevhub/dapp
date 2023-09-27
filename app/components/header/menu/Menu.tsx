@@ -1,12 +1,11 @@
 'use client'
 
 import { useEffect, type HTMLProps, useCallback } from 'react'
+import classNames from 'classnames'
 import { ArrowLeftIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/solid'
 import { useToggle, useMediaQuery } from 'usehooks-ts'
-import classNames from 'classnames'
-import { MenuList } from './MenuList'
-import { useI18n } from '@/locales/client'
 import { Card } from '@/app/components/card/Card'
+import { MenuList } from './MenuList'
 import { MenuListItemProps } from './MenuListItem'
 
 type MenuProps = HTMLProps<HTMLElement> & {
@@ -14,7 +13,6 @@ type MenuProps = HTMLProps<HTMLElement> & {
 }
 
 export const Menu = ({ tabIndex, navLinks, ...props }: MenuProps) => {
-  const t = useI18n()
   const [isOpened, toggle] = useToggle()
   const matches = useMediaQuery(`(min-width: 1024px`)
 

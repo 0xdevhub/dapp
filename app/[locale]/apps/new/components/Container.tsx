@@ -1,6 +1,4 @@
-'use client'
-
-import { HeadingNavigation } from '@/app/components/navigation'
+import { HeadingNavigation } from '@/app/components/navigation/heading/HeadingNavigation'
 
 export const AppsNewContainer = () => {
   return (

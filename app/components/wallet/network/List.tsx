@@ -4,7 +4,7 @@ import { Children, type HTMLProps } from 'react'
 import { CheckBadgeIcon } from '@heroicons/react/24/solid'
 import classNames from 'classnames'
 import useNetwork, { ChainConfig } from '@/app/lib/wallet/hooks/useNetwork'
-import Loading from '@/app/components/Loading'
+import { Loading } from '@/app/components/Loading'
 import { ExclamationCircleIcon } from '@heroicons/react/24/solid'
 
 type NetworkListProps = HTMLProps<HTMLUListElement> & {

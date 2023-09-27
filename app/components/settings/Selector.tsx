@@ -1,5 +1,3 @@
-'use client'
-
 import { type HTMLProps } from 'react'
 import classNames from 'classnames'
 import { Cog6ToothIcon } from '@heroicons/react/24/outline'

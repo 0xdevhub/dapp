@@ -1,5 +1,5 @@
-const cropDecimals = (value?: string) => {
-  return value ? value.slice(0, value.indexOf('.') + 5) : '0'
+const cropDecimals = (value?: string, maxDecimals = 5) => {
+  return value ? value.slice(0, value.indexOf('.') + maxDecimals) : '0'
 }
 
 export const balanceUtils = {

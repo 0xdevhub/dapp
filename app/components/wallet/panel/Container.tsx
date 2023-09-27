@@ -4,12 +4,12 @@ import { type HTMLProps } from 'react'
 import classNames from 'classnames'
 import { useWallet, useBalance } from '@/app/lib/wallet/hooks'
 import addressUtils from '@/app/lib/utils/address'
-import { Heading } from '@/app/components/typography/Heading'
+import useNetwork from '@/app/lib/wallet/hooks/useNetwork'
 import balanceUtils from '@/app/lib/utils/balance'
 import { Square2StackIcon } from '@heroicons/react/24/outline'
 import { useCopyToClipboard } from 'usehooks-ts'
-import { Network } from '../network'
-import useNetwork from '@/app/lib/wallet/hooks/useNetwork'
+import { Typography } from '@/app/components'
+import { Network } from '../network/Network'
 import { DisconnectButton } from '../button/Disconnect'
 import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
@@ -34,7 +34,7 @@ export const PanelContainer = ({
     >
       <div className='flex flex-col space-y-4'>
         <div className='flex flex-col space-y-1'>
-          <Heading as='h4'>{t(Locales.WALLET)}</Heading>
+          <Typography.Heading as='h4'>{t(Locales.WALLET)}</Typography.Heading>
           <div className='flex justify-between space-x-4'>
             <p>{addressUtils.toEllipsis(address!, 8, 6)}</p>
             <Square2StackIcon
@@ -45,11 +45,11 @@ export const PanelContainer = ({
           </div>
         </div>
         <div className='flex flex-col space-y-1'>
-          <Heading as='h4'>{t(Locales.NETWORK)}</Heading>
+          <Typography.Heading as='h4'>{t(Locales.NETWORK)}</Typography.Heading>
           <Network chain={chain!} chains={chains} />
         </div>
         <div className='flex flex-col space-y-1'>
-          <Heading as='h4'>{t(Locales.BALANCE)}</Heading>
+          <Typography.Heading as='h4'>{t(Locales.BALANCE)}</Typography.Heading>
           <div className='flex space-x-2'>
             <span>{balanceUtils.cropDecimals(balance?.formatted)}</span>
             <span>{balance?.symbol}</span>

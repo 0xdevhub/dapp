@@ -1,5 +1,5 @@
+import { type HTMLProps, createElement } from 'react'
 import classNames from 'classnames'
-import { HTMLProps, createElement } from 'react'
 
 export type CardProps = HTMLProps<HTMLDivElement> & {
   as?: string

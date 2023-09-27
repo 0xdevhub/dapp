@@ -1,11 +1,11 @@
-'use client'
-
 import { type HTMLProps } from 'react'
 import classNames from 'classnames'
+
 import {
   ToggleContent,
   ToggleContentProps
 } from '@/app/components/toggle/ToggleContent'
+
 import { ThemeSelector } from './Selector'
 import { ThemeList } from './List'
 

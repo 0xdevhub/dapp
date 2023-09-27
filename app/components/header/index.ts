@@ -1,2 +1,2 @@
-export { default as Header } from './Header'
+export { default as Container } from './Header'
 export { default as Shadow } from './Shadow'

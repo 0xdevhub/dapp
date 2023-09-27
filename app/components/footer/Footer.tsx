@@ -1,6 +1,6 @@
-import SocialMedia from '@/app/components/social/SocialMedia'
+import { type HTMLProps } from 'react'
 import classNames from 'classnames'
-import { HTMLProps } from 'react'
+import { SocialMedia } from '@/app/components/social/SocialMedia'
 
 export const Footer = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
   return (
