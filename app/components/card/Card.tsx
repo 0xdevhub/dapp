@@ -13,30 +13,20 @@ export const Card = ({
   as: Component = 'div',
   ...props
 }: CardProps) => {
-  return (
-    <>
-      <style jsx>
-        {`
-          .card {
-            --bg-opacity: ${bgOpacity};
-          }
-        `}
-      </style>
-      <div className='card'>
-        {createElement(
-          Component,
-          {
-            ...props,
-            className: classNames(
-              className,
-              'bg-white dark:bg-black',
-              `!bg-opacity-[var(--bg-opacity)]`
-            )
-          },
-          children
-        )}
-      </div>
-    </>
+  return createElement(
+    Component,
+    {
+      ...props,
+      style: {
+        '--bg-opacity': bgOpacity
+      },
+      className: classNames(
+        className,
+        'bg-white dark:bg-black',
+        `!bg-opacity-[var(--bg-opacity)]`
+      )
+    },
+    children
   )
 }
 
