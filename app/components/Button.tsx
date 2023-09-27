@@ -1,4 +1,4 @@
-import { type ReactNode, type ButtonHTMLAttributes } from 'react'
+import { type ButtonHTMLAttributes } from 'react'
 import classNames from 'classnames'
 import { Loading, LoadingProps } from '@/app/components/Loading'
 
@@ -25,14 +25,12 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: keyof typeof Sizes
   loading?: boolean
   loadingProps?: LoadingProps
-  iconBefore?: ReactNode
 }
 
 export const Button = ({
   loadingProps,
   children,
   loading,
-  iconBefore,
   variant = 'default',
   size = 'default',
   ...props
@@ -41,14 +39,13 @@ export const Button = ({
     <button
       {...props}
       className={classNames([
-        'flex items-center',
+        'flex w-full items-center justify-center rounded-md',
         props.className,
         props.disabled ? Variant[variant].disabled : Variant[variant].classes,
         Variant[variant].hover,
         Sizes[size].classes
       ])}
     >
-      {iconBefore && <span>{iconBefore}</span>}
       <span>{children}</span>
       <span
         className={classNames({

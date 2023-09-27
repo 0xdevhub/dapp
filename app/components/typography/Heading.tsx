@@ -3,21 +3,19 @@ import classNames from 'classnames'
 
 export const Variant = {
   h1: {
-    classes:
-      'text-3xl lg:text-2xl font-extrabold text-stone-500 dark:text-cyan-50'
+    classes: 'text-3xl lg:text-2xl font-extrabold'
   },
   h2: {
-    classes: 'text-2xl lg:text-xl font-bold text-stone-500 dark:text-cyan-50'
+    classes: 'text-2xl lg:text-xl font-bold'
   },
   h3: {
-    classes:
-      'text-base lg:text-lg font-medium lg:font-bold text-stone-500 dark:text-cyan-50'
+    classes: 'text-base lg:text-lg font-medium lg:font-bold'
   },
   h4: {
-    classes: 'text-base font-medium text-stone-500 dark:text-cyan-50'
+    classes: 'text-base font-medium'
   },
   h5: {
-    classes: 'text-base font-normal text-stone-500 dark:text-cyan-50'
+    classes: 'text-base font-normal'
   }
 } as const
 
@@ -29,6 +27,7 @@ export type HeadingProps = HTMLProps<HTMLDivElement> & {
 export const Heading = ({
   as: Component = 'h1',
   variant,
+  children,
   ...props
 }: HeadingProps) => {
   return createElement(
@@ -37,10 +36,11 @@ export const Heading = ({
       ...props,
       className: classNames(
         props.className,
+        'text-stone-500 dark:text-cyan-50',
         Variant[variant ?? Component].classes
       )
     },
-    props.children
+    children
   )
 }
 

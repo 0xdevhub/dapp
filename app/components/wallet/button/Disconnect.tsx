@@ -10,12 +10,7 @@ export const DisconnectButton = (props: ButtonProps) => {
   const t = useI18n()
 
   return (
-    <Button
-      className='w-full justify-center space-x-2 rounded-md'
-      type='button'
-      onClick={() => disconnect()}
-      {...props}
-    >
+    <Button type='button' onClick={() => disconnect()} {...props}>
       {t(Locales.DISCONNECT)}
     </Button>
   )

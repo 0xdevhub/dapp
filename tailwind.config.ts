@@ -2,9 +2,7 @@ import type { Config } from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
 
 export enum CONTAINER_SIZES {
-  fallback = '100%',
-  md = '768px',
-  lg = '1280px'
+  fallback = '100%'
 }
 
 export const colors = {
@@ -36,30 +34,12 @@ export const container = plugin(({ addUtilities }) => {
   addUtilities(utility)
 })
 
-export const gradientBorder = plugin(({ addUtilities }) => {
-  const utility = {
-    '.gradient-mask': {
-      content: '""',
-      position: 'absolute',
-      inset: '0',
-      '-webkit-mask':
-        'linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)',
-      mask: 'linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)',
-      '-webkit-mask-composite': 'xor',
-      'mask-composite': 'exclude',
-      'pointer-events': 'none'
-    }
-  }
-
-  addUtilities(utility)
-})
-
 const config: Config = {
   content: ['./app/**/*.{js,ts,jsx,tsx,mdx}'],
   corePlugins: {
     container: false
   },
-  plugins: [container, gradientBorder],
+  plugins: [container],
   darkMode: 'class',
   theme: {
     extend: {

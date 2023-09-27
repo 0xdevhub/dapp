@@ -28,10 +28,13 @@ export const Header = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
         <div className='flex items-center space-x-4'>
           <Menu tabIndex={2} navLinks={appConfig.routes} />
           <Separator className='hidden lg:inline-flex' />
-          <Settings tabIndex={3} className='box-content' />
+          <Settings
+            tabIndex={appConfig.routes.length + 2}
+            className='box-content'
+          />
           <Separator className='hidden lg:inline-flex' />
           <Wallet
-            tabIndex={appConfig.routes.length + 4}
+            tabIndex={appConfig.routes.length + 3}
             className='box-content'
           />
         </div>

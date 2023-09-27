@@ -23,9 +23,8 @@ export const ConnectButton = ({ loading, ...props }: ButtonProps) => {
       {...props}
       loadingProps={{
         variant: isDarkMode ? 'dark' : 'primary',
-        className: 'w-8'
+        className: 'w-6'
       }}
-      className='w-full justify-center rounded-md'
       type='button'
       key={connector.id}
       onClick={() => connect({ connector })}

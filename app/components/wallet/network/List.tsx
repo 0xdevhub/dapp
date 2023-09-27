@@ -17,7 +17,11 @@ export const NetworkList = ({ chain, chains, ...props }: NetworkListProps) => {
 
   return (
     <ul {...props}>
-      <li>{isLoading && <Loading className='my-2' />}</li>
+      {isLoading && (
+        <li className='p-2'>
+          <Loading className='my-2' />
+        </li>
+      )}
       {Children.toArray(
         chains.map((chainItem) => (
           <li
