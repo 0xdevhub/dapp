@@ -34,7 +34,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
               <StyledJsxRegistry>
                 <Header.Container />
                 <main className='flex-1 container'>{children}</main>
-                <Footer.Container className='pb-4 text-black/30' />
+                <Footer.Container className='pb-4 ' />
               </StyledJsxRegistry>
             )}
           </div>

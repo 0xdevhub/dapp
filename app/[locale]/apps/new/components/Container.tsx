@@ -1,9 +1,9 @@
-import { HeadingNavigation } from '@/app/components/navigation/heading/HeadingNavigation'
+import { Heading } from '@/app/components/typography/Heading'
 
 export const AppsNewContainer = () => {
   return (
     <div className='p-6'>
-      <HeadingNavigation as='h2'>New</HeadingNavigation>
+      <Heading as='h2'>New</Heading>
     </div>
   )
 }

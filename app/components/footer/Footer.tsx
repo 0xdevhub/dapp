@@ -8,7 +8,7 @@ export const Footer = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
       {...props}
       className={classNames(className, 'flex items-start container')}
     >
-      <SocialMedia />
+      <SocialMedia className='text-black/60' />
     </footer>
   )
 }
