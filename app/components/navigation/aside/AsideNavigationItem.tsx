@@ -5,6 +5,7 @@ import classNames from 'classnames'
 import { type HTMLProps, type ReactNode } from 'react'
 import { useCurrentLocale } from '@/locales/client'
 import { usePathname } from 'next/navigation'
+import useCurrentPath from '@/app/lib/hooks/useCurrentPath'
 
 export type AsideNavigationItemProps = HTMLProps<HTMLAnchorElement> &
   LinkProps & {
@@ -19,9 +20,7 @@ export const AsideNavigationItem = ({
   className,
   ...props
 }: AsideNavigationItemProps) => {
-  const currentLocale = useCurrentLocale()
-  const pathname = usePathname()
-  const isCurrentPath = pathname === `/${currentLocale + href}`
+  const { isCurrentPath } = useCurrentPath(href)
 
   return (
     <Link
@@ -30,9 +29,13 @@ export const AsideNavigationItem = ({
       className={classNames(
         className,
         'group',
-        'flex flex-col items-center p-4'
+        'flex flex-col items-center p-4',
+        {
+          'bg-secondary text-sky-100 dark:bg-lime-400 dark:text-lime-900':
+            isCurrentPath,
+          'hover:bg-zinc-200 dark:hover:bg-black/70': !isCurrentPath
+        }
       )}
-      data-active={isCurrentPath}
     >
       <span>{icon}</span>
       <span>{label}</span>

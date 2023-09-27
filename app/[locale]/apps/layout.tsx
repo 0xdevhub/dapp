@@ -1,11 +1,10 @@
 'use client'
 
 import { type ReactNode } from 'react'
-import { Heading } from '@/app/components/typography/Heading'
 import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
 import { AsideNavigation } from '@/app/components/navigation/aside/AsideNavigation'
-import { GlobeAltIcon, SquaresPlusIcon } from '@heroicons/react/24/outline'
+import { GlobeAltIcon } from '@heroicons/react/24/outline'
 import { AsideNavigationItemProps } from '@/app/components/navigation/aside/AsideNavigationItem'
 
 export type wizardLayoutProps = {
@@ -17,20 +16,14 @@ export default function wizardLayout({ children }: wizardLayoutProps) {
 
   const navLinks: AsideNavigationItemProps[] = [
     {
-      href: '/apps#',
+      href: '/apps/',
       icon: <GlobeAltIcon width={18} />,
-      label: 'Hub'
+      label: t(Locales.APPS)
     },
     {
-      href: '/apps#',
+      href: '/apps/new/',
       icon: <GlobeAltIcon width={18} />,
       label: 'New'
-    },
-
-    {
-      href: '/apps#',
-      icon: <GlobeAltIcon width={18} />,
-      label: 'Settings'
     }
   ]
 

@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import appConfig from '@/app.config'
 import { getI18n } from '@/locales/server'
 import { Locales } from '@/locales/locales'
-import { AppContainer } from './components/Container'
+import { AppsContainer } from './components/Container'
 
 export async function generateMetadata(): Promise<Metadata> {
   const i118n = await getI18n()
@@ -14,6 +14,6 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default function WizardPage() {
-  return <AppContainer />
+export default function AppsPage() {
+  return <AppsContainer />
 }

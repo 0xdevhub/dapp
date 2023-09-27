@@ -22,24 +22,23 @@ export const Variant = {
 } as const
 
 export type HeadingProps = HTMLProps<HTMLDivElement> & {
+  as?: keyof typeof Variant
   variant?: keyof typeof Variant
 }
 
-export const Heading = ({ variant = 'h1', ...props }: HeadingProps) => {
-  const CustomTag = {
-    h1: 'h1',
-    h2: 'h2',
-    h3: 'h3',
-    h4: 'h4',
-    h5: 'h5'
-  }[variant]
-
+export const Heading = ({
+  as: Component = 'h1',
+  variant,
+  ...props
+}: HeadingProps) => {
   return createElement(
-    CustomTag,
-
+    Component,
     {
       ...props,
-      className: classNames(props.className, Variant[variant].classes)
+      className: classNames(
+        props.className,
+        Variant[variant ?? Component].classes
+      )
     },
     props.children
   )
