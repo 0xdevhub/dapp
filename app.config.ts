@@ -21,7 +21,7 @@ export const socialMedia = [
   },
   {
     label: 'Discord',
-    href: 'https://discord.gg/GJrdB4Yp',
+    href: 'https://discord.gg/skvN5fnt5M',
     icon: 'discord'
   },
   {
