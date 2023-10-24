@@ -21,11 +21,10 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
         <div className={isClient ? (isDarkMode ? 'dark' : 'light') : 'dark'}>
           <div
             className={classNames(
-              'flex min-h-screen flex-col space-y-4',
+              'flex min-h-screen flex-col',
               'h-screen overflow-x-hidden text-sm font-medium',
-              'bg-gradient-radial',
-              'from-stone-100 via-stone-200 to-stone-300 text-stone-600/70',
-              'dark:from-third-100 dark:via-third-300 dark:to-third-500 dark:text-gray-400'
+              'bg-stone-100  text-stone-600/70',
+              'dark:bg-third-100 dark:text-gray-400'
             )}
           >
             {process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true' ? (
@@ -33,8 +32,8 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
             ) : (
               <StyledJsxRegistry>
                 <Header.Container />
-                <main className='flex-1 container'>{children}</main>
-                <Footer.Container className='pb-4 ' />
+                <main className='flex-1'>{children}</main>
+                <Footer.Container className='py-4' />
               </StyledJsxRegistry>
             )}
           </div>

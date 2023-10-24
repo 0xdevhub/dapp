@@ -19,12 +19,8 @@ export const AsideNavigation = ({
   ...props
 }: AsideNavigationProps) => {
   return (
-    <Card
-      {...props}
-      className={classNames(className, 'flex rounded-2xl')}
-      bgOpacity={0.4}
-    >
-      <aside className='rouded-l-xl flex-none overflow-hidden rounded-l-2xl'>
+    <Card {...props} className={classNames(className, 'flex')} bgOpacity={0.4}>
+      <aside className='flex-none overflow-hidden'>
         <ul className='flex flex-col'>
           {Children.toArray(
             navLinks.map(({ href, icon, label }) => (
@@ -37,8 +33,8 @@ export const AsideNavigation = ({
       </aside>
       <div
         className={classNames(
-          'flex-1 rounded-b-2xl rounded-r-2xl',
-          'border-l-4 border-secondary bg-zinc-100 shadow-xl dark:border-lime-400 dark:bg-black/40'
+          'flex-1 bg-stone-200 dark:bg-black/40',
+          'border-l-4 border-secondary dark:border-lime-400 '
         )}
       >
         {children}

@@ -31,7 +31,7 @@ export const AsideNavigationItem = ({
         {
           'bg-secondary font-bold text-sky-100 hover:opacity-90 dark:bg-lime-400 dark:text-lime-900':
             isCurrentPath,
-          'hover:bg-zinc-200 dark:hover:bg-black/70': !isCurrentPath
+          'hover:bg-stone-200 dark:hover:bg-black/70': !isCurrentPath
         }
       )}
     >

@@ -4,7 +4,6 @@ import appConfig from '@/app.config'
 import classNames from 'classnames'
 import { Separator, Logo, Loading } from '@/app/components'
 import { Menu } from './menu/Menu'
-import { HeaderShadow } from './Shadow'
 
 const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {
   ssr: false,
@@ -38,14 +37,6 @@ export const Header = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
             className='box-content'
           />
         </div>
-      </div>
-      <div
-        className={classNames(
-          'border-t-[1px] border-stone-500/10 dark:border-white/10',
-          'absolute left-0 right-0 top-14 h-12 w-full overflow-hidden'
-        )}
-      >
-        <HeaderShadow />
       </div>
     </header>
   )
