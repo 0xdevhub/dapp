@@ -1,7 +1,5 @@
 # 0xdevhub
 
-on-chain & off-chain dev hub
-
 ## Getting Started
 
 First, run the development server:
