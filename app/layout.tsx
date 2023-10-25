@@ -2,6 +2,7 @@ import './globals.css'
 
 import { type ReactNode } from 'react'
 import { Rubik } from 'next/font/google'
+import { getCurrentLocale } from '@/locales/server'
 
 const font = Rubik({
   subsets: ['latin'],
@@ -9,9 +10,11 @@ const font = Rubik({
   preload: true
 })
 
+const currentLocale = getCurrentLocale()
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang='en'>
+    <html lang={currentLocale}>
       <body className={font.className}>{children}</body>
     </html>
   )

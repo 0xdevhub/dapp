@@ -6,8 +6,8 @@ type WalletProviderProps = {
   children: ReactNode
 }
 
-const WaleltProvider = ({ children }: WalletProviderProps) => {
+export const WalletProvider = ({ children }: WalletProviderProps) => {
   return <WagmiConfig config={config}>{children}</WagmiConfig>
 }
 
-export default WaleltProvider
+export default WalletProvider

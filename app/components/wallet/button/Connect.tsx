@@ -6,7 +6,7 @@ import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
 import { useDarkMode, useIsClient } from 'usehooks-ts'
 
-export const ConnectButton = ({ loading, ...props }: ButtonProps) => {
+export const ButtonConnect = ({ loading, ...props }: ButtonProps) => {
   const t = useI18n()
   const isClient = useIsClient()
   const { isDarkMode } = useDarkMode()
@@ -38,4 +38,4 @@ export const ConnectButton = ({ loading, ...props }: ButtonProps) => {
   )
 }
 
-export default ConnectButton
+export default ButtonConnect

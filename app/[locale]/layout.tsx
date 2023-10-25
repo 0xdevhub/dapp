@@ -1,11 +1,13 @@
 'use client'
 
 import { type ReactNode } from 'react'
-import { Header, Footer, Language, Wallet } from '@/app/components'
 import { useDarkMode, useIsClient } from 'usehooks-ts'
 import classNames from 'classnames'
 import { MaintenanceMode } from './components/MaintenanceMode'
 import StyledJsxRegistry from '@/app/registry'
+import { Header, Footer } from '@/app/components'
+import { WalletProvider } from '../components/wallet/Provider'
+import { LanguageProvider } from '../components/language'
 
 export type BaseLayoutProps = {
   children: ReactNode
@@ -16,8 +18,8 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
   const isClient = useIsClient()
 
   return (
-    <Wallet.Provider>
-      <Language.Provider>
+    <WalletProvider>
+      <LanguageProvider>
         <div className={isClient ? (isDarkMode ? 'dark' : 'light') : 'dark'}>
           <div
             className={classNames(
@@ -31,14 +33,14 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
               <MaintenanceMode />
             ) : (
               <StyledJsxRegistry>
-                <Header.Container />
+                <Header />
                 <main className='flex-1'>{children}</main>
-                <Footer.Container className='py-4' />
+                <Footer className='py-4' />
               </StyledJsxRegistry>
             )}
           </div>
         </div>
-      </Language.Provider>
-    </Wallet.Provider>
+      </LanguageProvider>
+    </WalletProvider>
   )
 }

@@ -2,7 +2,7 @@
 
 import { type HTMLProps } from 'react'
 import { useWallet } from '@/app/lib/wallet/hooks'
-import { ConnectButton } from './button/Connect'
+import { ButtonConnect } from './button/Connect'
 import { Panel } from './panel/Panel'
 
 export const Wallet = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
@@ -11,7 +11,7 @@ export const Wallet = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
   return (
     <div {...props}>
       {!isConnected ? (
-        <ConnectButton tabIndex={tabIndex} />
+        <ButtonConnect tabIndex={tabIndex} />
       ) : (
         <Panel tabIndex={tabIndex} />
       )}

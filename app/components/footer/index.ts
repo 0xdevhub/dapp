@@ -1,1 +1,5 @@
-export { default as Container } from './Footer'
+import { Footer } from './Footer'
+
+export { Footer }
+
+export default Footer

@@ -5,7 +5,7 @@ import { Button, ButtonProps } from '@/app/components/Button'
 import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
 
-export const DisconnectButton = (props: ButtonProps) => {
+export const ButtonDisconnect = (props: ButtonProps) => {
   const { disconnect } = useWallet()
   const t = useI18n()
 
@@ -16,4 +16,4 @@ export const DisconnectButton = (props: ButtonProps) => {
   )
 }
 
-export default DisconnectButton
+export default ButtonDisconnect

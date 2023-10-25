@@ -5,14 +5,14 @@ import classNames from 'classnames'
 import { ArrowLeftIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/solid'
 import { useToggle, useMediaQuery } from 'usehooks-ts'
 import { Card } from '@/app/components/card/Card'
-import { MenuList } from './MenuList'
-import { MenuListItemProps } from './MenuListItem'
+import { MainList } from './MainList'
+import { MainListItemProps } from './MainListItem'
 
-type MenuProps = HTMLProps<HTMLElement> & {
-  navLinks: MenuListItemProps[]
+type MainProps = HTMLProps<HTMLElement> & {
+  navLinks: MainListItemProps[]
 }
 
-export const Menu = ({ tabIndex, navLinks, ...props }: MenuProps) => {
+export const Main = ({ tabIndex, navLinks, ...props }: MainProps) => {
   const [isOpened, toggle] = useToggle()
   const matches = useMediaQuery(`(min-width: 1024px`)
 
@@ -44,7 +44,7 @@ export const Menu = ({ tabIndex, navLinks, ...props }: MenuProps) => {
         />
       </div>
       <div className='hidden lg:inline-flex'>
-        <MenuList
+        <MainList
           tabIndex={tabIndex}
           navLinks={navLinks}
           className='flex space-x-8'
@@ -66,7 +66,7 @@ export const Menu = ({ tabIndex, navLinks, ...props }: MenuProps) => {
               onClick={toggle}
             />
 
-            <MenuList
+            <MainList
               tabIndex={tabIndex}
               navLinks={navLinks}
               className='flex flex-col space-y-4'
@@ -79,4 +79,4 @@ export const Menu = ({ tabIndex, navLinks, ...props }: MenuProps) => {
   )
 }
 
-export default Menu
+export default Main

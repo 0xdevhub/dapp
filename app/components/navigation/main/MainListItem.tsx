@@ -23,18 +23,18 @@ export const Variant = {
   }
 } as const
 
-export type MenuListItemProps = LinkProps & {
+export type MainListItemProps = LinkProps & {
   tabIndex?: number
   label: keyof LocalesKeys
   variant?: keyof typeof Variant
 }
 
-export const MenuListItem = ({
+export const MainListItem = ({
   href,
   label,
   variant = 'default',
   ...props
-}: MenuListItemProps) => {
+}: MainListItemProps) => {
   const t = useI18n()
   const { isCurrentPath } = useCurrentPath(href as string)
 
@@ -54,4 +54,4 @@ export const MenuListItem = ({
   )
 }
 
-export default MenuListItem
+export default MainListItem

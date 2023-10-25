@@ -16,11 +16,11 @@ export const SettingsContainer = (props: HTMLProps<HTMLDivElement>) => {
     >
       <div className='flex flex-col space-y-2'>
         <Heading as='h4'>{t(Locales.LANGUAGE)}</Heading>
-        <Language.Container />
+        <Language />
       </div>
       <div className='flex flex-col space-y-2'>
         <Heading as='h4'>{t(Locales.THEME)}</Heading>
-        <Theme.Container />
+        <Theme />
       </div>
     </div>
   )

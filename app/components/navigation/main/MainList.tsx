@@ -1,23 +1,23 @@
 import { Children, type HTMLProps } from 'react'
-import { MenuListItem, MenuListItemProps } from './MenuListItem'
+import { MainListItem, MainListItemProps } from './MainListItem'
 
-type MenuListProps = HTMLProps<HTMLUListElement> & {
-  navLinks: MenuListItemProps[]
+type MainListProps = HTMLProps<HTMLUListElement> & {
+  navLinks: MainListItemProps[]
   onItemClick?: () => void
 }
 
-export const MenuList = ({
+export const MainList = ({
   navLinks,
   onItemClick,
   tabIndex = 0,
   ...props
-}: MenuListProps) => {
+}: MainListProps) => {
   return (
     <ul {...props}>
       {Children.toArray(
         navLinks.map((navLink, index) => (
           <li>
-            <MenuListItem
+            <MainListItem
               {...navLink}
               onClick={onItemClick}
               tabIndex={tabIndex + index}
@@ -29,4 +29,4 @@ export const MenuList = ({
   )
 }
 
-export default MenuList
+export default MainList

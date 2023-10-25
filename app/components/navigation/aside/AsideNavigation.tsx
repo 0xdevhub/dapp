@@ -19,7 +19,12 @@ export const AsideNavigation = ({
   ...props
 }: AsideNavigationProps) => {
   return (
-    <Card {...props} className={classNames(className, 'flex')} bgOpacity={0.4}>
+    <Card
+      as='section'
+      {...props}
+      className={classNames(className, 'flex')}
+      bgOpacity={0.4}
+    >
       <aside className='flex-none overflow-hidden'>
         <ul className='flex flex-col'>
           {Children.toArray(

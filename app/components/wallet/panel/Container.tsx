@@ -10,7 +10,7 @@ import { Square2StackIcon } from '@heroicons/react/24/outline'
 import { useCopyToClipboard } from 'usehooks-ts'
 import { Typography } from '@/app/components'
 import { Network } from '../network/Network'
-import { DisconnectButton } from '../button/Disconnect'
+import { ButtonDisconnect } from '../button'
 import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
 
@@ -57,7 +57,7 @@ export const PanelContainer = ({
         </div>
       </div>
       <div>
-        <DisconnectButton />
+        <ButtonDisconnect />
       </div>
     </section>
   )

@@ -7,11 +7,11 @@ import { AsideNavigation } from '@/app/components/navigation/aside/AsideNavigati
 import { AsideNavigationItemProps } from '@/app/components/navigation/aside/AsideNavigationItem'
 import { PuzzlePieceIcon } from '@heroicons/react/24/solid'
 
-export type wizardLayoutProps = {
+export type LayoutProps = {
   children: ReactNode
 }
 
-export default function wizardLayout({ children }: wizardLayoutProps) {
+export default function Layout({ children }: LayoutProps) {
   const t = useI18n()
 
   const navLinks: AsideNavigationItemProps[] = [
@@ -23,10 +23,8 @@ export default function wizardLayout({ children }: wizardLayoutProps) {
   ]
 
   return (
-    <section className='grid h-full'>
-      <AsideNavigation navLinks={navLinks} className='h-full'>
-        {children}
-      </AsideNavigation>
-    </section>
+    <AsideNavigation navLinks={navLinks} className='h-full'>
+      {children}
+    </AsideNavigation>
   )
 }

@@ -1,1 +1,5 @@
-export { default as Container } from './HeadingNavigation'
+import { HeadingNavigation } from './HeadingNavigation'
+
+export { HeadingNavigation }
+
+export default HeadingNavigation
