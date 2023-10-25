@@ -5,7 +5,7 @@ export enum Locale {
 
 export const localeConfig = {
   locales: [Locale.PT, Locale.EN],
-  defaultLocale: Locale.PT
+  defaultLocale: Locale.EN
 }
 
 export default localeConfig
