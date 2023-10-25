@@ -1,13 +1,5 @@
 import { Locales } from './locales/locales'
 
-export const routes = [
-  {
-    label: Locales.APPS,
-    href: '/apps/',
-    variant: 'secondary'
-  }
-]
-
 export const socialMedia = [
   {
     label: 'Twitter',
@@ -31,7 +23,6 @@ const appConfig = {
   meta: {
     description: 'on-chain & off-chain dev hub'
   },
-  routes,
   socialMedia
 }
 

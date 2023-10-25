@@ -15,18 +15,13 @@ const DEFAULT_CLASSES = [
   'animate-rotate-gradient bg-gradient-conic bg-300 bg-clip-text font-extrabold text-transparent'
 ]
 
-export const Logo = ({
-  tabIndex,
-  className,
-  ...props
-}: HTMLProps<HTMLDivElement>) => {
+export const Logo = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
   return (
     <div {...props} className={classNames(className, font.className)}>
       <Link
         title={appConfig.name}
         className='select-none text-xl'
         href='/'
-        tabIndex={tabIndex}
         translate='no'
       >
         <h1 className='flex items-center space-x-px'>

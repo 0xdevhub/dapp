@@ -12,7 +12,7 @@ type MainProps = HTMLProps<HTMLElement> & {
   navLinks: MainListItemProps[]
 }
 
-export const Main = ({ tabIndex, navLinks, ...props }: MainProps) => {
+export const Main = ({ navLinks, ...props }: MainProps) => {
   const [isOpened, toggle] = useToggle()
   const matches = useMediaQuery(`(min-width: 1024px`)
 
@@ -45,7 +45,6 @@ export const Main = ({ tabIndex, navLinks, ...props }: MainProps) => {
       </div>
       <div className='hidden lg:inline-flex'>
         <MainList
-          tabIndex={tabIndex}
           navLinks={navLinks}
           className='flex space-x-8'
           onItemClick={handleToggle}
@@ -67,7 +66,6 @@ export const Main = ({ tabIndex, navLinks, ...props }: MainProps) => {
             />
 
             <MainList
-              tabIndex={tabIndex}
               navLinks={navLinks}
               className='flex flex-col space-y-4'
               onItemClick={handleToggle}

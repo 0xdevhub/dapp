@@ -24,7 +24,6 @@ export const Variant = {
 } as const
 
 export type MainListItemProps = LinkProps & {
-  tabIndex?: number
   label: keyof LocalesKeys
   variant?: keyof typeof Variant
 }

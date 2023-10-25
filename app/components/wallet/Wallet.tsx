@@ -5,18 +5,10 @@ import { useWallet } from '@/app/lib/wallet/hooks'
 import { ButtonConnect } from './button/Connect'
 import { Panel } from './panel/Panel'
 
-export const Wallet = ({ tabIndex, ...props }: HTMLProps<HTMLDivElement>) => {
+export const Wallet = (props: HTMLProps<HTMLDivElement>) => {
   const { isConnected } = useWallet()
 
-  return (
-    <div {...props}>
-      {!isConnected ? (
-        <ButtonConnect tabIndex={tabIndex} />
-      ) : (
-        <Panel tabIndex={tabIndex} />
-      )}
-    </div>
-  )
+  return <div {...props}>{!isConnected ? <ButtonConnect /> : <Panel />}</div>
 }
 
 export default Wallet

@@ -9,7 +9,6 @@ type MainListProps = HTMLProps<HTMLUListElement> & {
 export const MainList = ({
   navLinks,
   onItemClick,
-  tabIndex = 0,
   ...props
 }: MainListProps) => {
   return (
@@ -17,11 +16,7 @@ export const MainList = ({
       {Children.toArray(
         navLinks.map((navLink, index) => (
           <li>
-            <MainListItem
-              {...navLink}
-              onClick={onItemClick}
-              tabIndex={tabIndex + index}
-            />
+            <MainListItem {...navLink} onClick={onItemClick} />
           </li>
         ))
       )}
