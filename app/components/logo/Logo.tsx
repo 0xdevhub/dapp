@@ -25,7 +25,7 @@ export const Logo = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
         translate='no'
       >
         <h1 className='flex items-center space-x-px'>
-          <span className='text-stone-500 dark:text-cyan-50'>0xdev</span>
+          <span>0xdev</span>
           <span className='z-1 relative'>
             <span
               className={classNames([

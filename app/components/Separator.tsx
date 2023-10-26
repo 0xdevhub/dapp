@@ -7,7 +7,7 @@ export const Separator = (props: HTMLProps<HTMLDivElement>) => (
     {...props}
     className={classNames(
       props.className,
-      ' select-none text-stone-400/30 dark:text-secondary/30'
+      ' select-none text-stone-400/30 dark:text-cyan-50/20'
     )}
   >
     |

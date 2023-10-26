@@ -5,6 +5,7 @@ import classNames from 'classnames'
 import { useChangeLocale, useCurrentLocale } from '@/locales/client'
 import { localeConfig, Locale } from '@/locales/config'
 import { CheckBadgeIcon } from '@heroicons/react/24/solid'
+import { Typography } from '..'
 
 export const LanguageList = (props: HTMLProps<HTMLUListElement>) => {
   const currentLocale = useCurrentLocale()
@@ -24,7 +25,7 @@ export const LanguageList = (props: HTMLProps<HTMLUListElement>) => {
               'flex cursor-pointer items-center justify-between space-x-2 p-2'
             )}
           >
-            <span>{locale}</span>
+            <Typography.Text as='span'>{locale}</Typography.Text>
             {locale === currentLocale && (
               <CheckBadgeIcon width={18} className='text-green-400' />
             )}

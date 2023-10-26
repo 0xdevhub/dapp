@@ -36,7 +36,9 @@ export const PanelContainer = ({
         <div className='flex flex-col space-y-1'>
           <Typography.Heading as='h4'>{t(Locales.WALLET)}</Typography.Heading>
           <div className='flex justify-between space-x-4'>
-            <p>{addressUtils.toEllipsis(address!, 8, 6)}</p>
+            <Typography.Text as='span'>
+              {addressUtils.toEllipsis(address!, 8, 6)}
+            </Typography.Text>
             <Square2StackIcon
               onClick={() => copy(address!)}
               width={18}
@@ -51,8 +53,10 @@ export const PanelContainer = ({
         <div className='flex flex-col space-y-1'>
           <Typography.Heading as='h4'>{t(Locales.BALANCE)}</Typography.Heading>
           <div className='flex space-x-2'>
-            <span>{balanceUtils.cropDecimals(balance?.formatted)}</span>
-            <span>{balance?.symbol}</span>
+            <Typography.Text>
+              {balanceUtils.cropDecimals(balance?.formatted)}
+            </Typography.Text>
+            <Typography.Text as='span'>{balance?.symbol}</Typography.Text>
           </div>
         </div>
       </div>

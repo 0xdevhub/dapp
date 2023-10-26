@@ -6,6 +6,7 @@ import classNames from 'classnames'
 import useNetwork, { ChainConfig } from '@/app/lib/wallet/hooks/useNetwork'
 import { Loading } from '@/app/components/Loading'
 import { ExclamationCircleIcon } from '@heroicons/react/24/solid'
+import { Typography } from '../..'
 
 type NetworkListProps = HTMLProps<HTMLUListElement> & {
   chain: ChainConfig
@@ -32,7 +33,7 @@ export const NetworkList = ({ chain, chains, ...props }: NetworkListProps) => {
             )}
             onClick={() => switchNetwork && switchNetwork(chainItem.id)}
           >
-            <span>{chainItem.name}</span>
+            <Typography.Text as='span'>{chainItem.name}</Typography.Text>
             <span className='flex items-center space-x-px'>
               {chain.id === chainItem.id && (
                 <CheckBadgeIcon width={18} className='text-green-400' />

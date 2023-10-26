@@ -23,7 +23,7 @@ export default function Layout({ children }: LayoutProps) {
   ]
 
   return (
-    <AsideNavigation navLinks={navLinks} className='h-full'>
+    <AsideNavigation navLinks={navLinks} className='h-full w-full'>
       {children}
     </AsideNavigation>
   )

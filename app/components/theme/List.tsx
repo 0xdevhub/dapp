@@ -6,6 +6,7 @@ import { useDarkMode } from 'usehooks-ts'
 import { CheckBadgeIcon } from '@heroicons/react/24/solid'
 import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
+import { Typography } from '..'
 
 export const ThemeList = (props: HTMLProps<HTMLUListElement>) => {
   const t = useI18n()
@@ -36,7 +37,7 @@ export const ThemeList = (props: HTMLProps<HTMLUListElement>) => {
             )}
             onClick={theme.onClick}
           >
-            <span>{theme.label}</span>
+            <Typography.Text as='span'>{theme.label}</Typography.Text>
             {theme.active && (
               <span>
                 <CheckBadgeIcon width={18} className='text-green-400' />

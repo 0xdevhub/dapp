@@ -20,7 +20,7 @@ export const Header = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
     <header {...props} className={classNames(className, 'container')}>
       <div
         className={classNames(
-          'flex items-center justify-between rounded-xl py-4'
+          'flex items-center justify-between rounded-xl py-2'
         )}
       >
         <Logo />

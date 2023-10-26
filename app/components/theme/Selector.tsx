@@ -6,6 +6,7 @@ import classNames from 'classnames'
 import { useDarkMode } from 'usehooks-ts'
 import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
+import { Typography } from '..'
 
 export type ThemeSelectorProps = HTMLProps<HTMLDivElement> & {
   isOpen?: boolean
@@ -23,9 +24,9 @@ export const ThemeSelector = ({ isOpen, ...props }: ThemeSelectorProps) => {
         'flex cursor-pointer justify-between'
       )}
     >
-      <span className='text-sm'>
+      <Typography.Text as='span'>
         {isDarkMode ? t(Locales.DARK) : t(Locales.LIGHT)}
-      </span>
+      </Typography.Text>
       <ChevronDownIcon
         width={18}
         className={classNames('transform', {

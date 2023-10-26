@@ -26,8 +26,8 @@ export default function BaseLayout({ children, params }: BaseLayoutProps) {
             className={classNames(
               'flex min-h-screen flex-col',
               'h-screen overflow-x-hidden text-sm font-medium',
-              'bg-stone-100  text-stone-600/70',
-              'dark:bg-third-100 dark:text-gray-400'
+              'bg-stone-100  text-stone-900/70',
+              'dark:bg-third-100 dark:text-cyan-50'
             )}
           >
             {process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true' ? (
@@ -35,7 +35,7 @@ export default function BaseLayout({ children, params }: BaseLayoutProps) {
             ) : (
               <StyledJsxRegistry>
                 <Header />
-                <main className='flex-1'>{children}</main>
+                <main className='flex-1 lg:container'>{children}</main>
                 <Footer className='py-4' />
               </StyledJsxRegistry>
             )}

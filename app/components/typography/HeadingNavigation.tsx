@@ -19,7 +19,7 @@ export const HeadingNavigation = ({
         className='cursor-pointer'
         onClick={router.back}
       />
-      <span>{children}</span>
+      {children}
     </Heading>
   )
 }

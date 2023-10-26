@@ -4,6 +4,7 @@ import Link, { LinkProps } from 'next/link'
 import classNames from 'classnames'
 import { type HTMLProps, type ReactNode } from 'react'
 import useCurrentPath from '@/app/lib/hooks/useCurrentPath'
+import { Typography } from '../..'
 
 export type AsideNavigationItemProps = HTMLProps<HTMLAnchorElement> &
   LinkProps & {
@@ -29,14 +30,14 @@ export const AsideNavigationItem = ({
         'group',
         'flex flex-col items-center p-2 lg:p-4',
         {
-          'bg-secondary font-bold text-sky-100 hover:opacity-90 dark:bg-lime-400 dark:text-lime-900':
+          'bg-secondary text-sky-100 hover:opacity-90 dark:bg-lime-400 dark:text-lime-900':
             isCurrentPath,
           'hover:bg-stone-200 dark:hover:bg-black/70': !isCurrentPath
         }
       )}
     >
       <span>{icon}</span>
-      <span className='text-sm'>{label}</span>
+      <Typography.Text size='sm'>{label}</Typography.Text>
     </Link>
   )
 }

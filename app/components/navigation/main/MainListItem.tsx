@@ -5,12 +5,13 @@ import classNames from 'classnames'
 import { useI18n } from '@/locales/client'
 import { LocalesKeys } from '@/locales/locales'
 import useCurrentPath from '@/app/lib/hooks/useCurrentPath'
+import { Typography } from '../..'
 
 export const Variant = {
   default: {
     default: '',
     active:
-      'dark:text-cyan-50 font-bold hover:dark:text-cyan-50/75 hover:text-stone-500/75',
+      'dark:text-cyan-50 hover:dark:text-cyan-50/75 hover:text-stone-500/75',
     classes:
       'dark:text-cyan-50 hover:dark:text-cyan-50/75 hover:text-stone-500/75'
   },
@@ -48,7 +49,7 @@ export const MainListItem = ({
           : Variant[variant || 'default'].classes
       ])}
     >
-      {t(label)}
+      <Typography.Text size='base'>{t(label)}</Typography.Text>
     </Link>
   )
 }

@@ -7,7 +7,7 @@ export const MaintenanceMode = () => {
         <Logo />
       </div>
       <div>
-        <Social className='text-black/30' />
+        <Social className='text-black/40' />
       </div>
     </main>
   )
