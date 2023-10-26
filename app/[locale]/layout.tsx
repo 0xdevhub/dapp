@@ -11,15 +11,16 @@ import { LanguageProvider } from '../components/language'
 
 export type BaseLayoutProps = {
   children: ReactNode
+  params: { locale: string }
 }
 
-export default function BaseLayout({ children }: BaseLayoutProps) {
+export default function BaseLayout({ children, params }: BaseLayoutProps) {
   const { isDarkMode } = useDarkMode()
   const isClient = useIsClient()
 
   return (
     <WalletProvider>
-      <LanguageProvider>
+      <LanguageProvider locale={params.locale}>
         <div className={isClient ? (isDarkMode ? 'dark' : 'light') : 'dark'}>
           <div
             className={classNames(
