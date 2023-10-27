@@ -26,7 +26,7 @@ export default function BaseLayout({ children, params }: BaseLayoutProps) {
             className={classNames(
               'flex min-h-screen flex-col',
               'h-screen overflow-x-hidden text-sm font-medium',
-              'bg-stone-100  text-stone-900/70',
+              'bg-stone-100  text-stone-900',
               'dark:bg-third-100 dark:text-cyan-50'
             )}
           >

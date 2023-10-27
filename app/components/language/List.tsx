@@ -25,7 +25,9 @@ export const LanguageList = (props: HTMLProps<HTMLUListElement>) => {
               'flex cursor-pointer items-center justify-between space-x-2 p-2'
             )}
           >
-            <Typography.Text as='span'>{locale}</Typography.Text>
+            <Typography.Text as='span' className='capitalize'>
+              {locale}
+            </Typography.Text>
             {locale === currentLocale && (
               <CheckBadgeIcon width={18} className='text-green-400' />
             )}

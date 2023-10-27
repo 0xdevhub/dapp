@@ -1,6 +1,5 @@
 import { type HTMLProps } from 'react'
 import dynamic from 'next/dynamic'
-import appConfig from '@/app.config'
 import classNames from 'classnames'
 import { Separator, Logo, Loading, Navigation } from '@/app/components'
 import { Locales } from '@/locales/locales'

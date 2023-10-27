@@ -24,7 +24,9 @@ export const LanguageSelector = ({
         'flex cursor-pointer justify-between'
       )}
     >
-      <Typography.Text as='span'>{currentLocale}</Typography.Text>
+      <Typography.Text as='span' className='capitalize'>
+        {currentLocale}
+      </Typography.Text>
       <ChevronDownIcon
         width={18}
         className={classNames('transform', {

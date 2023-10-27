@@ -2,8 +2,8 @@ import { type HTMLProps, createElement } from 'react'
 import classNames from 'classnames'
 
 export const Sizes = {
-  default: 'text-xs',
-  sm: 'text-sm',
+  default: 'text-sm',
+  md: 'text-md',
   base: 'text-base'
 } as const
 
