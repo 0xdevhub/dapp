@@ -1,5 +1,7 @@
 # 0xdevhub
 
+[![Run Tests](https://github.com/0xdevhub/dapp/actions/workflows/tests.yml/badge.svg)](https://github.com/0xdevhub/dapp/actions/workflows/tests.yml)
+
 ## Getting Started
 
 First, run the development server:
