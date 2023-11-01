@@ -36,8 +36,10 @@ export const AsideNavigationItem = ({
         }
       )}
     >
-      <span>{icon}</span>
-      <Typography.Text size='sm'>{label}</Typography.Text>
+      {icon}
+      <Typography.Text size='md' className='hidden lg:block'>
+        {label}
+      </Typography.Text>
     </Link>
   )
 }

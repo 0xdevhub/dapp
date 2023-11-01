@@ -17,7 +17,7 @@ export default function Layout({ children }: LayoutProps) {
   const navLinks: AsideNavigationItemProps[] = [
     {
       href: '/apps/',
-      icon: <PuzzlePieceIcon width={18} />,
+      icon: <PuzzlePieceIcon width={32} className='w-6 lg:w-4' />,
       label: t(Locales.APPS)
     }
   ]
