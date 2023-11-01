@@ -8,6 +8,9 @@ dependencies:
   '@heroicons/react':
     specifier: latest
     version: 2.0.18(react@18.2.0)
+  '@types/jest':
+    specifier: ^29.5.7
+    version: 29.5.7
   classnames:
     specifier: latest
     version: 2.3.2
@@ -1385,6 +1388,13 @@ packages:
     resolution: {integrity: sha512-1nESsePMBlf0RPRffLZi5ujYh7IH1BWL4y9pr+Bn3cJBdxz+RTP8bUFljLz9HvzhhOSWKdyBZ4DIivdL6rvgZg==}
     dependencies:
       '@types/istanbul-lib-report': 3.0.2
+    dev: false
+
+  /@types/jest@29.5.7:
+    resolution: {integrity: sha512-HLyetab6KVPSiF+7pFcUyMeLsx25LDNDemw9mGsJBkai/oouwrjTycocSDYopMEwFhN2Y4s9oPyOCZNofgSt2g==}
+    dependencies:
+      expect: 29.7.0
+      pretty-format: 29.7.0
     dev: false
 
   /@types/jsdom@20.0.1:

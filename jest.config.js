@@ -11,7 +11,8 @@ const customJestConfig = {
     '^@/app/utils/(.*)$': '<rootDir>/app/utils/$1'
   },
   modulePathIgnorePatterns: ['mocks'],
-  testEnvironment: 'jest-environment-jsdom'
+  testEnvironment: 'jest-environment-jsdom',
+  verbose: true
 }
 
 module.exports = createJestConfig(customJestConfig)
