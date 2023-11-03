@@ -1,5 +1,5 @@
 import { Children, type HTMLProps, type SVGProps } from 'react'
-import { Discord, Twitter, Github } from './icons'
+import { Discord, X, Github } from './icons'
 import classNames from 'classnames'
 import { socialMedia } from '@/app.config'
 import Link from 'next/link'
@@ -29,7 +29,7 @@ export const SocialMedia = ({
             {
               {
                 discord: <Discord {...iconProps} />,
-                twitter: <Twitter {...iconProps} />,
+                x: <X {...iconProps} />,
                 github: <Github {...iconProps} />
               }[icon]
             }

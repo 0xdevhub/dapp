@@ -4,7 +4,7 @@ import Link, { LinkProps } from 'next/link'
 import classNames from 'classnames'
 import { type HTMLProps, type ReactNode } from 'react'
 import useCurrentPath from '@/app/lib/hooks/useCurrentPath'
-import { Typography } from '../..'
+import { Text } from '@/app/components/typography'
 
 export type AsideNavigationItemProps = HTMLProps<HTMLAnchorElement> &
   LinkProps & {
@@ -37,9 +37,9 @@ export const AsideNavigationItem = ({
       )}
     >
       {icon}
-      <Typography.Text size='md' className='hidden lg:block'>
+      <Text size='md' className='hidden lg:block'>
         {label}
-      </Typography.Text>
+      </Text>
     </Link>
   )
 }

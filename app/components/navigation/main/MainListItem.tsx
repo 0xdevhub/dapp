@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import { useI18n } from '@/locales/client'
 import { LocalesKeys } from '@/locales/locales'
 import useCurrentPath from '@/app/lib/hooks/useCurrentPath'
-import { Typography } from '../..'
+import { Text } from '@/app/components/typography'
 
 export const Variant = {
   default: {
@@ -49,7 +49,7 @@ export const MainListItem = ({
           : Variant[variant || 'default'].classes
       ])}
     >
-      <Typography.Text size='base'>{t(label)}</Typography.Text>
+      <Text size='base'>{t(label)}</Text>
     </Link>
   )
 }

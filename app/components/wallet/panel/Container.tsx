@@ -6,13 +6,13 @@ import { useWallet, useBalance } from '@/app/lib/wallet/hooks'
 import addressUtils from '@/app/lib/utils/address'
 import useNetwork from '@/app/lib/wallet/hooks/useNetwork'
 import balanceUtils from '@/app/lib/utils/balance'
-import { Square2StackIcon } from '@heroicons/react/24/outline'
-import { useCopyToClipboard } from 'usehooks-ts'
-import { Typography } from '@/app/components'
-import { Network } from '../network/Network'
-import { ButtonDisconnect } from '../button'
 import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
+import { useCopyToClipboard } from 'usehooks-ts'
+import { Square2StackIcon } from '@heroicons/react/24/outline'
+import { Network } from '../network/Network'
+import { ButtonDisconnect } from '../button'
+import { Heading, Text } from '@/app/components/typography'
 
 export const PanelContainer = ({
   className,
@@ -34,11 +34,9 @@ export const PanelContainer = ({
     >
       <div className='flex flex-col space-y-4'>
         <div className='flex flex-col space-y-1'>
-          <Typography.Heading as='h4'>{t(Locales.WALLET)}</Typography.Heading>
+          <Heading as='h4'>{t(Locales.WALLET)}</Heading>
           <div className='flex justify-between space-x-4'>
-            <Typography.Text as='span'>
-              {addressUtils.toEllipsis(address!, 8, 6)}
-            </Typography.Text>
+            <Text as='span'>{addressUtils.toEllipsis(address!, 8, 6)}</Text>
             <Square2StackIcon
               onClick={() => copy(address!)}
               width={18}
@@ -47,16 +45,14 @@ export const PanelContainer = ({
           </div>
         </div>
         <div className='flex flex-col space-y-1'>
-          <Typography.Heading as='h4'>{t(Locales.NETWORK)}</Typography.Heading>
+          <Heading as='h4'>{t(Locales.NETWORK)}</Heading>
           <Network chain={chain!} chains={chains} />
         </div>
         <div className='flex flex-col space-y-1'>
-          <Typography.Heading as='h4'>{t(Locales.BALANCE)}</Typography.Heading>
+          <Heading as='h4'>{t(Locales.BALANCE)}</Heading>
           <div className='flex space-x-2'>
-            <Typography.Text>
-              {balanceUtils.cropDecimals(balance?.formatted)}
-            </Typography.Text>
-            <Typography.Text as='span'>{balance?.symbol}</Typography.Text>
+            <Text>{balanceUtils.cropDecimals(balance?.formatted)}</Text>
+            <Text as='span'>{balance?.symbol}</Text>
           </div>
         </div>
       </div>

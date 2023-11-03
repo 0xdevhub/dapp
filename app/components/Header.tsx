@@ -1,8 +1,9 @@
 import { type HTMLProps } from 'react'
 import dynamic from 'next/dynamic'
 import classNames from 'classnames'
-import { Separator, Logo, Loading, Navigation } from '@/app/components'
+import { Separator, Logo, Loading } from '@/app/components'
 import { Locales } from '@/locales/locales'
+import { MainNav } from '@/app/components/navigation/main/Main'
 
 const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {
   ssr: false,
@@ -24,7 +25,7 @@ export const Header = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
       >
         <Logo />
         <div className='flex items-center space-x-4'>
-          <Navigation.MainNavigation
+          <MainNav
             navLinks={[
               {
                 label: Locales.APPS,

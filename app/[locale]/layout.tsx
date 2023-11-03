@@ -3,11 +3,11 @@
 import { type ReactNode } from 'react'
 import { useDarkMode, useIsClient } from 'usehooks-ts'
 import classNames from 'classnames'
-import { MaintenanceMode } from './components/MaintenanceMode'
 import StyledJsxRegistry from '@/app/registry'
 import { Header, Footer } from '@/app/components'
-import { WalletProvider } from '../components/wallet/Provider'
-import { LanguageProvider } from '../components/language'
+import { MaintenanceMode } from '@/app/[locale]/components/MaintenanceMode'
+import { Provider as WalletProvider } from '@/app/components/wallet'
+import { Provider as LanguageProvider } from '@/app/components/language'
 
 export type BaseLayoutProps = {
   children: ReactNode

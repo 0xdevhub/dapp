@@ -1,2 +1,2 @@
-export { default as AsideNavigation } from './aside'
-export { default as MainNavigation } from './main'
+export * as Aside from './aside'
+export * as Main from './main'

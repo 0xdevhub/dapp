@@ -1,3 +1,4 @@
+'use client'
 import { type HTMLProps, createElement } from 'react'
 import classNames from 'classnames'
 

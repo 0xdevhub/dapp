@@ -1,7 +1,2 @@
 export { default as AsideNavigationItem } from './AsideNavigationItem'
-
-import { AsideNavigation } from './AsideNavigation'
-
-export { AsideNavigation }
-
-export default AsideNavigation
+export { default as AsideNavigation } from './AsideNavigation'

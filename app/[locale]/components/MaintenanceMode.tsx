@@ -1,4 +1,5 @@
-import { Logo, Social } from '@/app/components'
+import { Logo } from '@/app/components'
+import { SocialMedia } from '@/app/components/social'
 
 export const MaintenanceMode = () => {
   return (
@@ -7,7 +8,7 @@ export const MaintenanceMode = () => {
         <Logo />
       </div>
       <div>
-        <Social className='text-black/40' />
+        <SocialMedia className='text-black/40' />
       </div>
     </main>
   )

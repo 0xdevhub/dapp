@@ -4,7 +4,7 @@ import { type HTMLProps } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import classNames from 'classnames'
 import { useCurrentLocale } from '@/locales/client'
-import { Typography } from '..'
+import { Text } from '@/app/components/typography'
 
 export type LanguageSelectorProps = HTMLProps<HTMLDivElement> & {
   isOpen?: boolean
@@ -24,9 +24,9 @@ export const LanguageSelector = ({
         'flex cursor-pointer justify-between'
       )}
     >
-      <Typography.Text as='span' className='capitalize'>
+      <Text as='span' className='capitalize'>
         {currentLocale}
-      </Typography.Text>
+      </Text>
       <ChevronDownIcon
         width={18}
         className={classNames('transform', {

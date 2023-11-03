@@ -3,9 +3,11 @@
 import { type HTMLProps } from 'react'
 import classNames from 'classnames'
 import { Heading } from '@/app/components/typography/Heading'
-import { Language, Theme } from '@/app/components'
+
 import { useI18n } from '@/locales/client'
 import { Locales } from '@/locales/locales'
+import { Theme } from '@/app/components/theme'
+import { Language } from '@/app/components/language'
 
 export const SettingsContainer = (props: HTMLProps<HTMLDivElement>) => {
   const t = useI18n()

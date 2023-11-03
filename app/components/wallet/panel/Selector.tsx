@@ -2,7 +2,7 @@
 
 import { type HTMLProps } from 'react'
 import { useWallet } from '@/app/lib/wallet/hooks'
-import { Avatar } from '../avatar/Avatar'
+import { Avatar } from '../Avatar'
 import classNames from 'classnames'
 
 export type PanelSelectorProps = HTMLProps<HTMLDivElement> & {

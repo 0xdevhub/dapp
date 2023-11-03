@@ -3,7 +3,7 @@
 import { type ReactNode, useRef } from 'react'
 import classNames from 'classnames'
 import { useOnClickOutside, useToggle } from 'usehooks-ts'
-import { Card } from '@/app/components/card/Card'
+import { Card } from '@/app/components/Card'
 
 export type ToggleContentOptions = {
   onClick: () => void

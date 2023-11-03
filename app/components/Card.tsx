@@ -12,8 +12,8 @@ export const Card = ({
   bgOpacity = 0.6,
   as: Component = 'div',
   ...props
-}: CardProps) => {
-  return createElement(
+}: CardProps) =>
+  createElement(
     Component,
     {
       ...props,
@@ -28,6 +28,5 @@ export const Card = ({
     },
     children
   )
-}
 
 export default Card

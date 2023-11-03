@@ -4,7 +4,7 @@ import { useEffect, type HTMLProps, useCallback } from 'react'
 import classNames from 'classnames'
 import { ArrowLeftIcon, Bars3BottomLeftIcon } from '@heroicons/react/24/solid'
 import { useToggle, useMediaQuery } from 'usehooks-ts'
-import { Card } from '@/app/components/card/Card'
+import { Card } from '@/app/components/Card'
 import { MainList } from './MainList'
 import { MainListItemProps } from './MainListItem'
 
@@ -12,7 +12,7 @@ type MainProps = HTMLProps<HTMLElement> & {
   navLinks: MainListItemProps[]
 }
 
-export const Main = ({ navLinks, ...props }: MainProps) => {
+export const MainNav = ({ navLinks, ...props }: MainProps) => {
   const [isOpened, toggle] = useToggle()
   const matches = useMediaQuery(`(min-width: 1024px`)
 
@@ -77,4 +77,4 @@ export const Main = ({ navLinks, ...props }: MainProps) => {
   )
 }
 
-export default Main
+export default MainNav

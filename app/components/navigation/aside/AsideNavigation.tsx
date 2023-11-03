@@ -1,5 +1,5 @@
 import { Children, type HTMLProps, type ReactNode } from 'react'
-import { Card } from '@/app/components/card/Card'
+import { Card } from '@/app/components/Card'
 import classNames from 'classnames'
 
 import {

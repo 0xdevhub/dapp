@@ -1,15 +1,8 @@
-import { Locales } from './locales/locales'
-
 export const socialMedia = [
   {
-    label: 'Twitter',
-    href: 'https://twitter.com/0xdevhub',
-    icon: 'twitter'
-  },
-  {
-    label: 'Discord',
-    href: 'https://discord.gg/skvN5fnt5M',
-    icon: 'discord'
+    label: 'X',
+    href: 'https://x.com/gervickasjs',
+    icon: 'x'
   },
   {
     label: 'Github',
@@ -21,7 +14,7 @@ export const socialMedia = [
 const appConfig = {
   name: '0xdevhub',
   meta: {
-    description: 'on-chain & off-chain dev hub'
+    description: 'gervickas.js blockchain app hub'
   },
   socialMedia
 }
