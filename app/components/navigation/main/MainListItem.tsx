@@ -49,7 +49,7 @@ export const MainListItem = ({
           : Variant[variant || 'default'].classes
       ])}
     >
-      <Text size='base'>{t(label)}</Text>
+      {t(label)}
     </Link>
   )
 }

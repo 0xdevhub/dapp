@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const i118n = await getI18n()
 
   return {
-    title: `${appConfig.name} - ${i118n(Locales.APPS)}`,
+    title: `${appConfig.name} - ${i118n(Locales.APPS)} demo`,
     description: appConfig.meta.description
   }
 }

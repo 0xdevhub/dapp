@@ -5,7 +5,6 @@ import { useDarkMode, useIsClient } from 'usehooks-ts'
 import classNames from 'classnames'
 import StyledJsxRegistry from '@/app/registry'
 import { Header, Footer } from '@/app/components'
-import { MaintenanceMode } from '@/app/[locale]/components/MaintenanceMode'
 import { Provider as WalletProvider } from '@/app/components/wallet'
 import { Provider as LanguageProvider } from '@/app/components/language'
 
@@ -30,15 +29,11 @@ export default function BaseLayout({ children, params }: BaseLayoutProps) {
               'dark:bg-third-100 dark:text-cyan-50'
             )}
           >
-            {process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true' ? (
-              <MaintenanceMode />
-            ) : (
-              <StyledJsxRegistry>
-                <Header />
-                <main className='flex-1 lg:container'>{children}</main>
-                <Footer className='py-4' />
-              </StyledJsxRegistry>
-            )}
+            <StyledJsxRegistry>
+              <Header />
+              <main className='flex-1 py-6 container'>{children}</main>
+              <Footer className='py-4' />
+            </StyledJsxRegistry>
           </div>
         </div>
       </LanguageProvider>
