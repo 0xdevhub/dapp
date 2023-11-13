@@ -2,7 +2,7 @@ import { Children } from 'react'
 import ListItem from './ListItem'
 
 export const List = () => {
-  const pins = Array.from({ length: 12 }).fill('')
+  const pins = Array.from({ length: 1 }).fill('')
 
   return (
     <ul className='grid grid-cols-4 gap-6'>
