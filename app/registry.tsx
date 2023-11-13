@@ -8,7 +8,7 @@ export type StyledJsxRegistryProps = {
   children: ReactNode
 }
 
-export const StyledJsxRegistry = ({ children }: StyledJsxRegistryProps) => {
+export const Registry = ({ children }: StyledJsxRegistryProps) => {
   const [jsxStyleRegistry] = useState(() => createStyleRegistry())
 
   useServerInsertedHTML(() => {
@@ -20,4 +20,4 @@ export const StyledJsxRegistry = ({ children }: StyledJsxRegistryProps) => {
   return <StyleRegistry registry={jsxStyleRegistry}>{children}</StyleRegistry>
 }
 
-export default StyledJsxRegistry
+export default Registry
