@@ -50,7 +50,7 @@ export const AccountContainer = ({
         <div className='flex flex-col space-y-1'>
           <Heading as='h4'>{t('WALLET.BALANCE')}</Heading>
           <div className='flex space-x-2'>
-            <Text>{balanceUtils.cropDecimals(balance?.formatted)}</Text>
+            <Text>{balanceUtils.formatBalance(balance?.formatted, 2, 2)}</Text>
             <Text as='span'>{balance?.symbol}</Text>
           </div>
         </div>
