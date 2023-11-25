@@ -15,6 +15,11 @@ export const AVALANCHE: Chain = merge(avalancheFuji, {
       address: '0x53E13Dd84Dc418095c31655573504F9A588F9159',
       blockCreated: 0
     }
+    // todo: add bridge contracts
+    // crosschainCcipBrige: {
+    //   address: '0x',
+    //   blockCreated: 0
+    // }
   }
 })
 
