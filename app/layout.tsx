@@ -9,9 +9,15 @@ const font = Rubik({
   preload: true
 })
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function Layout({
+  children,
+  params: { locale }
+}: {
+  children: ReactNode
+  params: { locale: string }
+}) {
   return (
-    <html lang='en'>
+    <html lang={locale}>
       <body className={font.className}>{children}</body>
     </html>
   )

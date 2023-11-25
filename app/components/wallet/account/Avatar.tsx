@@ -3,13 +3,18 @@ import { ZeroAddress } from 'ethers'
 import classNames from 'classnames'
 import Jazzicon, { jsNumberForAddress } from 'react-jazzicon'
 
-export type AvatarProps = HTMLProps<HTMLDivElement> & {
+export type AccountAvatarProps = HTMLProps<HTMLDivElement> & {
   address?: string
 }
 
 const SIZE = 52
 
-export const Avatar = ({ src, address, className, ...props }: AvatarProps) => {
+export const AccountAvatar = ({
+  src,
+  address,
+  className,
+  ...props
+}: AccountAvatarProps) => {
   return (
     <div
       {...props}
@@ -26,4 +31,4 @@ export const Avatar = ({ src, address, className, ...props }: AvatarProps) => {
   )
 }
 
-export default Avatar
+export default AccountAvatar

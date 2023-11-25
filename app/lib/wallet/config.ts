@@ -1,13 +1,20 @@
 import { createConfig, configureChains } from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
-import { polygonMumbai } from 'wagmi/chains'
-import { alchemyProvider } from 'wagmi/providers/alchemy'
+
+import { allowedChains, allowedChainsConfig } from '@/app/config/network'
+import { publicProvider } from 'wagmi/providers/public'
+import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [polygonMumbai],
+  allowedChains,
   [
-    alchemyProvider({
-      apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY!
+    publicProvider(),
+    jsonRpcProvider({
+      rpc: (chain) => {
+        const chainConfig = allowedChainsConfig[chain.id]
+        if (!chainConfig) throw new Error(`ChainId ${chain.id} not supported`)
+        return chainConfig
+      }
     })
   ]
 )

@@ -7,14 +7,13 @@ import addressUtils from '@/app/lib/utils/address'
 import useNetwork from '@/app/lib/wallet/hooks/useNetwork'
 import balanceUtils from '@/app/lib/utils/balance'
 import { useI18n } from '@/locales/client'
-import { Locales } from '@/locales/locales'
 import { useCopyToClipboard } from 'usehooks-ts'
 import { Square2StackIcon } from '@heroicons/react/24/outline'
 import { Network } from '../network/Network'
-import { ButtonDisconnect } from '../button'
+import { AccountDisconnect } from './Disconnect'
 import { Heading, Text } from '@/app/components/typography'
 
-export const PanelContainer = ({
+export const AccountContainer = ({
   className,
   ...props
 }: HTMLProps<HTMLDivElement>) => {
@@ -34,7 +33,7 @@ export const PanelContainer = ({
     >
       <div className='flex flex-col space-y-4'>
         <div className='flex flex-col space-y-1'>
-          <Heading as='h4'>{t(Locales.WALLET)}</Heading>
+          <Heading as='h4'>{t('WALLET.TITLE')}</Heading>
           <div className='flex justify-between space-x-4'>
             <Text as='span'>{addressUtils.toEllipsis(address!, 8, 6)}</Text>
             <Square2StackIcon
@@ -45,11 +44,11 @@ export const PanelContainer = ({
           </div>
         </div>
         <div className='flex flex-col space-y-1'>
-          <Heading as='h4'>{t(Locales.NETWORK)}</Heading>
+          <Heading as='h4'>{t('NETWORK.TITLE')}</Heading>
           <Network chain={chain!} chains={chains} />
         </div>
         <div className='flex flex-col space-y-1'>
-          <Heading as='h4'>{t(Locales.BALANCE)}</Heading>
+          <Heading as='h4'>{t('WALLET.BALANCE')}</Heading>
           <div className='flex space-x-2'>
             <Text>{balanceUtils.cropDecimals(balance?.formatted)}</Text>
             <Text as='span'>{balance?.symbol}</Text>
@@ -57,10 +56,10 @@ export const PanelContainer = ({
         </div>
       </div>
       <div>
-        <ButtonDisconnect />
+        <AccountDisconnect />
       </div>
     </section>
   )
 }
 
-export default PanelContainer
+export default AccountContainer

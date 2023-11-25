@@ -5,7 +5,6 @@ import classNames from 'classnames'
 import { useDarkMode } from 'usehooks-ts'
 import { CheckBadgeIcon } from '@heroicons/react/24/solid'
 import { useI18n } from '@/locales/client'
-import { Locales } from '@/locales/locales'
 import { Text } from '@/app/components/typography'
 
 export const ThemeList = (props: HTMLProps<HTMLUListElement>) => {
@@ -14,12 +13,12 @@ export const ThemeList = (props: HTMLProps<HTMLUListElement>) => {
 
   const themes = [
     {
-      label: t(Locales.LIGHT),
+      label: t('THEME.LIGHT'),
       onClick: disable,
       active: !isDarkMode
     },
     {
-      label: t(Locales.DARK),
+      label: t('THEME.DARK'),
       onClick: enable,
       active: isDarkMode
     }

@@ -11,7 +11,6 @@ import { NetworkThumbnail } from './Thumbnail'
 import classNames from 'classnames'
 import { ChainConfig } from '@/app/lib/wallet/hooks/useNetwork'
 import { useI18n } from '@/locales/client'
-import { Locales } from '@/locales/locales'
 import { Text } from '@/app/components/typography'
 
 type NetworkSelectorProps = HTMLProps<HTMLDivElement> & {
@@ -43,7 +42,7 @@ export const NetworkSelector = ({
           <NetworkThumbnail src={`/assets/images/chains/${chain.id}.svg`} />
         )}
         <Text as='span'>
-          {chain.unsupported ? t(Locales.NOT_ALLOWED) : chain.name}
+          {chain.unsupported ? t('FEEDBACK.NOT_ALLOWED') : chain.name}
         </Text>
       </div>
       <ChevronDownIcon

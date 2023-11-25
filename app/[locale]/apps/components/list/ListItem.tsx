@@ -9,6 +9,9 @@ export const ListItem = () => {
         className='flex cursor-pointer flex-col space-y-4 rounded-md p-4'
         as='section'
       >
+        {/**
+         * todo: add apps
+         */}
         <Heading as='h3'>CCIP crosschain NFT</Heading>
         <Text>Lock-and-Mint or Burn-and-unlock</Text>
       </Card>

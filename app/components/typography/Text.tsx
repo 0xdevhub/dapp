@@ -1,48 +1,62 @@
-'use client'
-import { type HTMLProps, createElement } from 'react'
+import {
+  type HTMLProps,
+  createElement,
+  Children,
+  cloneElement,
+  ReactNode
+} from 'react'
 import classNames from 'classnames'
 
 export const Sizes = {
   default: 'text-sm',
-  md: 'text-md',
-  base: 'text-base'
+  base: 'text-base',
+  lg: 'text-lg',
+  xl: 'text-xl'
 } as const
 
 export const Variant = {
   p: {
-    classes: 'font-normal'
+    classes: ['font-normal', Sizes.base].concat(' ')
   },
   span: {
-    classes: 'font-light'
+    classes: ['font-light', Sizes.default].concat(' ')
   }
 } as const
 
 export type TextProps = Omit<HTMLProps<HTMLElement>, 'size'> & {
-  as?: keyof typeof Variant
   size?: keyof typeof Sizes
   variant?: keyof typeof Variant
+  as?: keyof typeof Variant
+  children: ReactNode
 }
 
 export const Text = ({
-  as: Component = 'p',
+  as = 'p',
   variant = 'p',
   size = 'default',
   children,
   className,
   ...props
 }: TextProps) => {
-  return createElement(
-    Component,
-    {
-      ...props,
-      className: classNames(
-        className,
-        Variant[Component ?? variant].classes,
-        Sizes[size]
+  return !as
+    ? cloneElement(Children.only(<>{children}</>), {
+        ...props,
+        className: classNames(
+          className,
+          size ? Sizes[size] : Variant[variant].classes
+        )
+      })
+    : createElement(
+        as,
+        {
+          ...props,
+          className: classNames(
+            className,
+            size ? Sizes[size] : Variant[as || variant].classes
+          )
+        },
+        children
       )
-    },
-    children
-  )
 }
 
 export default Text

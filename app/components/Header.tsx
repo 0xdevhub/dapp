@@ -2,7 +2,6 @@ import { type HTMLProps } from 'react'
 import dynamic from 'next/dynamic'
 import classNames from 'classnames'
 import { Separator, Logo, Loading } from '@/app/components'
-import { Locales } from '@/locales/locales'
 import { MainNav } from '@/app/components/navigation/main/Main'
 
 const Wallet = dynamic(() => import('@/app/components/wallet/Wallet'), {
@@ -28,7 +27,7 @@ export const Header = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
           <MainNav
             navLinks={[
               {
-                label: Locales.APPS,
+                label: 'PAGES.APPS.TITLE',
                 href: '/apps/',
                 variant: 'secondary'
               }

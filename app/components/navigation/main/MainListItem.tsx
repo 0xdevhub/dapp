@@ -3,9 +3,8 @@
 import Link, { LinkProps } from 'next/link'
 import classNames from 'classnames'
 import { useI18n } from '@/locales/client'
-import { LocalesKeys } from '@/locales/locales'
 import useCurrentPath from '@/app/lib/hooks/useCurrentPath'
-import { Text } from '@/app/components/typography'
+import { Locale } from '@/locales/config'
 
 export const Variant = {
   default: {
@@ -25,7 +24,7 @@ export const Variant = {
 } as const
 
 export type MainListItemProps = LinkProps & {
-  label: keyof LocalesKeys
+  label: string
   variant?: keyof typeof Variant
 }
 
@@ -49,7 +48,7 @@ export const MainListItem = ({
           : Variant[variant || 'default'].classes
       ])}
     >
-      {t(label)}
+      {t(label as any, {})}
     </Link>
   )
 }

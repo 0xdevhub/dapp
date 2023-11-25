@@ -16,29 +16,33 @@ export const Variant = {
   },
   h5: {
     classes: 'text-base font-normal'
+  },
+  h6: {
+    classes: 'text-sm font-normal'
   }
 } as const
 
 export type HeadingProps = HTMLProps<HTMLHeadingElement> & {
-  as?: keyof typeof Variant
   variant?: keyof typeof Variant
+  as?: keyof typeof Variant
 }
 
 export const Heading = ({
-  as: Component = 'h1',
-  variant,
+  as = 'h1',
+  variant = 'h1',
   children,
   className,
   ...props
-}: HeadingProps) => {
-  return createElement(
-    Component,
-    {
-      ...props,
-      className: classNames(className, Variant[variant ?? Component].classes)
-    },
-    children
-  )
-}
+}: HeadingProps) =>
+  !as
+    ? children
+    : createElement(
+        as,
+        {
+          ...props,
+          className: classNames(className, Variant[as || variant].classes)
+        },
+        children
+      )
 
 export default Heading

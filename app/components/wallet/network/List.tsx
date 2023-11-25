@@ -7,6 +7,7 @@ import useNetwork, { ChainConfig } from '@/app/lib/wallet/hooks/useNetwork'
 import { Loading } from '@/app/components/Loading'
 import { ExclamationCircleIcon } from '@heroicons/react/24/solid'
 import { Text } from '@/app/components/typography'
+import { useI18n } from '@/locales/client'
 
 type NetworkListProps = HTMLProps<HTMLUListElement> & {
   chain: ChainConfig
@@ -15,6 +16,7 @@ type NetworkListProps = HTMLProps<HTMLUListElement> & {
 
 export const NetworkList = ({ chain, chains, ...props }: NetworkListProps) => {
   const { switchNetwork, isLoading } = useNetwork()
+  const t = useI18n()
 
   return (
     <ul {...props}>
@@ -42,7 +44,7 @@ export const NetworkList = ({ chain, chains, ...props }: NetworkListProps) => {
                 <ExclamationCircleIcon
                   width={18}
                   className='text-yellow-400'
-                  title='testnet'
+                  title={t('NETWORK.TESTNET')}
                 />
               )}
             </span>
