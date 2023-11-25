@@ -1,8 +1,8 @@
 import { avalancheFuji } from 'wagmi/chains'
-import { assign } from 'lodash'
+import { merge } from 'lodash'
 import { getChainRPCById } from '../lib/utils/network'
 
-export const AVALANCHE = assign(avalancheFuji, {
+export const AVALANCHE = merge(avalancheFuji, {
   rpcUrls: {
     protocol: getChainRPCById(avalancheFuji.id)
   }
