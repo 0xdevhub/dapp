@@ -11,9 +11,13 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
     publicProvider(),
     jsonRpcProvider({
       rpc: (chain) => {
-        const chainConfig = allowedChainsConfig[chain.id]
+        const chainConfig = allowedChainsConfig[chain.id].rpcUrls.protocol
         if (!chainConfig) throw new Error(`ChainId ${chain.id} not supported`)
-        return chainConfig
+
+        return {
+          http: chainConfig.http[0],
+          webSocket: chainConfig.webSocket[0]
+        }
       }
     })
   ]
