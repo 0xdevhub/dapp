@@ -16,7 +16,7 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
 
         return {
           http: chainConfig.http[0],
-          webSocket: chainConfig.webSocket[0]
+          webSocket: chainConfig?.webSocket?.[0]
         }
       }
     })
