@@ -4,8 +4,8 @@ export type ChainRpcUrls = {
 }
 
 export const getChainRPCById = (network: number) => {
-  const HTTP_RPC = `NEXT_PUBLIC_${network}_HTTP_RPC`
-  const WS_RPC = `NEXT_PUBLIC_${network}_WS_RPC`
+  const HTTP_RPC = `NEXT_PUBLIC_NETWORK_${network}_HTTP_RPC`
+  const WS_RPC = `NEXT_PUBLIC_NETWORK_${network}_WS_RPC`
 
   const config: ChainRpcUrls = {
     http: process.env[HTTP_RPC]!
