@@ -1,45 +1,51 @@
-import { ApolloClient, InMemoryCache, ApolloLink } from '@apollo/client'
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloLink,
+  Operation
+} from '@apollo/client'
 import { RetryLink } from '@apollo/client/link/retry'
-import { HttpLink } from '@apollo/client'
-import { allowedChainsConfig } from '@/app/config/config'
+import { HttpLink, split } from '@apollo/client'
+import { allowedChains, allowedChainsConfig } from '@/app/config/config'
+import { reduce } from 'lodash'
+import { Chain } from '@/app/config/types'
 
-///todo
+const clients = reduce(
+  allowedChains,
+  (acc, chain: Chain) => {
+    const API_URL = allowedChainsConfig[chain.id].blockExplorers.thegraph.url
+    acc[chain.id] = new HttpLink({ uri: API_URL })
+    return acc
+  },
 
-// const defaultClient: keyof typeof clients = "heroku";
+  {} as { [key: number]: HttpLink }
+)
 
-// const clients = {
-//   "heroku": new HttpLink({ uri: "https://endpointURLForHeroku" }),
-//   "lists": new HttpLink({uri: "https://endpointURLForLists" })
-// }
+// Default client based on environment variable
+const defaultClient: keyof typeof clients =
+  +process.env.NEXT_PUBLIC_NETWORK_DEFAULT_ID!
 
-// const isRequestedClient = (clientName: string) => (op: Operation) =>
-//   op.getContext().clientName === clientName;
+// Function to create a link for a specific client
+const createClientLink = (clientName: number): ApolloLink => {
+  return new ApolloLink((operation, forward) =>
+    clients[clientName].request(operation, forward)
+  )
+}
 
-// const ClientResolverLink = Object.entries(clients)
-//   .map(([clientName, Link]) => ([clientName, ApolloLink.from([Link])] as const))
-//   .reduce(([_, PreviousLink], [clientName, NextLink]) => {
+// Create a map of clientName to ApolloLink
+const clientLinks = Object.keys(clients).reduce(
+  (acc, clientName) => ({
+    ...acc,
+    [clientName]: createClientLink(parseInt(clientName))
+  }),
+  {} as Record<keyof typeof clients, ApolloLink>
+)
 
-//     const ChainedLink = ApolloLink.split(
-//       isRequestedClient(clientName),
-//       NextLink,
-//       PreviousLink
-//     )
-
-//     return [clientName, ChainedLink];
-//   }, ["_default", clients[defaultClient]])[1]
-
-// declare module "@apollo/client" {
-//   interface DefaultContext {
-//     clientName: keyof typeof clients
-//   }
-// }
-
-const API_URL = allowedChainsConfig[43_113].blockExplorers.thegraph.url
-
-console.log(API_URL, allowedChainsConfig)
-
-const httpLink = new HttpLink({
-  uri: API_URL
+// Create a link that resolves the appropriate client based on the operation context
+const httpLink = new ApolloLink((operation, forward) => {
+  const clientName =
+    operation.getContext().clientName || defaultClient.toString()
+  return clientLinks[clientName].request(operation, forward)
 })
 
 const retryLink = new RetryLink({
