@@ -2,7 +2,7 @@ import { Chain, avalancheFuji } from 'wagmi/chains'
 import { merge, reduce } from 'lodash'
 import { getChainRPCById } from '../lib/utils/network'
 
-export const AVALANCHE: Chain = merge(avalancheFuji, {
+export const avalancheFujiChain: Chain = merge(avalancheFuji, {
   rpcUrls: {
     protocol: getChainRPCById(avalancheFuji.id)
   },
@@ -23,7 +23,7 @@ export const AVALANCHE: Chain = merge(avalancheFuji, {
   }
 })
 
-export const allowedChains = [AVALANCHE]
+export const allowedChains = [avalancheFujiChain]
 
 export const allowedChainsConfig = reduce(
   allowedChains,
