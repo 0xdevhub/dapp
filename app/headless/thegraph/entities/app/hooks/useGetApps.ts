@@ -6,8 +6,16 @@ export type UseGetAppsResponse = {
   hubAppAddeds: IHubAppAddeds[]
 }
 
-export function useGetApps() {
-  const { loading, data } = useQuery<UseGetAppsResponse>(HUB_APP_ADDEDS_QUERY)
+type UseGetAppsProps = {
+  chainId: number
+}
+
+export function useGetApps({ chainId }: UseGetAppsProps) {
+  const { loading, data } = useQuery<UseGetAppsResponse>(HUB_APP_ADDEDS_QUERY, {
+    context: {
+      chainId
+    }
+  })
 
   return {
     apps: data?.hubAppAddeds || [],

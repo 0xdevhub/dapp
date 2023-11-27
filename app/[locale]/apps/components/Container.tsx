@@ -5,10 +5,14 @@ import { Heading } from '@/app/components/typography'
 import { List } from './list'
 import useGetApps from '@/app/headless/thegraph/entities/app/hooks/useGetApps'
 import { Loading } from '@/app/components'
+import { useNetwork } from '@/app/lib/wallet/hooks/useNetwork'
 
 export const PageContainer = () => {
   const t = useI18n()
-  const { apps, loading } = useGetApps()
+  const { config } = useNetwork()
+  const { apps, loading } = useGetApps({
+    chainId: config.id
+  })
 
   return (
     <div>
