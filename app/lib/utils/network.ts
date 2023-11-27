@@ -13,3 +13,9 @@ export const getChainRPCById = (network: number) => {
 
   return config
 }
+
+export const getChainSubgraphById = (network: number) => {
+  const SUBGRAPH = `NEXT_PUBLIC_NETWORK_${network}_SUBGRAPH`
+
+  return process.env[SUBGRAPH]
+}

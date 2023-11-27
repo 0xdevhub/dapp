@@ -8,11 +8,11 @@ export const avalancheFujiChain: Chain = merge(avalancheFuji, {
   },
   contracts: {
     accessManagement: {
-      address: '0x1987F5A465c27dD03d25a029d66a3eD800228EC9',
+      address: '0x96445b0c40a03a988C72bBb6537358779F4659bC',
       blockCreated: 0
     },
     hub: {
-      address: '0x53E13Dd84Dc418095c31655573504F9A588F9159',
+      address: '0xd3975F5c825DDb608d32DDdF89d072c524470414',
       blockCreated: 0
     }
     // todo: add bridge contracts
