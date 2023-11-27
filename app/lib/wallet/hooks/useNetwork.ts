@@ -15,7 +15,7 @@ export function useNetwork() {
   // returns default when not defined yet
   const chainIdRefined = find(allowedChains, { id: chain?.id })
 
-  const config =
+  const configByCurrentChainOrDefaultId =
     allowedChainsConfig[
       chainIdRefined?.id || +process.env.NEXT_PUBLIC_NETWORK_DEFAULT_ID!
     ]
@@ -27,7 +27,7 @@ export function useNetwork() {
     chains,
     chain,
     switchNetwork,
-    config
+    config: configByCurrentChainOrDefaultId
   }
 }
 
