@@ -41,10 +41,7 @@ const retryLink = new RetryLink({
   },
   attempts: {
     max: 20,
-    retryIf: (error, op) => {
-      console.log('retry error', error, op)
-      return !!error
-    }
+    retryIf: (error) => !!error
   }
 })
 

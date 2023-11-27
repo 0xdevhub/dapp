@@ -1,4 +1,5 @@
-import { allowedChainsConfig } from '@/app/config/config'
+import { allowedChainsConfig, allowedChains } from '@/app/config/config'
+import { find } from 'lodash'
 import { Chain, useNetwork as useNetworkHook, useSwitchNetwork } from 'wagmi'
 
 export type ChainConfig = Chain & {
@@ -11,10 +12,12 @@ export function useNetwork() {
   const { chains, error, isLoading, pendingChainId, switchNetwork } =
     useSwitchNetwork()
 
-  //returns default when not defined yet
+  // returns default when not defined yet
+  const chainIdRefined = find(allowedChains, { id: chain?.id })
+
   const config =
     allowedChainsConfig[
-      chain?.id || +process.env.NEXT_PUBLIC_NETWORK_DEFAULT_ID!
+      chainIdRefined?.id || +process.env.NEXT_PUBLIC_NETWORK_DEFAULT_ID!
     ]
 
   return {

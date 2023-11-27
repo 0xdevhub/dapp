@@ -9,7 +9,7 @@ export type ListItemProps = Partial<LinkProps> & {
 
 export const ListItem = ({ app, ...props }: ListItemProps) => {
   return (
-    <Link {...props} href={app.appId_}>
+    <Link {...props} href={app.id}>
       <Card
         className='flex cursor-pointer flex-col space-y-4 rounded-md p-4'
         as='section'

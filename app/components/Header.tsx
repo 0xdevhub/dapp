@@ -16,7 +16,10 @@ const Settings = dynamic(() => import('@/app/components/settings/Settings'), {
 
 export const Header = ({ className, ...props }: HTMLProps<HTMLDivElement>) => {
   return (
-    <header {...props} className={classNames(className, 'container')}>
+    <header
+      {...props}
+      className={classNames(className, 'bg-black/20 container')}
+    >
       <div
         className={classNames(
           'flex items-center justify-between rounded-xl py-2'
