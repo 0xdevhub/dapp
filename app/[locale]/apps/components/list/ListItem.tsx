@@ -1,19 +1,21 @@
 import { Card } from '@/app/components'
 import { Heading, Text } from '@/app/components/typography'
-import Link from 'next/link'
+import { IHubAppAddeds } from '@/app/headless/thegraph/entities/app/types'
+import Link, { LinkProps } from 'next/link'
 
-export const ListItem = () => {
+export type ListItemProps = Partial<LinkProps> & {
+  app: IHubAppAddeds
+}
+
+export const ListItem = ({ app, ...props }: ListItemProps) => {
   return (
-    <Link href='1'>
+    <Link {...props} href={app.appId_}>
       <Card
         className='flex cursor-pointer flex-col space-y-4 rounded-md p-4'
         as='section'
       >
-        {/**
-         * todo: add apps
-         */}
-        <Heading as='h3'>CCIP crosschain NFT</Heading>
-        <Text>Lock-and-Mint or Burn-and-unlock</Text>
+        <Heading as='h3'>{app.name_}</Heading>
+        <Text>{app.description_}</Text>
       </Card>
     </Link>
   )

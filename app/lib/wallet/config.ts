@@ -1,7 +1,7 @@
 import { createConfig, configureChains } from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 
-import { allowedChains, allowedChainsConfig } from '@/app/config/network'
+import { allowedChains, allowedChainsConfig } from '@/app/config/config'
 import { publicProvider } from 'wagmi/providers/public'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 

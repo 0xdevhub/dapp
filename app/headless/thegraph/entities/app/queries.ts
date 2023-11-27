@@ -1,12 +1,13 @@
 import { gql } from '@apollo/client'
 
-export const GET_APPS_ADDEDS_QUERY = gql`
+export const HUB_APP_ADDEDS_QUERY = gql`
   query HubAppAddeds {
-    hubAppAddeds() {
-        id
-        appId_
-        appAddress_
-        name_
-      }
+    hubAppAddeds {
+      id
+      appId_
+      appAddress_
+      name_
+      description_
+    }
   }
 `

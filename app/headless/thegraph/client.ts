@@ -1,11 +1,42 @@
 import { ApolloClient, InMemoryCache, ApolloLink } from '@apollo/client'
 import { RetryLink } from '@apollo/client/link/retry'
 import { HttpLink } from '@apollo/client'
-import { getChainSubgraphById } from '@/app/lib/utils/network'
+import { allowedChainsConfig } from '@/app/config/config'
 
-const API_URL = getChainSubgraphById(
-  +process.env.NEXT_PUBLIC_NETWORK_DEFAULT_ID!
-)
+///todo
+
+// const defaultClient: keyof typeof clients = "heroku";
+
+// const clients = {
+//   "heroku": new HttpLink({ uri: "https://endpointURLForHeroku" }),
+//   "lists": new HttpLink({uri: "https://endpointURLForLists" })
+// }
+
+// const isRequestedClient = (clientName: string) => (op: Operation) =>
+//   op.getContext().clientName === clientName;
+
+// const ClientResolverLink = Object.entries(clients)
+//   .map(([clientName, Link]) => ([clientName, ApolloLink.from([Link])] as const))
+//   .reduce(([_, PreviousLink], [clientName, NextLink]) => {
+
+//     const ChainedLink = ApolloLink.split(
+//       isRequestedClient(clientName),
+//       NextLink,
+//       PreviousLink
+//     )
+
+//     return [clientName, ChainedLink];
+//   }, ["_default", clients[defaultClient]])[1]
+
+// declare module "@apollo/client" {
+//   interface DefaultContext {
+//     clientName: keyof typeof clients
+//   }
+// }
+
+const API_URL = allowedChainsConfig[43_113].blockExplorers.thegraph.url
+
+console.log(API_URL, allowedChainsConfig)
 
 const httpLink = new HttpLink({
   uri: API_URL
