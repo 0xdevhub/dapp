@@ -8,7 +8,8 @@ function useBalance() {
   const { data } = useBalanceHook({
     address,
     chainId: chain?.id,
-    formatUnits: 'ether'
+    formatUnits: 'ether',
+    watch: true
   })
 
   return {

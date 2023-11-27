@@ -5,7 +5,6 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import classNames from 'classnames'
 import { useDarkMode } from 'usehooks-ts'
 import { useI18n } from '@/locales/client'
-import { Locales } from '@/locales/locales'
 import { Text } from '@/app/components/typography'
 
 export type ThemeSelectorProps = HTMLProps<HTMLDivElement> & {
@@ -24,7 +23,7 @@ export const ThemeSelector = ({ isOpen, ...props }: ThemeSelectorProps) => {
         'flex cursor-pointer justify-between'
       )}
     >
-      <Text as='span'>{isDarkMode ? t(Locales.DARK) : t(Locales.LIGHT)}</Text>
+      <Text as='span'>{isDarkMode ? t('THEME.DARK') : t('THEME.LIGHT')}</Text>
       <ChevronDownIcon
         width={18}
         className={classNames('transform', {

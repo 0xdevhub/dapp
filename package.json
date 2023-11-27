@@ -17,8 +17,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.7",
     "@heroicons/react": "latest",
     "@types/jest": "^29.5.7",
+    "@types/lodash": "^4.14.202",
     "classnames": "latest",
     "cssnano": "latest",
     "ethers": "latest",

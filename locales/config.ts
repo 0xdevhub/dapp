@@ -5,7 +5,8 @@ export enum Locale {
 
 export const localeConfig = {
   locales: [Locale.PT, Locale.EN],
-  defaultLocale: Locale.EN
-}
+  defaultLocale: Locale.EN,
+  urlMappingStrategy: 'rewriteDefault'
+} as const
 
 export default localeConfig

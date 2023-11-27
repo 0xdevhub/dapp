@@ -1,23 +1,27 @@
 'use client'
 
-import { Locales } from '@/locales/locales'
 import { useI18n } from '@/locales/client'
-import { Text, HeadingNavigation } from '@/app/components/typography'
+import { Heading } from '@/app/components/typography'
+import { List } from './list'
+import useGetApps from '@/app/headless/thegraph/entities/app/hooks/useGetApps'
+import { Loading } from '@/app/components'
+import { useNetwork } from '@/app/lib/wallet/hooks/useNetwork'
 
-export const AppsContainer = () => {
+export const PageContainer = () => {
   const t = useI18n()
+  const { config } = useNetwork()
+  const { apps, loading } = useGetApps({
+    chainId: config.id
+  })
 
   return (
-    <div className='w-full p-6'>
-      <div className='flex flex-col space-y-4'>
-        <HeadingNavigation as='h2'>{t(Locales.APPS)}</HeadingNavigation>
-        <Text className='max-w-lg' variant='span'>
-          Enjoy thousand of the latest ethereum apps, games, music, movies, TV,
-          books, magazines & more. Anytime, anywhere, across your devices.
-        </Text>
-      </div>
+    <div>
+      <section className='flex flex-col space-y-4'>
+        <Heading as='h2'>{t('PAGES.APPS.TITLE')}</Heading>
+        {loading ? <Loading /> : <List apps={apps} />}
+      </section>
     </div>
   )
 }
 
-export default AppsContainer
+export default PageContainer

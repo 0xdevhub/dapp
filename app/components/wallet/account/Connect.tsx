@@ -3,10 +3,9 @@
 import useWallet from '@/app/lib/wallet/hooks/useWallet'
 import { Button, ButtonProps } from '@/app/components/Button'
 import { useI18n } from '@/locales/client'
-import { Locales } from '@/locales/locales'
 import { useDarkMode, useIsClient } from 'usehooks-ts'
 
-export const ButtonConnect = ({ loading, ...props }: ButtonProps) => {
+export const AccountConnect = ({ loading, ...props }: ButtonProps) => {
   const t = useI18n()
   const isClient = useIsClient()
   const { isDarkMode } = useDarkMode()
@@ -32,10 +31,10 @@ export const ButtonConnect = ({ loading, ...props }: ButtonProps) => {
       disabled={props.disabled || isConnecting}
     >
       {isClient && (loading || isReconnecting || isConnecting)
-        ? t(Locales.CONNECTING)
-        : t(Locales.CONNECT)}
+        ? t('WALLET.CONNECTING')
+        : t('WALLET.CONNECT')}
     </Button>
   )
 }
 
-export default ButtonConnect
+export default AccountConnect

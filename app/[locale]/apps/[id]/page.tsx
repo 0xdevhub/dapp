@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const i118n = await getI18n()
 
   return {
-    title: `${appConfig.name} - ${i118n('PAGES.APPS.TITLE')}`,
+    title: `${appConfig.name} - ${i118n('PAGES.APPS.TITLE')} demo`,
     description: appConfig.meta.description
   }
 }

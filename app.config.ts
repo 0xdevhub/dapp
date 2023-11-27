@@ -14,7 +14,7 @@ export const socialMedia = [
 const appConfig = {
   name: '0xdevhub',
   meta: {
-    description: 'gervickas.js blockchain app hub'
+    description: 'gervickas.js blockchain hub'
   },
   socialMedia
 }

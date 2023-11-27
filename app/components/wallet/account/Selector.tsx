@@ -2,22 +2,22 @@
 
 import { type HTMLProps } from 'react'
 import { useWallet } from '@/app/lib/wallet/hooks'
-import { Avatar } from '../Avatar'
+import { AccountAvatar } from './Avatar'
 import classNames from 'classnames'
 
-export type PanelSelectorProps = HTMLProps<HTMLDivElement> & {
+export type AccountSelectorProps = HTMLProps<HTMLDivElement> & {
   isOpen?: boolean
 }
 
-export const PanelSelector = ({
+export const AccountSelector = ({
   isOpen,
   className,
   ...props
-}: PanelSelectorProps) => {
+}: AccountSelectorProps) => {
   const { address } = useWallet()
 
   return (
-    <Avatar
+    <AccountAvatar
       {...props}
       title={!isOpen ? address : ''}
       address={address}
@@ -25,4 +25,4 @@ export const PanelSelector = ({
     />
   )
 }
-export default PanelSelector
+export default AccountSelector

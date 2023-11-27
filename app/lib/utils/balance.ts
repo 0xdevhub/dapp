@@ -1,9 +1,16 @@
-const cropDecimals = (value?: string, maxDecimals = 5) => {
-  return value ? value.slice(0, value.indexOf('.') + maxDecimals) : '0'
+export const formatBalance = (
+  value?: string | number,
+  maximumFractionDigits = 5,
+  minimumFractionDigits = 2
+) => {
+  return Number(value || 0).toLocaleString('en-US', {
+    maximumFractionDigits,
+    minimumFractionDigits
+  })
 }
 
 export const balanceUtils = {
-  cropDecimals
+  formatBalance
 }
 
 export default balanceUtils
