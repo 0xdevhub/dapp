@@ -5,7 +5,8 @@ const pt = {
     }
   },
   FEEDBACK: {
-    NOT_ALLOWED: 'Não permitido'
+    NOT_ALLOWED: 'Não permitido',
+    NO_APPS_FOUND: 'Nenhum app encontrado'
   },
   LANGUAGE: {
     TITLE: 'Idioma'
