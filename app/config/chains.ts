@@ -17,11 +17,15 @@ export const avalancheFujiChain: Chain = merge(avalancheFuji, {
   },
   contracts: {
     accessManagement: {
-      address: '0x96445b0c40a03a988C72bBb6537358779F4659bC',
+      address: '0x091BEbE42637D6c283f88ceF478Cab8581293f73',
       blockCreated: 0
     },
     hub: {
-      address: '0xd3975F5c825DDb608d32DDdF89d072c524470414',
+      address: '0xA5fBbb4B142A8062b37A2f2CbeBe8c67F65C9978',
+      blockCreated: 0
+    },
+    ccipCrossChainBridge: {
+      address: '0xF793d3D4372935C236422DFA9cd958ec14C80F55',
       blockCreated: 0
     }
   }
@@ -42,11 +46,15 @@ export const optimismGoerliChain: Chain = merge(optimismGoerli, {
   },
   contracts: {
     accessManagement: {
-      address: '0x0077124A6913476D37405E46fb41F1AA7ce255D7',
+      address: '0xd9b59f89A8FEF69d2Dbc028C9f00087432589F72',
       blockCreated: 0
     },
     hub: {
-      address: '0x747bC054Da9C824eC9f10D5DCEe0D8FA3BecDc38',
+      address: '0x78a321E00Be5bf8Df399FCE76D92fd5C900638c9',
+      blockCreated: 0
+    },
+    ccipCrossChainBridge: {
+      address: '0xA5fBbb4B142A8062b37A2f2CbeBe8c67F65C9978',
       blockCreated: 0
     }
   }
