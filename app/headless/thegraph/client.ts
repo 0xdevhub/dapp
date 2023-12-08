@@ -6,6 +6,10 @@ import { allowedChains, allowedChainsConfig } from '@/app/config/config'
 import { reduce } from 'lodash'
 import { Chain } from '@/app/config/types'
 
+// Default client based on environment variable
+const defaultClient: keyof typeof clients =
+  +process.env.NEXT_PUBLIC_NETWORK_DEFAULT_ID!
+
 const clients = reduce(
   allowedChains,
   (acc, chain: Chain) => {
@@ -13,24 +17,12 @@ const clients = reduce(
     acc[chain.id] = new HttpLink({ uri: API_URL })
     return acc
   },
-  {} as Record<keyof typeof allowedChains, HttpLink>
+  {} as Record<keyof typeof allowedChainsConfig, HttpLink>
 )
 
-// Default client based on environment variable
-const defaultClient: keyof typeof clients =
-  +process.env.NEXT_PUBLIC_NETWORK_DEFAULT_ID!
-
-// Function to create a link for a specific client
-const createClientLink = (chainId: keyof typeof clients): ApolloLink => {
-  return new ApolloLink((operation, forward) =>
-    clients[chainId].request(operation, forward)
-  )
-}
-
-// Create a link that resolves the appropriate client based on the operation context
 const httpLink = new ApolloLink((operation, forward) => {
-  const chainId = operation.getContext().chainId || defaultClient.toString()
-  return createClientLink(chainId).request(operation, forward)
+  const chainId = operation.getContext().chainId || +defaultClient
+  return clients[chainId].request(operation, forward)
 })
 
 const retryLink = new RetryLink({

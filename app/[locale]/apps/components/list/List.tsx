@@ -14,7 +14,7 @@ export const List = ({ apps, ...props }: ListProps) => {
   return (
     <ul className='grid grid-cols-4 gap-6' {...props}>
       {apps.length === 0 ? (
-        <li>{t('FEEDBACK.NO_APPS_FOUND')}</li>
+        <li className='col-span-4'>{t('FEEDBACK.NO_APPS_FOUND')}</li>
       ) : (
         <>
           {Children.toArray(
