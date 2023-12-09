@@ -58,7 +58,7 @@ export const useERC20Approve = ({
 
   const isApproved = useMemo(() => {
     return (ERC20Approved || 0n) >= amount
-  }, [ERC20Approved])
+  }, [ERC20Approved, amount])
 
   return {
     approve: writeAsync,

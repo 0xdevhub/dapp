@@ -105,17 +105,17 @@ export const BridgeButton = ({
             />
           ) : (
             <div className='flex flex-col space-y-4'>
-              <div>
-                <ul>
-                  <li>
-                    Fees (Link):{' '}
-                    {ethers.formatEther(bridgeFeesField || 0n).toString()}
-                  </li>
+              <ul>
+                <li>
+                  Fees (Link):
+                  {ethers.formatEther(bridgeFeesField || 0n).toString()}
+                </li>
+                {symbol && (
                   <li>
                     <Text>NFT to bridge: {symbol}</Text>
                   </li>
-                </ul>
-              </div>
+                )}
+              </ul>
               <Button
                 type={isERC721Approved ? 'submit' : 'button'}
                 className='w-full'
