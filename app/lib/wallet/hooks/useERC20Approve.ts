@@ -31,6 +31,7 @@ export const useERC20Approve = ({
       abi: erc20ABI,
       address: address as `0x${string}`,
       enabled:
+        !!walletAddress &&
         ethers.isAddress(address) &&
         !isEmpty(address) &&
         !isEmpty(spender) &&

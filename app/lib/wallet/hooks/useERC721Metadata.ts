@@ -11,10 +11,11 @@ export const useERC721Metadata = ({
   ERC721Address,
   ERC721TokenId
 }: UseERC721MetadataProps) => {
-  const { isConnected } = useWallet()
+  const { isConnected, address: walletAddress } = useWallet()
 
   const ERC721Token = useContractReads({
     enabled:
+      !!walletAddress &&
       isConnected &&
       ethers.isAddress(ERC721Address) &&
       !(ERC721Address?.length === 0) &&

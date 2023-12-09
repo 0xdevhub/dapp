@@ -23,13 +23,14 @@ export const useERC721Approve = ({
   address,
   spender
 }: UseERC721ApproveProps) => {
-  const { isConnected } = useWallet()
+  const { isConnected, address: walletAddress } = useWallet()
 
   const { data: ERC721Approved, isLoading: ERC721IsApprovedLoading } =
     useContractRead({
       abi: erc721ABI,
       address: address as `0x${string}`,
       enabled:
+        !!walletAddress &&
         ethers.isAddress(address) &&
         !isEmpty(address) &&
         !isEmpty(tokenId) &&

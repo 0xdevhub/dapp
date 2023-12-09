@@ -37,7 +37,7 @@ export const useBridgeFees = ({
   ERC721Address,
   ERC721TokenId
 }: UseBridgeFeesProps) => {
-  const { isConnected, address } = useWallet()
+  const { isConnected, address: walletAddress } = useWallet()
   const { config } = useNetwork()
 
   const getEvmChainIdSettingsResult = useContractRead({
@@ -45,6 +45,7 @@ export const useBridgeFees = ({
       .address as `0x${string}`,
     abi: BRIDGE_ABI,
     enabled:
+      !!walletAddress &&
       isConnected &&
       destinationChain.id !== config.id &&
       ethers.isAddress(ERC721Address),
@@ -65,6 +66,7 @@ export const useBridgeFees = ({
       .address as `0x${string}`,
     abi: BRIDGE_ABI,
     enabled:
+      !!walletAddress &&
       isConnected &&
       destinationChain.id !== config.id &&
       ethers.isAddress(ERC721Address) &&
@@ -84,7 +86,7 @@ export const useBridgeFees = ({
     data: coderUtils.abiCoder.encode(
       ['address', 'bytes', 'bytes'],
       [
-        address,
+        walletAddress || ethers.ZeroAddress,
         coderUtils.abiCoder.encode(
           ['uint256', 'address', 'uint256'],
           [
@@ -105,6 +107,7 @@ export const useBridgeFees = ({
     address: targetEvmChainIdSettings?.adapter as `0x${string}`,
     abi: BASE_ADAPTER_ABI,
     enabled:
+      !!walletAddress &&
       isConnected &&
       destinationChain.id !== config.id &&
       ethers.isAddress(ERC721Address) &&
