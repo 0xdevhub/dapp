@@ -19,7 +19,7 @@ export const PageContainer = ({ params }: AppLayoutProps) => {
     [CrosschainNFTBridgeAppIdFuji]: CrosschainNFTBridge
   }[id]
 
-  if (Component) return <Component />
+  if (Component) return <Component id={id} />
 
   const t = useI18n()
 

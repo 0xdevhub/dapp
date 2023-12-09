@@ -60,7 +60,7 @@ export const Form = ({
             aria-label='Switch'
             type='button'
             onClick={onSwitch}
-            className='text-lime-400'
+            className='text-third-300 dark:text-lime-400'
           >
             <ArrowPathRoundedSquareIcon
               width={24}
@@ -84,6 +84,10 @@ export const Form = ({
         <p className='text-green-500'>
           Your ERC721 has been bridged successfully to {destinationChain.name}!
         </p>
+      )}
+
+      {!isLoading && status === 'error' && (
+        <p className='text-red-500'>Error! Please try again later.</p>
       )}
     </form>
   )

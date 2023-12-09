@@ -29,7 +29,7 @@ export const Selector = ({
       <Heading as='h5'>{label}</Heading>
       <div className='flex justify-between'>
         <Text className='text-gray-400'>{chain.name}</Text>
-        {chain && displayBlockExplorer && (
+        {address && chain && displayBlockExplorer && (
           <Text>
             <Link
               target='_blank'
