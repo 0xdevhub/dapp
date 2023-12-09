@@ -9,7 +9,7 @@ export const Variant = {
     classes: 'text-2xl lg:text-xl font-bold lg:font-extrabold'
   },
   h3: {
-    classes: 'text-base lg:text-lg font-medium lg:font-bold'
+    classes: 'text-base lg:text-lg font-medium'
   },
   h4: {
     classes: 'text-base font-medium'
@@ -29,7 +29,7 @@ export type HeadingProps = HTMLProps<HTMLHeadingElement> & {
 
 export const Heading = ({
   as = 'h1',
-  variant = 'h1',
+  variant,
   children,
   className,
   ...props
@@ -40,7 +40,7 @@ export const Heading = ({
         as,
         {
           ...props,
-          className: classNames(className, Variant[as || variant].classes)
+          className: classNames(className, Variant[variant || as].classes)
         },
         children
       )

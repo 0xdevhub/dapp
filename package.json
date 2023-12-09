@@ -19,6 +19,7 @@
   "dependencies": {
     "@apollo/client": "^3.8.7",
     "@heroicons/react": "latest",
+    "@hookform/resolvers": "^3.3.2",
     "@types/jest": "^29.5.7",
     "@types/lodash": "^4.14.202",
     "classnames": "latest",
@@ -31,9 +32,11 @@
     "next-international": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-hook-form": "^7.48.2",
     "react-jazzicon": "latest",
     "usehooks-ts": "latest",
-    "wagmi": "latest"
+    "wagmi": "latest",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "latest",

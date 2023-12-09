@@ -22,5 +22,9 @@ export type Chain = IChain & {
       address: string
       blockCreated?: number
     }
+    crosschainNFTBridgeContract: {
+      address: string
+      blockCreated?: number
+    }
   }
 }

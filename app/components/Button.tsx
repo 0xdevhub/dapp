@@ -8,6 +8,9 @@ export const Sizes = {
   },
   md: {
     classes: 'px-3 py-1.5 text-base'
+  },
+  lg: {
+    classes: 'px-4 py-2 text-lg'
   }
 } as const
 
@@ -15,7 +18,7 @@ export const Variant = {
   default: {
     classes: 'bg-third-300 text-cyan-50 dark:bg-lime-400 dark:text-third-500',
     disabled:
-      'bg-third-300/70 text-cyan-50/80 dark:bg-lime-400/70 dark:text-third-300',
+      'bg-third-300/70 text-cyan-50/80 dark:bg-lime-400/70 dark:text-third-300 cursor-not-allowed',
     hover: 'hover:bg-third-300/90 dark:hover:bg-lime-400/90'
   }
 } as const
@@ -33,15 +36,18 @@ export const Button = ({
   loading,
   variant = 'default',
   size = 'default',
+  className,
+  disabled,
   ...props
 }: ButtonProps) => {
   return (
     <button
       {...props}
+      disabled={disabled}
       className={classNames([
         'flex w-full items-center justify-center rounded-md',
-        props.className,
-        props.disabled ? Variant[variant].disabled : Variant[variant].classes,
+        className,
+        disabled ? Variant[variant].disabled : Variant[variant].classes,
         Variant[variant].hover,
         Sizes[size].classes
       ])}
@@ -51,7 +57,7 @@ export const Button = ({
         className={classNames({
           'visible w-8 pl-2 opacity-100': loading,
           'invisible w-0 overflow-hidden pl-0 opacity-0': !loading,
-          'opacity-50': props.disabled
+          'opacity-50': disabled
         })}
       >
         <Loading {...loadingProps} />

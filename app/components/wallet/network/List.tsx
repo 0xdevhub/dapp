@@ -33,7 +33,7 @@ export const NetworkList = ({ chain, chains, ...props }: NetworkListProps) => {
               'bg-white/75 hover:bg-black/10',
               'flex cursor-pointer items-center justify-between space-x-2 p-2'
             )}
-            onClick={() => switchNetwork && switchNetwork(chainItem.id)}
+            onClick={() => switchNetwork?.(chainItem.id)}
           >
             <Text as='span'>{chainItem.name}</Text>
             <span className='flex items-center space-x-px'>

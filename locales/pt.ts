@@ -1,12 +1,17 @@
 const pt = {
   PAGES: {
     APPS: {
-      TITLE: 'Apps'
+      TITLE: 'Apps',
+      CROSSCHAIN_NFT_BRIDGE: {
+        FROM: 'De',
+        TO: 'Para'
+      }
     }
   },
   FEEDBACK: {
     NOT_ALLOWED: 'Não permitido',
-    NO_APPS_FOUND: 'Nenhum app encontrado'
+    NO_APPS_FOUND: 'Nenhum app encontrado',
+    NO_WIDGET_AVAILABLE: 'Nenhum widget disponível'
   },
   LANGUAGE: {
     TITLE: 'Idioma'

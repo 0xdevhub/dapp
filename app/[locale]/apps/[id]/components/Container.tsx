@@ -1,36 +1,29 @@
 'use client'
 
 import { useI18n } from '@/locales/client'
-import { Heading } from '@/app/components/typography'
-import useGetApp from '@/app/headless/thegraph/entities/app/hooks/useGetApp'
-import { useNetwork } from '@/app/lib/wallet/hooks'
-import { Loading } from '@/app/components'
+import {
+  CrosschainNFTBridge,
+  CrosschainNFTBridgeAppIdMumbai,
+  CrosschainNFTBridgeAppIdFuji
+} from './crosschain-nft-bridge/CrosschainNFTBridge'
 
-export type PageContainerProps = {
-  params: {
-    id: string
-  }
+export type AppLayoutProps = {
+  params: { id: string }
 }
 
-export const PageContainer = ({ params }: PageContainerProps) => {
+export const PageContainer = ({ params }: AppLayoutProps) => {
+  const { id } = params
+
+  const Component = {
+    [CrosschainNFTBridgeAppIdMumbai]: CrosschainNFTBridge,
+    [CrosschainNFTBridgeAppIdFuji]: CrosschainNFTBridge
+  }[id]
+
+  if (Component) return <Component />
+
   const t = useI18n()
-  const { config } = useNetwork()
 
-  const { app, loading } = useGetApp({
-    chainId: config.id,
-    id: params.id
-  })
-
-  return loading ? (
-    <Loading />
-  ) : (
-    <div>
-      <div className='flex flex-col space-y-4'>
-        <Heading as='h2'>{app?.name_} demo</Heading>
-        <Heading as='h3'>{app?.description_}</Heading>
-      </div>
-    </div>
-  )
+  return <div>{t('FEEDBACK.NO_WIDGET_AVAILABLE')}</div>
 }
 
 export default PageContainer
