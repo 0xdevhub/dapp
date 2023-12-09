@@ -32,6 +32,60 @@ export type UseBridgeFeesProps = {
   ERC721TokenId: bigint
 }
 
+type GetPayloadProps = {
+  config?: Chain
+  targetEvmChainIdSettings?: EvmChainSettings
+  receiver?: string
+  originEvmChainId?: bigint
+  ERC721Address?: string
+  ERC721TokenId?: bigint
+  name?: string
+  symbol?: string
+  tokenURI?: string
+}
+
+const getPayload = ({
+  config,
+  targetEvmChainIdSettings,
+  receiver,
+  originEvmChainId,
+  ERC721Address,
+  ERC721TokenId,
+  name,
+  symbol,
+  tokenURI
+}: GetPayloadProps) => {
+  const receiverFallback = ethers.isAddress(receiver)
+    ? receiver
+    : ethers.ZeroAddress
+
+  const evmChainId = originEvmChainId || config?.id || 0n
+  const ERC721AddressFallback = ethers.isAddress(ERC721Address)
+    ? ERC721Address
+    : ethers.ZeroAddress
+  const ERC721TokenIdFallback = ERC721TokenId || 0n
+
+  return {
+    toChain: targetEvmChainIdSettings?.nonEvmChainId,
+    receiver: targetEvmChainIdSettings?.adapter,
+    gasLimit: targetEvmChainIdSettings?.gasLimit,
+    data: coderUtils.abiCoder.encode(
+      ['address', 'bytes', 'bytes'],
+      [
+        receiverFallback,
+        coderUtils.abiCoder.encode(
+          ['uint256', 'address', 'uint256'],
+          [evmChainId, ERC721AddressFallback, ERC721TokenIdFallback]
+        ),
+        coderUtils.abiCoder.encode(
+          ['string', 'string', 'string'],
+          [name, symbol, tokenURI]
+        )
+      ]
+    )
+  }
+}
+
 export const useBridgeFees = ({
   destinationChain,
   ERC721Address,
@@ -79,30 +133,6 @@ export const useBridgeFees = ({
   const wrappedToken =
     getWERC721ByOriginERC721AddressResult.data as ERC721Wrapped
 
-  const payload = {
-    toChain: targetEvmChainIdSettings?.nonEvmChainId,
-    receiver: targetEvmChainIdSettings?.adapter,
-    gasLimit: targetEvmChainIdSettings?.gasLimit,
-    data: coderUtils.abiCoder.encode(
-      ['address', 'bytes', 'bytes'],
-      [
-        walletAddress || ethers.ZeroAddress,
-        coderUtils.abiCoder.encode(
-          ['uint256', 'address', 'uint256'],
-          [
-            wrappedToken?.evmChainId || config.id || 0n,
-            ERC721Address || ethers.ZeroAddress,
-            ERC721TokenId || 0n
-          ]
-        ),
-        coderUtils.abiCoder.encode(
-          ['string', 'string', 'string'],
-          [name, symbol, tokenURI]
-        )
-      ]
-    )
-  }
-
   const getFeeResult = useContractRead({
     address: targetEvmChainIdSettings?.adapter as `0x${string}`,
     abi: BASE_ADAPTER_ABI,
@@ -114,7 +144,19 @@ export const useBridgeFees = ({
       ethers.isAddress(targetEvmChainIdSettings?.adapter) &&
       targetEvmChainIdSettings?.isEnabled,
     functionName: 'getFee',
-    args: [payload]
+    args: [
+      getPayload({
+        config,
+        targetEvmChainIdSettings,
+        receiver: walletAddress as string,
+        originEvmChainId: wrappedToken?.evmChainId,
+        ERC721Address,
+        ERC721TokenId,
+        name,
+        symbol,
+        tokenURI
+      })
+    ]
   })
 
   return {

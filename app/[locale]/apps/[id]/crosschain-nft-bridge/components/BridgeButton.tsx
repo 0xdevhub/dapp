@@ -92,6 +92,8 @@ export const BridgeButton = ({
     register('bridgeFees')
   })
 
+  console.log(!isERC721Approved || !isERC20Approved)
+
   return (
     <>
       {!isConnected ? (
@@ -117,7 +119,9 @@ export const BridgeButton = ({
                 )}
               </ul>
               <Button
-                type={isERC721Approved ? 'submit' : 'button'}
+                type={
+                  !isERC721Approved || !isERC20Approved ? 'button' : 'submit'
+                }
                 className='w-full'
                 size='lg'
                 onClick={
@@ -132,6 +136,8 @@ export const BridgeButton = ({
                   disabled ||
                   loading ||
                   isLoading ||
+                  !erc721AddressField.length ||
+                  !erc721TokenIdField ||
                   isERC721Loading ||
                   isERC20Loading
                 }
