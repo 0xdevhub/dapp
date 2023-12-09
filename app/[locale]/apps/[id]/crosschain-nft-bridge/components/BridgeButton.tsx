@@ -107,9 +107,13 @@ export const BridgeButton = ({
           ) : (
             <div className='flex flex-col space-y-4'>
               <ul>
-                <li>
-                  Fees (Link):
-                  {ethers.formatEther(bridgeFeesField || 0n).toString()}
+                <li className='flex space-x-px'>
+                  <Text>
+                    {t('PAGES.APPS.CROSSCHAIN_NFT_BRIDGE.FEES')} (Link):
+                  </Text>
+                  <Text>
+                    {ethers.formatEther(bridgeFeesField || 0n).toString()}
+                  </Text>
                 </li>
                 {symbol && (
                   <li>

@@ -8,7 +8,12 @@ const en = {
         ERC721_ADDRESS: 'ERC721 Address',
         ERC721_NFT_TO_BRIDGE_LABEL: 'ERC721 NFT to bridge',
         BRIDGE: 'Bridge',
-        APPROVE_NFT: 'Approve NFT'
+        APPROVE_NFT: 'Approve NFT',
+        FEES: 'Fees',
+        FEEDBACK: {
+          SUCCESS_TO: 'Your ERC721 has been bridged successfully to',
+          ERROR_TO: 'An error occurred while bridging your ERC721'
+        }
       }
     }
   },

@@ -1,6 +1,6 @@
 'use client'
 
-import { Heading } from '@/app/components/typography'
+import { Heading, Text } from '@/app/components/typography'
 import { ArrowPathRoundedSquareIcon } from '@heroicons/react/20/solid'
 import { Selector } from '.'
 import { AddressField } from './AddressField'
@@ -82,12 +82,17 @@ export const Form = ({
       />
       {!isLoading && status === 'success' && (
         <p className='text-green-500'>
-          Your ERC721 has been bridged successfully to {destinationChain.name}!
+          <Text>
+            {t('PAGES.APPS.CROSSCHAIN_NFT_BRIDGE.FEEDBACK.SUCCESS_TO')}
+          </Text>
+          <Text>{destinationChain.name}!</Text>
         </p>
       )}
 
       {!isLoading && status === 'error' && (
-        <p className='text-red-500'>Error! Please try again later.</p>
+        <p className='text-red-500'>
+          {t('PAGES.APPS.CROSSCHAIN_NFT_BRIDGE.FEEDBACK.ERROR_TO')}
+        </p>
       )}
     </form>
   )

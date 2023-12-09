@@ -8,7 +8,12 @@ const pt = {
         ERC721_ADDRESS: 'Endereço ERC721',
         ERC721_NFT_TO_BRIDGE_LABEL: 'ERC721 NFT para ponte',
         BRIDGE: 'Transferir',
-        APPROVE_NFT: 'Aprovar NFT'
+        APPROVE_NFT: 'Aprovar NFT',
+        FEES: 'Taxas',
+        FEEDBACK: {
+          SUCCESS_TO: 'Seu ERC721 foi transferido com sucesso para',
+          ERROR_TO: 'Ocorreu um erro ao transferir seu ERC721 para'
+        }
       }
     }
   },
