@@ -18,7 +18,7 @@ export const useBridge = ({
 }: UseBridgeProps) => {
   const { config } = useNetwork()
 
-  const { writeAsync, isLoading, data } = useContractWrite({
+  const { writeAsync, isLoading, data, status } = useContractWrite({
     address: config.contracts.crosschainNFTBridgeContract
       .address as `0x${string}`,
     abi: BRIDGE_ABI,
@@ -33,6 +33,7 @@ export const useBridge = ({
 
   return {
     bridge: writeAsync,
-    isLoading: isLoading || isTransactionLoading
+    isLoading: isLoading || isTransactionLoading,
+    status
   }
 }

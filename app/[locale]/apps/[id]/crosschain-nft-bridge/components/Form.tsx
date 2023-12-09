@@ -32,7 +32,7 @@ export const Form = ({
 
   const { watch, handleSubmit } = useFormContext()
 
-  const { bridge, isLoading } = useBridge({
+  const { bridge, isLoading, status } = useBridge({
     destinationChain,
     ERC721Address: watch('erc721Address'),
     ERC721TokenId: watch('erc721TokenId'),
@@ -80,6 +80,11 @@ export const Form = ({
         sourceChain={sourceChain}
         destinationChain={destinationChain}
       />
+      {!isLoading && status === 'success' && (
+        <p className='text-green-500'>
+          Your ERC721 has been bridged successfully to {destinationChain.name}!
+        </p>
+      )}
     </form>
   )
 }
