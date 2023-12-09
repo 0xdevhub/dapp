@@ -26,5 +26,9 @@ export type Chain = IChain & {
       address: string
       blockCreated?: number
     }
+    LINK: {
+      address: string
+      blockCreated?: number
+    }
   }
 }

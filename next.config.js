@@ -16,7 +16,15 @@ const nextConfig = {
       }
     ]
   },
-  transpilePackages: ['next-international', 'international-types']
+  transpilePackages: ['next-international', 'international-types'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**'
+      }
+    ]
+  }
 }
 
 module.exports = nextConfig

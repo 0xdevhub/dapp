@@ -5,7 +5,7 @@ import {
   CrosschainNFTBridge,
   CrosschainNFTBridgeAppIdMumbai,
   CrosschainNFTBridgeAppIdFuji
-} from './crosschain-nft-bridge/CrosschainNFTBridge'
+} from '../crosschain-nft-bridge/components/CrosschainNFTBridge'
 
 export type AppLayoutProps = {
   params: { id: string }

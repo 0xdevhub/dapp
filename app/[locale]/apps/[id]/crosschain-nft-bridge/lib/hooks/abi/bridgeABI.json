@@ -1,0 +1,508 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "accessManagement_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "chainId_",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "authority",
+        "type": "address"
+      }
+    ],
+    "name": "AccessManagedInvalidAuthority",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "delay",
+        "type": "uint32"
+      }
+    ],
+    "name": "AccessManagedRequiredDelay",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      }
+    ],
+    "name": "AccessManagedUnauthorized",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AdapterNotEnabled",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AdapterNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ERC721WrappedCreationFailed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InsufficientFeeTokenAmount",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OperationNotSupported",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TransferNotAllowed",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "authority",
+        "type": "address"
+      }
+    ],
+    "name": "AuthorityUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "evmChainId_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "sender_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "data_",
+        "type": "bytes"
+      }
+    ],
+    "name": "ERC721Received",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "evmChainId_",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "receiver_",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "data_",
+        "type": "bytes"
+      }
+    ],
+    "name": "ERC721Sent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "evmChainId_",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "originAddress_",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "wrappedAddress_",
+        "type": "address"
+      }
+    ],
+    "name": "ERC721WrappedCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "evmChainId_",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "enum IBridge.RampType",
+        "name": "rampType_",
+        "type": "uint8"
+      }
+    ],
+    "name": "EvmChainSettingsSet",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "authority",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "chainId",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "evmChainId_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "enum IBridge.RampType",
+        "name": "rampType_",
+        "type": "uint8"
+      }
+    ],
+    "name": "getEvmChainIdSettings",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "evmChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "nonEvmChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "adapter",
+            "type": "address"
+          },
+          {
+            "internalType": "bool",
+            "name": "isEnabled",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "gasLimit",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IBridge.EvmChainSettings",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "originAddress_",
+        "type": "address"
+      }
+    ],
+    "name": "getWERC721ByOriginERC721Address",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "originAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "evmChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "wrappedAddress",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct IBridge.ERC721Wrapped",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "isConsumingScheduledOp",
+    "outputs": [
+      {
+        "internalType": "bytes4",
+        "name": "",
+        "type": "bytes4"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "operator",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      }
+    ],
+    "name": "onERC721Received",
+    "outputs": [
+      {
+        "internalType": "bytes4",
+        "name": "",
+        "type": "bytes4"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "fromChain",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "sender",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes",
+            "name": "data",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IBaseAdapter.MessageReceive",
+        "name": "payload_",
+        "type": "tuple"
+      }
+    ],
+    "name": "receiveERC721",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "evmChainId_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "ERC721Address_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "quotedFee_",
+        "type": "uint256"
+      }
+    ],
+    "name": "sendERC721UsingERC20",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "toChain_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "ERC721Address_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId_",
+        "type": "uint256"
+      }
+    ],
+    "name": "sendERC721UsingNative",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newAuthority",
+        "type": "address"
+      }
+    ],
+    "name": "setAuthority",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "evmChainId_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "nonEvmChainId_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "adapter_",
+        "type": "address"
+      },
+      {
+        "internalType": "enum IBridge.RampType",
+        "name": "rampType_",
+        "type": "uint8"
+      },
+      {
+        "internalType": "bool",
+        "name": "isEnabled_",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "gasLimit_",
+        "type": "uint256"
+      }
+    ],
+    "name": "setEvmChainIdSetting",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "originAddress_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "evmChainId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "wrappedAddress_",
+        "type": "address"
+      }
+    ],
+    "name": "setWERC721ByOriginERC721Address",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

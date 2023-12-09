@@ -7,6 +7,10 @@ import { useEffectOnce } from 'usehooks-ts'
 import { useNetwork } from 'wagmi'
 import { Requirements } from './Requirements'
 import { Form } from './Form'
+import { FormProvider, useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as z from 'zod'
+import { ethers } from 'ethers'
 
 export const CrosschainNFTBridgeAppIdMumbai =
   '0x3581ded89c04be046f61dbf380aff24bbb4d1866010c64302ad872e61a44c06023000000'
@@ -21,11 +25,22 @@ export const CrosschainNFTBridge = () => {
   const { chain } = useNetwork()
 
   const sourceChain = useMemo(() => chains[0], [chains])
-  const destionationChain = useMemo(() => chains[1], [chains])
+  const destinationChain = useMemo(() => chains[1], [chains])
 
   const handleSwitch = () => {
     setChains((currentChains) => [currentChains[1], currentChains[0]])
   }
+
+  const methods = useForm({
+    mode: 'all',
+    reValidateMode: 'onBlur',
+    resolver: zodResolver(
+      z.object({
+        erc721Address: z.string().refine((v) => ethers.isAddress(v)),
+        erc721TokenId: z.string().refine((v) => v.length > 0)
+      })
+    )
+  })
 
   useEffectOnce(() => {
     const [mumbai, fuji] = [bridgeChains[0].id, bridgeChains[1].id]
@@ -42,11 +57,14 @@ export const CrosschainNFTBridge = () => {
   return (
     <div className='flex  justify-center'>
       <Card className='flex w-full flex-col space-y-4 rounded-md p-4 lg:w-auto lg:min-w-[26rem]'>
-        <Form
-          onSwitch={handleSwitch}
-          sourceChain={sourceChain}
-          destionationChain={destionationChain}
-        />
+        <FormProvider {...methods}>
+          <Form
+            onSwitch={handleSwitch}
+            sourceChain={sourceChain}
+            destinationChain={destinationChain}
+          />
+        </FormProvider>
+
         <Requirements />
       </Card>
     </div>
