@@ -6,7 +6,7 @@ import { AccountConnect } from '@/app/components/wallet/account/Connect'
 import { NetworkSwitch } from '@/app/components/wallet/network/Switch'
 import { Chain } from '@/app/config/types'
 import { useNetwork, useWallet } from '@/app/lib/wallet/hooks'
-import useERC20Approve from '@/app/lib/wallet/hooks/useERC20Approve'
+import { useERC20Approve } from '@/app/lib/wallet/hooks/useERC20Approve'
 import { useERC721Approve } from '@/app/lib/wallet/hooks/useERC721Approve'
 import { ethers } from 'ethers'
 import { useEffect, useMemo } from 'react'
@@ -14,8 +14,8 @@ import { useFormContext } from 'react-hook-form'
 import { useDarkMode, useEffectOnce } from 'usehooks-ts'
 import { useBridgeFees } from '../lib/hooks/useBridgeFees'
 import { useERC721Metadata } from '@/app/lib/wallet/hooks/useERC721Metadata'
-import Image from 'next/image'
 import { Text } from '@/app/components/typography'
+import { useI18n } from '@/locales/client'
 
 export type BridgeButtonProps = ButtonProps & {
   sourceChain: Chain
@@ -30,6 +30,7 @@ export const BridgeButton = ({
   loading,
   ...props
 }: BridgeButtonProps) => {
+  const t = useI18n()
   const { watch, register, setValue } = useFormContext()
   const { isConnected } = useWallet()
   const { isLoading, chain, config } = useNetwork()
@@ -112,7 +113,12 @@ export const BridgeButton = ({
                 </li>
                 {symbol && (
                   <li>
-                    <Text>NFT to bridge: {symbol}</Text>
+                    <Text>
+                      {t(
+                        'PAGES.APPS.CROSSCHAIN_NFT_BRIDGE.ERC721_NFT_TO_BRIDGE_LABEL'
+                      )}
+                      : {symbol}
+                    </Text>
                   </li>
                 )}
               </ul>
@@ -149,9 +155,13 @@ export const BridgeButton = ({
                 {...props}
               >
                 {isERC721Approved ? (
-                  <>{isERC20Approved ? 'Bridge' : 'Approve Link'}</>
+                  <>
+                    {isERC20Approved
+                      ? t('PAGES.APPS.CROSSCHAIN_NFT_BRIDGE.BRIDGE')
+                      : 'Approve Link'}
+                  </>
                 ) : (
-                  'Approve NFT'
+                  t('PAGES.APPS.CROSSCHAIN_NFT_BRIDGE.APPROVE_NFT')
                 )}
               </Button>
             </div>

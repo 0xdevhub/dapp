@@ -96,8 +96,9 @@ export const CrosschainNFTBridge = ({
             destinationChain={destinationChain}
           />
         </FormProvider>
-
-        <Requirements />
+        <div className='flex justify-end'>
+          <Requirements />
+        </div>
       </Card>
     </div>
   )

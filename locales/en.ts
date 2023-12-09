@@ -4,7 +4,11 @@ const en = {
       TITLE: 'Apps',
       CROSSCHAIN_NFT_BRIDGE: {
         FROM: 'From',
-        TO: 'To'
+        TO: 'To',
+        ERC721_ADDRESS: 'ERC721 Address',
+        ERC721_NFT_TO_BRIDGE_LABEL: 'ERC721 NFT to bridge',
+        BRIDGE: 'Bridge',
+        APPROVE_NFT: 'Approve NFT'
       }
     }
   },
