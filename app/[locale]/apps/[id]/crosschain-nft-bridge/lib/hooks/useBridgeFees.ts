@@ -101,8 +101,6 @@ export const useBridgeFees = ({
     )
   }
 
-  console.log(payload)
-
   const getFeeResult = useContractRead({
     address: targetEvmChainIdSettings?.adapter as `0x${string}`,
     abi: BASE_ADAPTER_ABI,
