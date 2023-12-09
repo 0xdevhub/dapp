@@ -32,14 +32,7 @@ export const Form = ({
 
   const { watch, handleSubmit } = useFormContext()
 
-  const { bridge } = useBridge({
-    destinationChain,
-    ERC721Address: watch('erc721Address'),
-    ERC721TokenId: watch('erc721TokenId'),
-    fee: watch('bridgeFees')
-  })
-
-  console.log({
+  const { bridge, isLoading } = useBridge({
     destinationChain,
     ERC721Address: watch('erc721Address'),
     ERC721TokenId: watch('erc721TokenId'),
@@ -83,6 +76,7 @@ export const Form = ({
         />
       </div>
       <BridgeButton
+        loading={isLoading}
         sourceChain={sourceChain}
         destinationChain={destinationChain}
       />

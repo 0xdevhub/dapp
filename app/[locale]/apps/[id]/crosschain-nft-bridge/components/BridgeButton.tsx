@@ -27,6 +27,7 @@ export const BridgeButton = ({
   destinationChain,
   sourceChain,
   disabled,
+  loading,
   ...props
 }: BridgeButtonProps) => {
   const { watch, register, setValue } = useFormContext()
@@ -128,9 +129,15 @@ export const BridgeButton = ({
                     : undefined
                 }
                 disabled={
-                  disabled || isLoading || isERC721Loading || isERC20Loading
+                  disabled ||
+                  loading ||
+                  isLoading ||
+                  isERC721Loading ||
+                  isERC20Loading
                 }
-                loading={isLoading || isERC721Loading || isERC20Loading}
+                loading={
+                  loading || isLoading || isERC721Loading || isERC20Loading
+                }
                 loadingProps={{
                   variant: isDarkMode ? 'dark' : 'primary',
                   className: 'w-6'
