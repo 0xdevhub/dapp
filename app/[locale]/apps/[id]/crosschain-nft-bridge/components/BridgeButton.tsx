@@ -92,8 +92,6 @@ export const BridgeButton = ({
     register('bridgeFees')
   })
 
-  console.log(!isERC721Approved || !isERC20Approved)
-
   return (
     <>
       {!isConnected ? (
