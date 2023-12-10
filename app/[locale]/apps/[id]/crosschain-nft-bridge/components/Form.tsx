@@ -81,11 +81,11 @@ export const Form = ({
         destinationChain={destinationChain}
       />
       {!isLoading && status === 'success' && (
-        <p className='text-green-500'>
-          <Text>
+        <p className='flex space-x-px text-green-500'>
+          <Text as='span'>
             {t('PAGES.APPS.CROSSCHAIN_NFT_BRIDGE.FEEDBACK.SUCCESS_TO')}
           </Text>
-          <Text>{destinationChain.name}!</Text>
+          <Text as='span'>{destinationChain.name}!</Text>
         </p>
       )}
 

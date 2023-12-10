@@ -84,7 +84,7 @@ export const CrosschainNFTBridge = ({
     if (pathname.includes(currentAppId)) {
       updatePathname(currentAppId, targetAppId)
     }
-  }, [config.id, mumbai.id, pathname, router])
+  }, [config.id, mumbai.id, pathname, router, updatePathname])
 
   return (
     <div className={classNames(className, 'flex  justify-center')} {...props}>
