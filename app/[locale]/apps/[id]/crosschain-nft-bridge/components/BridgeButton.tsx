@@ -87,7 +87,7 @@ export const BridgeButton = ({
 
   useEffect(() => {
     setValue('bridgeFees', fee)
-  }, [fee])
+  }, [fee, setValue])
 
   useEffectOnce(() => {
     register('bridgeFees')
